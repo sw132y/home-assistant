@@ -1,0 +1,20 @@
+- alias: Set theme at startup
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: Dark
+
+
+- id: 'telegramboot'
+  alias: 'Telegram bot to notify on boot'
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - service: notify.startup
+    data:
+      message: Home Assistant on Pi booted
