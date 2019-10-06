@@ -34,6 +34,9 @@ homeassistant:
 panel_custom: !include panel_custom.yaml
 binary_sensor: !include binary_sensors.yaml
 
+shell_command:
+    backup: git status
+
 # Example configuration.yaml entry for the Telegram Bot
 telegram_bot:
   - platform: polling
@@ -43,6 +46,6 @@ telegram_bot:
 
 # Example configuration.yaml entry for the notifier
 notify:
-  - name: startup
+  - name: send
     platform: telegram
     chat_id: !secret telegram_chat_id

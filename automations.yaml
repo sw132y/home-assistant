@@ -8,13 +8,37 @@
       name: Dark
 
 
-- id: 'telegramboot'
-  alias: 'Telegram bot to notify on boot'
+- id: 'telegram_piboot'
+  alias: 'Telegram o uruchomieniu hassio'
   trigger:
   - event: start
     platform: homeassistant
   condition: []
   action:
-  - service: notify.startup
+  - service: notify.send
     data:
       message: Home Assistant on Pi booted
+      
+- id: 'telegram_window'
+  alias: 'Telegram o otwartym oknie'
+  trigger:
+    - platform: time_pattern
+      minutes: "/10"
+  condition:
+    condition: and
+    conditions:
+        - condition: numeric_state
+          entity_id: sensor.temp008_parter_salon_temperature
+          below: 20
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: binary_sensor.kontr102_pietro_sypialnia_oknopd_contact
+              state: 'on'
+            - condition: state
+              entity_id: binary_sensor.kontr106_pietro_lazienka_okno_contact
+              state: 'on'
+  action:
+  - service: notify.send
+    data:
+      message: Czy na pewno chcesz aby okno było dalej otwarte?
