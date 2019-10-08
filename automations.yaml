@@ -28,7 +28,7 @@
     condition: and
     conditions:
         - condition: numeric_state
-          entity_id: sensor.temp008_parter_salon_temperature
+          entity_id: sensor.temp201_ogrod_ganek_temperature
           below: 20
         - condition: or
           conditions:
