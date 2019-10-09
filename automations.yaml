@@ -7,7 +7,6 @@
     data:
       name: Dark
 
-
 - id: 'telegram_piboot'
   alias: 'Telegram o uruchomieniu hassio'
   trigger:
@@ -23,7 +22,7 @@
   alias: 'Telegram o otwartym oknie'
   trigger:
     - platform: time_pattern
-      minutes: "/10"
+      minutes: "/20"
   condition:
     condition: and
     conditions:
@@ -45,9 +44,9 @@
       
       
 - id: 'backup_to_git'
-  alias: 'Wysłanie kopii zapasowej do GIT'
+  alias: 'Automatyczne wysłanie kopii zapasowej do GITa'
   trigger:
     - platform: time_pattern
-      minutes: "/5"
+      minutes: "/30"
   action:
     - service: shell_command.backup
