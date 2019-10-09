@@ -6,6 +6,6 @@ git status
 git pull
 git add --all
 git commit -m "Daily backup"
-git push origin HEAD
+git push -u origin master
 
 exit
