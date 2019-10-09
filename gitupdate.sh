@@ -1,6 +1,9 @@
 #!/bin/bash
 
-hassio homeassistant check
+#hassio homeassistant check
+
+echo "$USER"
+echo whoami
 
 git status
 git pull
