@@ -1,13 +1,11 @@
 #!/bin/bash
 
-cd /config
+hassio homeassistant check
 
-hass --script check_config
-
-git pull
-git add .
 git status
+git pull
+git add --all
 git commit -m "Daily backup"
-git push -u origin master
+git push origin HEAD
 
 exit
