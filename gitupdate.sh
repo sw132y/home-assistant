@@ -2,7 +2,6 @@
 
 hassio homeassistant check
 
-
 chmod 400 /config/.ssh/id_rsa 
 
 git status
