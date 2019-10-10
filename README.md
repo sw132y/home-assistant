@@ -1,6 +1,8 @@
 # home-assistant
 
 ## GIT & SSH configuration
+How to integrate github with hassio you can find in [https://www.home-assistant.io/docs/ecosystem/backup/backup_github/](documentation)
+
 Docker container does not keep user data after restart so you need to put SSH key into `/config` folder.
 
 Upload your id_rsa SSH private key to `/config/.ssh/id_rsa`.
