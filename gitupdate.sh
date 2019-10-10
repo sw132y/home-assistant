@@ -1,14 +1,14 @@
 #!/bin/bash
 
-#hassio homeassistant check
+hassio homeassistant check
 
-echo "$USER"
-echo whoami
+
+chmod 400 /config/.ssh/id_rsa 
 
 git status
 git pull
 git add --all
 git commit -m "Daily backup"
-git push -u origin master
+ssh-agent bash -c 'ssh-add /config/.ssh/id_rsa; git push origin HEAD'
 
 exit

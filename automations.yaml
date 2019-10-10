@@ -47,6 +47,6 @@
   alias: 'Automatyczne wysłanie kopii zapasowej do GITa'
   trigger:
     - platform: time_pattern
-      minutes: "/5"
+      hours: "23"
   action:
     - service: shell_command.backup
