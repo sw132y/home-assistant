@@ -22,31 +22,25 @@
   alias: 'Telegram o otwartym oknie'
   trigger:
     - platform: time_pattern
-      minutes: "/20"
+      minutes: "/25"
   condition:
     condition: and
     conditions:
-        - condition: numeric_state
-          entity_id: sensor.temp201_ogrod_ganek_temperature
-          below: 20
-        - condition: or
-          conditions:
-            - condition: state
-              entity_id: binary_sensor.kontr102_pietro_sypialnia_oknopd_contact
-              state: 'on'
-            - condition: state
-              entity_id: binary_sensor.kontr106_pietro_lazienka_okno_contact
-              state: 'on'
+        - condition: template
+          value_template: "{{ ( states.sensor.temp201_ogrod_ganek_temperature.state  ) < ( states.sensor.temp005_parter_biuro_temperature.state ) }}"
+        - condition: state
+          entity_id: group.upstairs_windows
+          state: 'on'
   action:
   - service: notify.send
     data:
-      message: Czy na pewno chcesz aby okno było dalej otwarte?
+      message: Okno na piętrze jest otwarte
       
       
 - id: 'backup_to_git'
   alias: 'Automatyczne wysłanie kopii zapasowej do GITa'
   trigger:
     - platform: time_pattern
-      hours: "23"
+      hours: "2"
   action:
     - service: shell_command.backup

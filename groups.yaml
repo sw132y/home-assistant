@@ -1,0 +1,10 @@
+﻿upstairs_windows:
+    name: Okna u góry
+    entities:
+        - binary_sensor.kontr102_pietro_sypialnia_oknopd_contact
+        - binary_sensor.kontr106_pietro_lazienka_okno_contact
+        
+temperature_outside:
+    name: Ogród
+    entities:
+        - sensor.temp201_ogrod_ganek_temperature
