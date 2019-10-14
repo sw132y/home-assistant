@@ -3,6 +3,7 @@
     entities:
         - binary_sensor.kontr102_pietro_sypialnia_oknopd_contact
         - binary_sensor.kontr106_pietro_lazienka_okno_contact
+        - binary_sensor.kontr103_pietro_chillroom_okno_contact
         
 temperature_outside:
     name: Ogród
