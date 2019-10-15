@@ -2,6 +2,8 @@
     name: Okna u góry
     entities:
         - binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
+        - binary_sensor.kontr101_pietro_sypialnia_wschod_contact
         - binary_sensor.kontr103_pietro_chillroom_contact
         - binary_sensor.kontr104_pietro_goscinny_contact
         - binary_sensor.kontr106_pietro_lazienka_contact
+        - binary_sensor.kontr105_pietro_ignacy_contact
