@@ -1,10 +1,10 @@
-title: Sensory
+title: Dom
 views:
   - badges:
       - sensor.temp005_parter_biuro_temperature
-      - sensor.temp005_parter_biuro_humidity
-      - sensor.temp101_pietro_sypialnia_temperature
       - sensor.temp008_parter_salon_temperature
+      - sensor.temp101_pietro_sypialnia_temperature
+      - sensor.temp005_parter_biuro_humidity
       - sensor.temp101_pietro_sypialnia_humidity
       - sensor.temp201_ogrod_ganek_temperature
       - sensor.temp201_ogrod_ganek_humidity
@@ -62,19 +62,45 @@ views:
         type: weather-forecast
     path: default_view
     title: Home
+ 
   - badges: []
+    panel: true
     cards:
-      - entity: automation.automatyczne_wyslanie_kopii_zapasowej_do_gita
-        hold_action:
-          action: none
-        icon_height: 25px
-        name: Kopia sapasowa GIT
-        show_icon: true
-        show_name: true
-        tap_action:
-          action: call-service
-          service: shell_command.backup
-        type: entity-button
-    path: akcje
-    theme: dark
-    title: Akcje
+      - type: picture-elements
+        image: /local/floorplan/floors/parter/parter.svg
+        elements:
+        - type: state-label
+          entity: sensor.temp005_parter_biuro_temperature
+          style:
+            top: 73%
+            left: 15%
+            text-align: center
+        - type: state-label
+          entity: sensor.temp008_parter_salon_temperature
+          style:
+            top: 15%
+            left: 35%
+            text-align: center
+        - type: state-label
+          entity: sensor.temp201_ogrod_ganek_temperature
+          style:
+            top: 87%
+            left: 15%
+            text-align: center
+    id: system
+    title: Parter
+    
+  - badges: []
+    panel: true
+    cards:
+      - type: picture-elements
+        image: /local/floorplan/floors/pietro/pietro.svg
+        elements:
+        - type: state-label
+          entity: sensor.temp101_pietro_sypialnia_temperature
+          style:
+            top: 20%
+            right: 10%
+            text-align: right
+    id: system
+    title: Piętro
