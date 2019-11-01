@@ -4,7 +4,7 @@ hassio homeassistant check
 
 chmod 400 /config/.ssh/id_rsa 
 
-ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+ssh-keyscan -H github.com >> /config/.ssh/known_hosts
 
 git status
 git fetch
