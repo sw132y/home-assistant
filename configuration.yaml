@@ -31,6 +31,9 @@ frontend:
 homeassistant:
   customize: !include customize.yaml
 
+lovelace:
+  mode: yaml
+
 panel_custom: !include panel_custom.yaml
 binary_sensor: !include binary_sensors.yaml
 
