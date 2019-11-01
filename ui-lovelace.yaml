@@ -67,26 +67,23 @@ views:
     panel: true
     cards:
       - type: picture-elements
-        image: /local/floorplan/floors/parter/parter.svg
+        image: /local/floorplan/parter.svg
         elements:
         - type: state-label
           entity: sensor.temp005_parter_biuro_temperature
           style:
             top: 73%
             left: 15%
-            text-align: center
         - type: state-label
           entity: sensor.temp008_parter_salon_temperature
           style:
             top: 15%
             left: 35%
-            text-align: center
         - type: state-label
           entity: sensor.temp201_ogrod_ganek_temperature
           style:
             top: 87%
             left: 15%
-            text-align: center
     id: system
     title: Parter
     
@@ -94,13 +91,12 @@ views:
     panel: true
     cards:
       - type: picture-elements
-        image: /local/floorplan/floors/pietro/pietro.svg
+        image: /local/floorplan/pietro.svg
         elements:
         - type: state-label
           entity: sensor.temp101_pietro_sypialnia_temperature
           style:
             top: 20%
             right: 10%
-            text-align: right
     id: system
     title: Piętro
