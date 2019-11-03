@@ -14,6 +14,9 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
+homeassistant:
+  customize: !include customize.yaml
+
 influxdb:
   host: a0d7b954-influxdb
   port: 8086
@@ -25,6 +28,8 @@ influxdb:
   
 frontend:
   themes: !include themes.yaml
+  extra_html_url:
+    - /local/fontawesome/hass-fontawesome-solid.html
 
 lovelace:
   mode: yaml
