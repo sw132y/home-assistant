@@ -1,4 +1,7 @@
 title: Dom
+resources:
+  - url: /local/floorplan/plugins/card-mod.js
+    type: js
 views:
   - badges:
       - sensor.temp005_parter_biuro_temperature
@@ -68,9 +71,19 @@ views:
     cards:
       - type: picture-elements
         image: /local/floorplan/parter.svg
+        style: |
+          hui-state-label-element {
+            font-size: 20px;
+            font-size: 2.5vw;
+          }
         elements:
         - type: state-label
           entity: sensor.temp005_parter_biuro_temperature
+          style:
+            top: 71%
+            left: 15%
+        - type: state-label
+          entity: sensor.temp005_parter_biuro_humidity
           style:
             top: 73%
             left: 15%
@@ -80,9 +93,19 @@ views:
             top: 15%
             left: 35%
         - type: state-label
+          entity: sensor.temp008_parter_salon_humidity
+          style:
+            top: 17%
+            left: 35%
+        - type: state-label
           entity: sensor.temp201_ogrod_ganek_temperature
           style:
             top: 87%
+            left: 15%
+        - type: state-label
+          entity: sensor.temp201_ogrod_ganek_humidity
+          style:
+            top: 89%
             left: 15%
     id: system
     title: Parter
@@ -92,11 +115,21 @@ views:
     cards:
       - type: picture-elements
         image: /local/floorplan/pietro.svg
+        style: |
+          hui-state-label-element {
+            font-size: 20px;
+            font-size: 2.5vw;
+          }
         elements:
         - type: state-label
           entity: sensor.temp101_pietro_sypialnia_temperature
           style:
             top: 20%
+            right: 10%
+        - type: state-label
+          entity: sensor.temp101_pietro_sypialnia_humidity
+          style:
+            top: 22%
             right: 10%
     id: system
     title: Piętro
