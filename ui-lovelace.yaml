@@ -85,27 +85,27 @@ views:
         - type: state-label
           entity: sensor.temp005_parter_biuro_humidity
           style:
-            top: 73%
+            top: 74%
             left: 15%
         - type: state-label
           entity: sensor.temp008_parter_salon_temperature
           style:
-            top: 15%
+            top: 12%
             left: 35%
         - type: state-label
           entity: sensor.temp008_parter_salon_humidity
           style:
-            top: 17%
+            top: 15%
             left: 35%
         - type: state-label
           entity: sensor.temp201_ogrod_ganek_temperature
           style:
-            top: 87%
+            top: 90%
             left: 15%
         - type: state-label
           entity: sensor.temp201_ogrod_ganek_humidity
           style:
-            top: 89%
+            top: 93%
             left: 15%
     id: system
     title: Parter
@@ -129,7 +129,7 @@ views:
         - type: state-label
           entity: sensor.temp101_pietro_sypialnia_humidity
           style:
-            top: 22%
+            top: 23%
             right: 10%
     id: system
     title: Piętro
