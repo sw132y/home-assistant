@@ -121,6 +121,9 @@ views:
             font-size: 20px;
             font-size: 2.5vw;
           }
+          hui-state-icon-element {
+            transform: scale(2);
+          }
         elements:
         - type: state-label
           entity: sensor.temp101_pietro_sypialnia_temperature
@@ -137,36 +140,30 @@ views:
           style:
             top: 45%
             left: 4%
-            transform: scale(3,3)
         - type: state-icon
           entity: binary_sensor.kontr104_pietro_goscinny_contact
           style:
             top: 78%
             left: 22%
-            transform: scale(3,3)
         - type: state-icon
           entity: binary_sensor.kontr103_pietro_chillroom_contact
           style:
             top: 78%
             left: 58%
-            transform: scale(3,3)
         - type: state-icon
           entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
           style:
             top: 43%
             left: 83%
-            transform: scale(3,3)
         - type: state-icon
           entity: binary_sensor.kontr101_pietro_sypialnia_wschod_contact
           style:
             top: 10%
             left: 65%
-            transform: scale(3,3)
         - type: state-icon
           entity: binary_sensor.kontr105_pietro_ignacy_contact
           style:
             top: 10%
             left: 27%
-            transform: scale(3,3)
     id: system
     title: Piętro
