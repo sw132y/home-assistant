@@ -108,6 +108,13 @@ views:
           style:
             top: 93%
             left: 15%
+        - type: state-icon
+          entity: switch.relay001_parter_wejscie_furtka
+          tap_action:
+            action: toggle
+          style:
+            top: 80%
+            left: 35%
     id: system
     title: Parter
     
@@ -140,6 +147,8 @@ views:
           style:
             top: 45%
             left: 4%
+            #--iron-icon-height: 60px
+            #--iron-icon-width: 60px
         - type: state-icon
           entity: binary_sensor.kontr104_pietro_goscinny_contact
           style:
