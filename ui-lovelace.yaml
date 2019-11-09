@@ -11,17 +11,17 @@ views:
       - sensor.temp005_parter_biuro_humidity
       - sensor.temp008_parter_salon_humidity
       - sensor.temp101_pietro_sypialnia_humidity
-      - sensor.temp201_ogrod_ganek_humidity
+    #   - sensor.temp201_ogrod_ganek_humidity
       - sensor.temp201_ogrod_ganek_pressure
-      - sun.sun
+    #   - sun.sun
       - binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
       - binary_sensor.kontr101_pietro_sypialnia_wschod_contact
       - binary_sensor.kontr103_pietro_chillroom_contact
       - binary_sensor.kontr104_pietro_goscinny_contact
       - binary_sensor.kontr106_pietro_lazienka_contact
       - binary_sensor.kontr105_pietro_ignacy_contact
-      - binary_sensor.0x00124b0018e32cb8_router
-      - binary_sensor.0x00124b0018ed2935_router
+    #   - binary_sensor.0x00124b0018e32cb8_router
+    #   - binary_sensor.0x00124b0018ed2935_router
     cards:
       - entity: switch.relay001_parter_wejscie_furtka
         hold_action:
