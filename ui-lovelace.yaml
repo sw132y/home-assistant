@@ -26,7 +26,6 @@ views:
             hold_action:
               action: none
             name: Zamek
-            icon: fas:key
             show_state: false
             show_name: false
           - entity: switch.relay005_parter_wejscie_dzwonek
@@ -35,7 +34,6 @@ views:
             hold_action:
               action: none
             name: Dzwonek
-            icon: fas:bell
             show_state: false
             show_name: false
         title: Furtka
@@ -47,7 +45,6 @@ views:
           - entity: binary_sensor.kontr103_pietro_chillroom_contact
           - entity: binary_sensor.kontr106_pietro_lazienka_contact
           - entity: binary_sensor.kontr105_pietro_ignacy_contact
-          - entity: group.upstairs_windows
         show_header_toggle: false
         theme: default
         title: Okna
@@ -69,8 +66,6 @@ views:
         show_header_toggle: false
         title: Ogród
         type: entities
-      - entity: weather.dom
-        type: weather-forecast
     path: default_view
     title: Home
  
@@ -140,7 +135,6 @@ views:
           ha-icon {
             --iron-icon-width: 32px;
             --iron-icon-height: 32px;
-            
           }
         elements:
         - type: state-label
@@ -158,16 +152,11 @@ views:
           style:
             top: 45%
             left: 4%
-            --iron-icon-width: 10vw;
-            --iron-icon-height: 10vw;
-        - type: icon
-          #entity: binary_sensor.kontr104_pietro_goscinny_contact
-          icon: fas:key
+        - type: state-icon
+          entity: binary_sensor.kontr104_pietro_goscinny_contact
           style:
             top: 78%
             left: 22%
-            --iron-icon-height: auto
-            --iron-icon-width: 4vh
         - type: state-icon
           entity: binary_sensor.kontr103_pietro_chillroom_contact
           style:

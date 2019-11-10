@@ -16,6 +16,10 @@ script: !include scripts.yaml
 
 homeassistant:
   customize: !include customize.yaml
+  customize_glob:
+    "*.*":
+      custom_ui_state_card: state-card-custom-ui
+  
 
 influxdb:
   host: a0d7b954-influxdb
@@ -29,7 +33,10 @@ influxdb:
 frontend:
   themes: !include themes.yaml
   extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
     - /local/fontawesome/hass-fontawesome-solid.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
 
 lovelace:
   mode: yaml
@@ -54,3 +61,8 @@ notify:
     
 logger:
     default: debug
+
+config:
+
+customizer:
+  custom_ui: local

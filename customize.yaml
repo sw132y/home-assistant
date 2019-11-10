@@ -1,0 +1,9 @@
+switch.relay005_parter_wejscie_dzwonek:
+  icon: fas:bell
+  templates:
+    icon: >
+      if (state === 'on') return 'fas:bell';
+      return 'fas:bell-slash';
+
+switch.relay001_parter_wejscie_furtka:
+  icon: fas:key
