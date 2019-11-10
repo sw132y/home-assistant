@@ -2,6 +2,11 @@ dark:
   # Background image
   background-image: 'center / cover no-repeat url("/local/night.jpg") fixed'
 
+  switch-checked-color: '#d26d26' # Knob On
+  switch-unchecked-color: '#268bd2' # Knob Off
+  switch-unchecked-button-color: '#268bd2' # Knob Off
+  switch-unchecked-track-color: 'var(--base01)'
+  
   # Colors
   text-color: '#DADADB'                                                           # Grey text
   text-medium-light-color: '#A0A2A8'                                              # Medium-light grey text
