@@ -36,18 +36,15 @@ views:
             name: Dzwonek
             show_state: false
             show_name: false
-        title: Furtka
-        type: glance
-      - entities:
-        - entity: switch.relay006_parter_salon_witryna
-          tap_action:
-            action: toggle
-          hold_action:
-            action: none
-          name: Witryna
-          show_state: false
-          show_name: true
-        title: Salon
+          - entity: binary_sensor.kontr202_ogrod_brama_contact
+            tap_action:
+              action: none
+            hold_action:
+              action: none
+            name: Brama
+            show_state: false
+            show_name: true
+        title: Wejście
         type: glance
       - entities:
           - entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
