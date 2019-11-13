@@ -47,6 +47,17 @@ views:
         title: Wejście
         type: glance
       - entities:
+        - entity: switch.relay006_parter_salon_witryna
+          tap_action:
+            action: toggle
+          hold_action:
+            action: none
+          name: Witryna
+          show_state: false
+          show_name: true
+        title: Salon
+        type: glance
+      - entities:
           - entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
           - entity: binary_sensor.kontr101_pietro_sypialnia_wschod_contact
           - entity: binary_sensor.kontr104_pietro_goscinny_contact
