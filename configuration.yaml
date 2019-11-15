@@ -21,15 +21,18 @@ homeassistant:
       custom_ui_state_card: state-card-custom-ui
   
 
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: homeassistant
-  username: !secret influxdb_username
-  password: !secret influxdb_password
-  max_retries: 3
-  default_measurement: state
-  
+# influxdb:
+#   host: a0d7b954-influxdb
+#   port: 8086
+#   database: homeassistant
+#   username: !secret influxdb_username
+#   password: !secret influxdb_password
+#   max_retries: 3
+#   default_measurement: state
+
+recorder:
+  db_url: mysql://homeassistant:8dA73ux8@$/@core-mariadb/homeassistant?charset=utf8
+
 frontend:
   themes: !include themes.yaml
   extra_html_url:
