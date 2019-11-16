@@ -36,6 +36,19 @@
     data:
       message: Okno na piętrze jest otwarte
       
+- id: telegram_brama_otwarta
+  alias: Telegram o otwartej bramie
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kontr202_ogrod_brama_contact
+    from: 'off'
+    to: 'on'
+    for:
+      seconds: 2
+  action:
+  - service: notify.send
+    data:
+      message: Brama jest otwarta
       
 - id: 'backup_to_git'
   alias: 'Automatyczne wysłanie kopii zapasowej do GITa'
