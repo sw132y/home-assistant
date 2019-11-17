@@ -17,7 +17,34 @@
   - service: notify.send
     data:
       message: Home Assistant on Pi booted
-      
+
+#
+# Klimat w domu
+#
+
+- id: 'telegram_temperature_inside_below_limit'
+  alias: 'Telegram o temperaturze poniżej 20 stopni'
+  trigger:
+    - platform: time_pattern
+      minutes: "/30"
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.temp101_pietro_sypialnia_temperature
+        below: 20
+      - condition: time
+        after: '18:00:00'
+        before: '07:00:00'
+  action:
+  - service: notify.send
+    data:
+      message: Tenperatura w sypialni wynosi {{states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit}}
+
+#
+# Okna u góry
+# 
+
 - id: 'telegram_window'
   alias: 'Telegram o otwartym oknie'
   trigger:
@@ -35,21 +62,59 @@
   - service: notify.send
     data:
       message: Okno na piętrze jest otwarte
-      
-- id: telegram_brama_otwarta
-  alias: Telegram o otwartej bramie
+
+#
+# Brama wjazdowa
+#      
+
+- id: telegram_brama_otwarta_przez_dluzszy_czas
+  alias: Telegram o otwartej bramie 123
+  trigger:
+    - platform: time_pattern
+      seconds: "/60"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.kontr202_ogrod_brama_contact
+        state: 'on'
+      - condition: template
+        value_template: '{{as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed) >= 300}}'
+  action:
+  - service: notify.send
+    data:
+      message: 'Brama jest otwarta od {{((as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed)) / 60) | int}}min'
+
+- id: telegram_brama_otwarcie
+  alias: Telegram o otwarciu bramy
   trigger:
     platform: state
     entity_id: binary_sensor.kontr202_ogrod_brama_contact
     from: 'off'
     to: 'on'
     for:
-      seconds: 2
+      seconds: 10
   action:
   - service: notify.send
     data:
-      message: Brama jest otwarta
-      
+      message: Brama została otwarta
+
+- id: telegram_brama_zamkniecie
+  alias: Telegram o zamknięciu bramy
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kontr202_ogrod_brama_contact
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 10
+  action:
+  - service: notify.send
+    data:
+      message: Brama została zamknięta
+#
+# Backup
+#            
 - id: 'backup_to_git'
   alias: 'Automatyczne wysłanie kopii zapasowej do GITa'
   trigger:

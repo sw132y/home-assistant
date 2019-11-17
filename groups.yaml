@@ -7,3 +7,9 @@
         - binary_sensor.kontr104_pietro_goscinny_contact
         - binary_sensor.kontr106_pietro_lazienka_contact
         - binary_sensor.kontr105_pietro_ignacy_contact
+
+temperature_inside:
+    name: Temperatura w środku
+    entities:
+        - sensor.temp008_parter_salon_temperature
+        - sensor.temp101_pietro_sypialnia_temperature

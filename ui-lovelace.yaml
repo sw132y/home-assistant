@@ -8,16 +8,11 @@ views:
       - sensor.temp008_parter_salon_temperature
       - sensor.temp101_pietro_sypialnia_temperature
       - sensor.temp201_ogrod_ganek_temperature
-      - sensor.temp005_parter_biuro_humidity
-      - sensor.temp008_parter_salon_humidity
+      #- sensor.temp005_parter_biuro_humidity
+      #- sensor.temp008_parter_salon_humidity
       - sensor.temp101_pietro_sypialnia_humidity
       - sensor.temp201_ogrod_ganek_pressure
-      - binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
-      - binary_sensor.kontr101_pietro_sypialnia_wschod_contact
-      - binary_sensor.kontr103_pietro_chillroom_contact
-      - binary_sensor.kontr104_pietro_goscinny_contact
-      - binary_sensor.kontr106_pietro_lazienka_contact
-      - binary_sensor.kontr105_pietro_ignacy_contact
+      #- group.upstairs_windows
     cards:
       - entities:
           - entity: switch.relay001_parter_wejscie_furtka
@@ -55,7 +50,36 @@ views:
           name: Witryna
           show_state: false
           show_name: true
+        - entity: sensor.temp008_parter_salon_temperature
+          tap_action:
+            action: toggle
+          hold_action:
+            action: none
+          show_state: true
         title: Salon
+        type: glance
+      - entities:
+        - entity: switch.relay006_parter_salon_witryna
+          tap_action:
+            action: toggle
+          hold_action:
+            action: none
+          show_state: false
+          name: Grzejnik
+          icon: 'mdi:radiator'
+        - entity: sensor.temp101_pietro_sypialnia_temperature
+          tap_action:
+            action: toggle
+          hold_action:
+            action: none
+          show_state: true
+        - entity: sensor.temp101_pietro_sypialnia_humidity
+          tap_action:
+            action: toggle
+          hold_action:
+            action: none
+          show_state: true
+        title: Sypialnia
         type: glance
       - entities:
           - entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
