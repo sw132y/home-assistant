@@ -20,7 +20,7 @@ views:
               action: toggle
             hold_action:
               action: none
-            name: Zamek
+            name: Furtka
             show_state: false
             show_name: false
           - entity: switch.relay005_parter_wejscie_dzwonek
