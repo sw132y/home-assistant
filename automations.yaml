@@ -39,7 +39,7 @@
   action:
   - service: notify.send
     data:
-      message: Tenperatura w sypialni wynosi {{states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit}}
+      message: Temperatura w sypialni wynosi {{states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit}}
 
 #
 # Okna u góry
@@ -47,6 +47,7 @@
 
 - id: 'telegram_window'
   alias: 'Telegram o otwartym oknie'
+  initial_state: 'on'
   trigger:
     - platform: time_pattern
       minutes: "/30"
@@ -68,7 +69,8 @@
 #      
 
 - id: telegram_brama_otwarta_przez_dluzszy_czas
-  alias: Telegram o otwartej bramie 123
+  initial_state: 'on'
+  alias: Telegram o otwartej bramie
   trigger:
     - platform: time_pattern
       seconds: "/60"
@@ -86,6 +88,7 @@
       message: 'Brama jest otwarta od {{((as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed)) / 60) | int}}min'
 
 - id: telegram_brama_otwarcie
+  initial_state: 'on'
   alias: Telegram o otwarciu bramy
   trigger:
     platform: state
@@ -100,6 +103,7 @@
       message: Brama została otwarta
 
 - id: telegram_brama_zamkniecie
+  initial_state: 'on'
   alias: Telegram o zamknięciu bramy
   trigger:
     platform: state
@@ -116,24 +120,29 @@
 # Backup
 #
 
-# - alias: 'Create Weekly Backup'
-#   initial_state: 'on'
-#   trigger:
-#     platform: time
-#         at: '02:00:00'
-#     condition:  
-#         condition: time
-#             weekday:
-#             - sun
-#     action:
-#       service: hassio.snapshot_full
-#       data_template:
-#         name: Hassio ({{now().strftime('%d.%m.%y')}})
+- alias: 'Create Snapshot'
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '02:00:00'
+  condition:  
+    condition: time
+    weekday:
+      - sun
+      - wed
+  action:
+    - service: hassio.snapshot_full
+      data_template:
+        name: Hassio ({{now().strftime('%d.%m.%y')}})
+    - service: notify.send
+      data_template:
+        message: Hassio snapshot {{now().strftime('%d.%m.%y')}} is done.
 
 - id: 'backup_to_git'
+  initial_state: 'on'
   alias: 'Automatyczne wysłanie kopii zapasowej do GITa'
   trigger:
-    - platform: time_pattern
-      hours: "2"
+    platform: time
+    at: '22:03:00'
   action:
     - service: shell_command.backup
