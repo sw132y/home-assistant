@@ -114,7 +114,22 @@
       message: Brama została zamknięta
 #
 # Backup
-#            
+#
+
+# - alias: 'Create Weekly Backup'
+#   initial_state: 'on'
+#   trigger:
+#     platform: time
+#         at: '02:00:00'
+#     condition:  
+#         condition: time
+#             weekday:
+#             - sun
+#     action:
+#       service: hassio.snapshot_full
+#       data_template:
+#         name: Hassio ({{now().strftime('%d.%m.%y')}})
+
 - id: 'backup_to_git'
   alias: 'Automatyczne wysłanie kopii zapasowej do GITa'
   trigger:
