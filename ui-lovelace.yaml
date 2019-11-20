@@ -51,33 +51,21 @@ views:
           show_state: false
           show_name: true
         - entity: sensor.temp008_parter_salon_temperature
-          tap_action:
-            action: toggle
-          hold_action:
-            action: none
           show_state: true
         title: Salon
         type: glance
       - entities:
-        - entity: switch.relay006_parter_salon_witryna
-          tap_action:
-            action: toggle
-          hold_action:
-            action: none
-          show_state: false
-          name: Grzejnik
-          icon: 'mdi:radiator'
+        # - entity: switch.relay006_parter_salon_witryna
+        #   tap_action:
+        #     action: toggle
+        #   hold_action:
+        #     action: none
+        #   show_state: false
+        #   name: Grzejnik
+        #   icon: 'mdi:radiator'
         - entity: sensor.temp101_pietro_sypialnia_temperature
-          tap_action:
-            action: toggle
-          hold_action:
-            action: none
           show_state: true
         - entity: sensor.temp101_pietro_sypialnia_humidity
-          tap_action:
-            action: toggle
-          hold_action:
-            action: none
           show_state: true
         title: Sypialnia
         type: glance
