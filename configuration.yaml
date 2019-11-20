@@ -94,3 +94,9 @@ vacuum:
       - high
       - max
     send_command_topic: "vacuum/send_command"
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: 48
+  platform: smart_life
