@@ -20,18 +20,9 @@ homeassistant:
     "*.*":
       custom_ui_state_card: state-card-custom-ui
   
-
-# influxdb:
-#   host: a0d7b954-influxdb
-#   port: 8086
-#   database: homeassistant
-#   username: !secret influxdb_username
-#   password: !secret influxdb_password
-#   max_retries: 3
-#   default_measurement: state
-
 recorder:
-  db_url: mysql://homeassistant:8dA73ux8@$/@core-mariadb/homeassistant?charset=utf8
+  db_url: !secret mariadb_url
+  purge_keep_days: 5
 
 frontend:
   themes: !include themes.yaml
@@ -49,17 +40,16 @@ binary_sensor: !include binary_sensors.yaml
 shell_command:
     backup: sh /config/gitupdate.sh
 
-# Example configuration.yaml entry for the Telegram Bot
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_api_key
     allowed_chat_ids:
       - !secret telegram_chat_id
 
-# Example configuration.yaml entry for the notifier
 notify:
-  - name: send
+  - name: sw132y
     platform: telegram
+    api_key: !secret telegram_api_key
     chat_id: !secret telegram_chat_id
     
 logger:

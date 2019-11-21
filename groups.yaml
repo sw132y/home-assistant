@@ -13,3 +13,4 @@ temperature_inside:
     entities:
         - sensor.temp008_parter_salon_temperature
         - sensor.temp101_pietro_sypialnia_temperature
+        - sensor.temp005_parter_biuro_temperature

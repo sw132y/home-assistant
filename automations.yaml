@@ -14,7 +14,7 @@
     platform: homeassistant
   condition: []
   action:
-  - service: notify.send
+  - service: notify.sw132y
     data:
       message: Home Assistant on Pi booted
 
@@ -37,7 +37,7 @@
         after: '18:00:00'
         before: '07:00:00'
   action:
-  - service: notify.send
+  - service: notify.sw132y
     data:
       message: Temperatura w sypialni wynosi {{states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit}}
 
@@ -60,7 +60,7 @@
           entity_id: group.upstairs_windows
           state: 'on'
   action:
-  - service: notify.send
+  - service: notify.sw132y
     data:
       message: Okno na piętrze jest otwarte
 
@@ -83,7 +83,7 @@
       - condition: template
         value_template: '{{as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed) >= 300}}'
   action:
-  - service: notify.send
+  - service: notify.sw132y
     data:
       message: 'Brama jest otwarta od {{((as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed)) / 60) | int}}min'
 
@@ -98,7 +98,7 @@
     for:
       seconds: 10
   action:
-  - service: notify.send
+  - service: notify.sw132y
     data:
       message: Brama została otwarta
 
@@ -113,7 +113,7 @@
     for:
       seconds: 10
   action:
-  - service: notify.send
+  - service: notify.sw132y
     data:
       message: Brama została zamknięta
 #
@@ -134,7 +134,7 @@
     - service: hassio.snapshot_full
       data_template:
         name: Hassio ({{now().strftime('%d.%m.%y')}})
-    - service: notify.send
+    - service: notify.sw132y
       data_template:
         message: Hassio snapshot {{now().strftime('%d.%m.%y')}} is done.
 
@@ -146,3 +146,39 @@
     at: '22:03:00'
   action:
     - service: shell_command.backup
+
+#
+# Raports
+#
+
+- id: show_available_options_in_telegram
+  alias: 'Shows all available options in telegram'
+  hide_entity: true
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/options'
+  action:
+    - service: notify.sw132y
+      data:
+        title: '*Dostępne opcje*'
+        message: "Co chcesz zrobić?"
+        data:
+          inline_keyboard:
+            - "Raport:/report"
+
+- id: report_all
+  alias: 'Report states'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report'
+  action:
+    - service: notify.sw132y
+      data:
+        title: '*Raport*'
+        message: "Sypialnia: {{ states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit ) }}"
