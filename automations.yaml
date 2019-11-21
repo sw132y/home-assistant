@@ -163,22 +163,110 @@
   action:
     - service: notify.sw132y
       data:
-        title: '*Dostępne opcje*'
-        message: "Co chcesz zrobić?"
+        title: '*Dostępne opcje:*'
+        message: "Wybierz:"
         data:
           inline_keyboard:
-            - "Raport:/report"
+            - "Raporty:/all_reports"
 
-- id: report_all
-  alias: 'Report states'
+- id: all_reports
+  alias: 'Shows all available reports in telegram'
+  hide_entity: true
   initial_state: 'on'
   trigger:
     platform: event
     event_type: telegram_callback
     event_data:
-      data: '/report'
+      command: '/all_reports'
   action:
     - service: notify.sw132y
       data:
-        title: '*Raport*'
-        message: "Sypialnia: {{ states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit ) }}"
+        title: '*Dostępne raporty:*'
+        message: "Wybierz:"
+        data:
+          inline_keyboard:
+            - "Temperatura i wigotność:/report_temperature"
+            - "Brama wjazdowa:/report_gate"
+            - "Okna u góry:/report_upstairs_window"
+            - "Dzwonek:/report_doorbell"
+            - "Światła:/report_lights"
+
+- id: report_temperature
+  alias: 'Temperature and humidity'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_temperature'
+  action:
+    - service: notify.sw132y
+      data:
+        title: '*Temperatura i wilgotność*'
+        message: |
+          Sypialnia {{ states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit }}, {{ states.sensor.temp101_pietro_sypialnia_humidity.state_with_unit }}
+          Salon {{ states.sensor.temp008_parter_salon_temperature.state_with_unit }}, {{ states.sensor.temp008_parter_salon_humidity.state_with_unit }}
+          Biuro {{ states.sensor.temp005_parter_biuro_temperature.state_with_unit }}, {{ states.sensor.temp005_parter_biuro_humidity.state_with_unit }}
+          Ogród {{ states.sensor.temp201_ogrod_ganek_temperature.state_with_unit }}, {{ states.sensor.temp201_ogrod_ganek_humidity.state_with_unit }}
+
+- id: report_gate
+  alias: 'Entry gate state'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_gate'
+  action:
+    - service: notify.sw132y
+      data:
+        title: '*Brama wjazdowa*'
+        message: Brama jest {{states.binary_sensor.kontr202_ogrod_brama_contact.state}} od {{((as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed)) / 60) | int}}min
+
+- id: report_upstairs_window
+  alias: 'Upstairs window'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_upstairs_window'
+  action:
+    - service: notify.sw132y
+      data:
+        title: '*Okna u góry*'
+        message: |
+          Sypialnia Pd {{states.binary_sensor.kontr102_pietro_sypialnia_poludnie_contact.state}}
+          Sypialnia Wsch {{states.binary_sensor.kontr101_pietro_sypialnia_wschod_contact.state}}
+          Chillroom {{states.binary_sensor.kontr103_pietro_chillroom_contact.state}}
+          Gościnny {{states.binary_sensor.kontr104_pietro_goscinny_contact.state}}
+          Łazienka {{states.binary_sensor.kontr106_pietro_lazienka_contact.state}}
+          Ignacy {{states.binary_sensor.kontr105_pietro_ignacy_contact.state}}
+
+- id: report_doorbell
+  alias: 'Doorbell state'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_doorbell'
+  action:
+    - service: notify.sw132y
+      data:
+        title: '*Dzwonek*'
+        message: Dzwonek jest {{states.switch.relay005_parter_wejscie_dzwonek.state}}
+
+- id: report_lights
+  alias: 'Lights state'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_lights'
+  action:
+    - service: notify.sw132y
+      data:
+        title: '*Światła*'
+        message: Witryna jest {{states.switch.relay006_parter_salon_witryna.state}}
