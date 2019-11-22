@@ -159,15 +159,14 @@
     platform: event
     event_type: telegram_command
     event_data:
-      command: '/options'
+      command: '/o'
   action:
     - service: notify.sw132y
       data:
-        title: '*Dostępne opcje:*'
         message: "Wybierz:"
         data:
           inline_keyboard:
-            - "Raporty:/all_reports"
+            - "Raporty:/r"
 
 - id: all_reports
   alias: 'Shows all available reports in telegram'
@@ -177,19 +176,15 @@
     platform: event
     event_type: telegram_callback
     event_data:
-      command: '/all_reports'
+      command: '/r'
   action:
     - service: notify.sw132y
       data:
-        title: '*Dostępne raporty:*'
         message: "Wybierz:"
         data:
           inline_keyboard:
-            - "Temperatura i wigotność:/report_temperature"
-            - "Brama wjazdowa:/report_gate"
-            - "Okna u góry:/report_upstairs_window"
-            - "Dzwonek:/report_doorbell"
-            - "Światła:/report_lights"
+            - "Klimat:/report_temperature, Okna:/report_upstairs_window"
+            - "Brama:/report_gate, Światła:/report_lights, Dzwonek:/report_doorbell"
 
 - id: report_temperature
   alias: 'Temperature and humidity'
