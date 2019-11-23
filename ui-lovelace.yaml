@@ -55,20 +55,22 @@ views:
         title: Salon
         type: glance
       - entities:
-        # - entity: switch.relay006_parter_salon_witryna
-        #   tap_action:
-        #     action: toggle
-        #   hold_action:
-        #     action: none
-        #   show_state: false
-        #   name: Grzejnik
-        #   icon: 'mdi:radiator'
+        - entity: switch.relay102_grzejnik
+          tap_action:
+            action: toggle
+          hold_action:
+            action: none
+          show_state: false
+          name: Grzejnik
         - entity: sensor.temp101_pietro_sypialnia_temperature
           show_state: true
         - entity: sensor.temp101_pietro_sypialnia_humidity
           show_state: true
         title: Sypialnia
         type: glance
+      - entity: light.light201_pietro_chillroom
+        title: Chillroom
+        type: light
       - entities:
           - entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
           - entity: binary_sensor.kontr101_pietro_sypialnia_wschod_contact

@@ -5,6 +5,13 @@ switch.relay005_parter_wejscie_dzwonek:
       if (state === 'on') return 'fas:bell';
       return 'fas:bell-slash';
 
+switch.relay102_grzejnik:
+  icon: mdi:radiator
+  templates:
+    icon: >
+      if (state === 'on') return 'mdi:radiator';
+      return 'mdi:radiator-off';
+
 switch.relay001_parter_wejscie_furtka:
   icon: fas:key
 

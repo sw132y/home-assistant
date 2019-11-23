@@ -91,3 +91,10 @@ tuya:
   password: !secret tuya_password
   country_code: 48
   platform: smart_life
+
+# light:
+#   - platform: group
+#     name: chillroom_lights
+#     entities:
+#       - light.light201_pietro_chillroom
+#       - light.light202_pietro_chillroom

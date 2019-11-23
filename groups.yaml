@@ -14,3 +14,9 @@ temperature_inside:
         - sensor.temp008_parter_salon_temperature
         - sensor.temp101_pietro_sypialnia_temperature
         - sensor.temp005_parter_biuro_temperature
+
+lights_chillroom:
+    name: Chillroom światło
+    entities:
+        - light.light201_pietro_chillroom
+        - light.light202_pietro_chillroom
