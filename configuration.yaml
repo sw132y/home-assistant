@@ -92,9 +92,9 @@ tuya:
   country_code: 48
   platform: smart_life
 
-# light:
-#   - platform: group
-#     name: chillroom_lights
-#     entities:
-#       - light.light201_pietro_chillroom
-#       - light.light202_pietro_chillroom
+light:
+  - platform: group
+    name: Chillroom Lights
+    entities:
+      - light.light201_pietro_chillroom
+      - light.light202_pietro_chillroom

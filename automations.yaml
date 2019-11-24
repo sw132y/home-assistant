@@ -148,6 +148,27 @@
     - service: shell_command.backup
 
 #
+# Rely
+# 
+
+- id: telegram_radiator_state_changed
+  initial_state: 'on'
+  alias: Telegram o włączeniu przekaźnika
+  trigger:
+    - platform: state
+      entity_id: switch.relay102_grzejnik
+      from: 'on'
+      to: 'off'
+    - platform: state
+      entity_id: switch.relay102_grzejnik
+      from: 'off'
+      to: 'on'
+  action:
+  - service: notify.sw132y
+    data:
+       message: Grzejnik jest "{{states.switch.relay102_grzejnik.state}}"
+
+#
 # Raports
 #
 
@@ -167,6 +188,7 @@
         data:
           inline_keyboard:
             - "Raporty:/r"
+            - "Chillout room:/ch"
 
 - id: all_reports
   alias: 'Shows all available reports in telegram'
@@ -185,6 +207,23 @@
           inline_keyboard:
             - "Klimat:/report_temperature, Okna:/report_upstairs_window"
             - "Brama:/report_gate, Światła:/report_lights, Dzwonek:/report_doorbell"
+
+- id: chillout_room_lights
+  alias: 'Shows all available lights mode in chillout room'
+  hide_entity: true
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      command: '/ch'
+  action:
+    - service: notify.sw132y
+      data:
+        message: "Wybierz:"
+        data:
+          inline_keyboard:
+            - "Film:/chillout_room_mode_movie,Dzień:/chillout_room_mode_normal,Full:/chillout_room_mode_full"
 
 - id: report_temperature
   alias: 'Temperature and humidity'
@@ -265,3 +304,45 @@
       data:
         title: '*Światła*'
         message: Witryna jest {{states.switch.relay006_parter_salon_witryna.state}}
+#
+# Lights
+#
+
+- id: chillout_room_mode_movie
+  alias: Chillout room - Movie mode
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/chillout_room_mode_movie'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.chillroom_lights
+        brightness: 50
+
+- id: chillout_room_mode_normal
+  alias: Chillout room - Normal mode
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/chillout_room_mode_normal'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.chillroom_lights
+        brightness: 125
+        
+- id: chillout_room_mode_full
+  alias: Chillout room - Full mode
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/chillout_room_mode_full'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.chillroom_lights
+        brightness: 255
