@@ -1,0 +1,11 @@
+entities:
+  - entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
+  - entity: binary_sensor.kontr101_pietro_sypialnia_wschod_contact
+  - entity: binary_sensor.kontr104_pietro_goscinny_contact
+  - entity: binary_sensor.kontr103_pietro_chillroom_contact
+  - entity: binary_sensor.kontr106_pietro_lazienka_contact
+  - entity: binary_sensor.kontr105_pietro_ignacy_contact
+show_header_toggle: false
+theme: default
+title: Okna
+type: entities

@@ -11,91 +11,13 @@ views:
       - sensor.temp101_pietro_sypialnia_humidity
       - sensor.temp201_ogrod_ganek_pressure
     cards:
-      - entities:
-          - entity: switch.relay001_parter_wejscie_furtka
-            tap_action:
-              action: toggle
-            hold_action:
-              action: none
-            name: Furtka
-            show_state: false
-            show_name: false
-          - entity: switch.relay005_parter_wejscie_dzwonek
-            tap_action:
-                action: toggle
-            hold_action:
-              action: none
-            name: Dzwonek
-            show_state: false
-            show_name: false
-          - entity: binary_sensor.kontr202_ogrod_brama_contact
-            tap_action:
-              action: none
-            hold_action:
-              action: none
-            name: Brama
-            show_state: false
-            show_name: true
-        title: Wejście
-        type: glance
-      - entities:
-        - entity: switch.relay006_parter_salon_witryna
-          tap_action:
-            action: toggle
-          hold_action:
-            action: none
-          name: Witryna
-          show_state: false
-          show_name: true
-        - entity: sensor.temp008_parter_salon_temperature
-          show_state: true
-        title: Salon
-        type: glance
-      - entities:
-        - entity: switch.relay102_grzejnik
-          tap_action:
-            action: toggle
-          hold_action:
-            action: none
-          show_state: true
-          name: Grzejnik
-        - entity: sensor.temp101_pietro_sypialnia_temperature
-          show_state: true
-        - entity: sensor.temp101_pietro_sypialnia_humidity
-          show_state: true
-        title: Sypialnia
-        type: glance
-      - entity: light.chillroom_lights
-        title: Chillroom
-        type: light
-      - entities:
-          - entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
-          - entity: binary_sensor.kontr101_pietro_sypialnia_wschod_contact
-          - entity: binary_sensor.kontr104_pietro_goscinny_contact
-          - entity: binary_sensor.kontr103_pietro_chillroom_contact
-          - entity: binary_sensor.kontr106_pietro_lazienka_contact
-          - entity: binary_sensor.kontr105_pietro_ignacy_contact
-        show_header_toggle: false
-        theme: default
-        title: Okna
-        type: entities
-      - entities:
-          - entity: sensor.temp008_parter_salon_temperature
-          - entity: sensor.temp008_parter_salon_humidity
-          - entity: sensor.temp005_parter_biuro_temperature
-          - entity: sensor.temp005_parter_biuro_humidity
-          - entity: sensor.temp101_pietro_sypialnia_temperature
-          - entity: sensor.temp101_pietro_sypialnia_humidity
-        show_header_toggle: false
-        title: Dom
-        type: entities
-      - entities:
-          - entity: sensor.temp201_ogrod_ganek_temperature
-          - entity: sensor.temp201_ogrod_ganek_humidity
-          - entity: sensor.temp201_ogrod_ganek_pressure
-        show_header_toggle: false
-        title: Ogród
-        type: entities
+      - !include /config/lovelace/views/01-parter-wejscie.yaml
+      - !include /config/lovelace/views/02-parter-salon.yaml
+      - !include /config/lovelace/views/03-pietro-sypialnia.yaml
+      - !include /config/lovelace/views/04-pietro-chillroom.yaml
+      - !include /config/lovelace/views/05-pietro-okna.yaml
+      - !include /config/lovelace/views/06-dom-klimat.yaml
+      - !include /config/lovelace/views/07-ogrod-klimat.yaml
     path: default_view
     title: Home
  

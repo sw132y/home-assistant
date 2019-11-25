@@ -17,3 +17,6 @@ switch.relay001_parter_wejscie_furtka:
 
 switch.relay006_parter_salon_witryna:
   icon: fas:lightbulb
+
+switch.relay007_parter_salon_naroznik:
+  icon: mdi:lamp

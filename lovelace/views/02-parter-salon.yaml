@@ -1,0 +1,20 @@
+entities:
+  - entity: switch.relay006_parter_salon_witryna
+    tap_action:
+      action: toggle
+    hold_action:
+      action: none
+    name: Witryna
+    show_state: true
+    show_name: true
+  - entity: switch.relay007_parter_salon_naroznik
+    tap_action:
+      action: toggle
+    hold_action:
+      action: none
+    name: Narożnik
+    show_name: true
+  - entity: sensor.temp008_parter_salon_temperature
+    show_name: true
+title: Parter
+type: entities

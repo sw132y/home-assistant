@@ -220,10 +220,10 @@
   action:
     - service: notify.sw132y
       data:
-        message: "Wybierz:"
+        message: "Wybierz tryb:"
         data:
           inline_keyboard:
-            - "Film:/chillout_room_mode_movie,Dzień:/chillout_room_mode_normal,Full:/chillout_room_mode_full"
+            - "Film:/chillout_room_mode_movie,Wieczór:/chillout_room_mode_evening,Dzień:/chillout_room_mode_normal,Max:/chillout_room_mode_full"
 
 - id: report_temperature
   alias: 'Temperature and humidity'
@@ -311,28 +311,45 @@
 - id: chillout_room_mode_movie
   alias: Chillout room - Movie mode
   trigger:
-    platform: event
-    event_type: telegram_callback
-    event_data:
-      data: '/chillout_room_mode_movie'
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: '/chillout_room_mode_movie'
   action:
     - service: light.turn_on
       data:
         entity_id: light.chillroom_lights
-        brightness: 50
+        brightness: 30
+
+- id: chillout_room_mode_evening
+  alias: Chillout room - Evening mode
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: '/chillout_room_mode_evening'
+    - platform: time
+      at: "20:00:00"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.chillroom_lights
+        brightness: 80
 
 - id: chillout_room_mode_normal
   alias: Chillout room - Normal mode
   trigger:
-    platform: event
-    event_type: telegram_callback
-    event_data:
-      data: '/chillout_room_mode_normal'
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: '/chillout_room_mode_normal'
+    - platform: time
+      at: "06:00:00"
   action:
     - service: light.turn_on
       data:
         entity_id: light.chillroom_lights
-        brightness: 125
+        brightness: 150
         
 - id: chillout_room_mode_full
   alias: Chillout room - Full mode
