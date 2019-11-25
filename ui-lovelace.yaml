@@ -23,111 +23,14 @@ views:
  
   - badges: []
     panel: true
-    cards:
-      - type: picture-elements
-        image: /local/floorplan/parter.svg
-        style: |
-          hui-state-label-element {
-            font-size: 20px;
-            font-size: 2.5vw;
-            color: #333333
-          }
-        elements:
-        - type: state-label
-          entity: sensor.temp005_parter_biuro_temperature
-          style:
-            top: 71%
-            left: 15%
-        - type: state-label
-          entity: sensor.temp005_parter_biuro_humidity
-          style:
-            top: 74%
-            left: 15%
-        - type: state-label
-          entity: sensor.temp008_parter_salon_temperature
-          style:
-            top: 12%
-            left: 35%
-        - type: state-label
-          entity: sensor.temp008_parter_salon_humidity
-          style:
-            top: 15%
-            left: 35%
-        - type: state-label
-          entity: sensor.temp201_ogrod_ganek_temperature
-          style:
-            top: 90%
-            left: 15%
-        - type: state-label
-          entity: sensor.temp201_ogrod_ganek_humidity
-          style:
-            top: 93%
-            left: 15%
-        - type: state-icon
-          entity: switch.relay001_parter_wejscie_furtka
-          tap_action:
-            action: toggle
-          style:
-            top: 80%
-            left: 35%
     id: system
     title: Parter
-    
+    cards:
+      - !include /config/lovelace/views/floorplan/parter.yaml
+      
   - badges: []
     panel: true
-    cards:
-      - type: picture-elements
-        image: /local/floorplan/pietro.svg
-        style: |
-          hui-state-label-element {
-            font-size: 20px;
-            font-size: 2.5vw;
-            color: #333333;
-          }
-          ha-icon {
-            --iron-icon-width: 32px;
-            --iron-icon-height: 32px;
-          }
-        elements:
-        - type: state-label
-          entity: sensor.temp101_pietro_sypialnia_temperature
-          style:
-            top: 20%
-            right: 10%
-        - type: state-label
-          entity: sensor.temp101_pietro_sypialnia_humidity
-          style:
-            top: 23%
-            right: 10%
-        - type: state-icon
-          entity: binary_sensor.kontr106_pietro_lazienka_contact
-          style:
-            top: 45%
-            left: 4%
-        - type: state-icon
-          entity: binary_sensor.kontr104_pietro_goscinny_contact
-          style:
-            top: 78%
-            left: 22%
-        - type: state-icon
-          entity: binary_sensor.kontr103_pietro_chillroom_contact
-          style:
-            top: 78%
-            left: 58%
-        - type: state-icon
-          entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
-          style:
-            top: 43%
-            left: 83%
-        - type: state-icon
-          entity: binary_sensor.kontr101_pietro_sypialnia_wschod_contact
-          style:
-            top: 10%
-            left: 65%
-        - type: state-icon
-          entity: binary_sensor.kontr105_pietro_ignacy_contact
-          style:
-            top: 5%
-            left: 27%
     id: system
     title: Piętro
+    cards:
+      - !include /config/lovelace/views/floorplan/pietro.yaml

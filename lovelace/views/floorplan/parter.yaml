@@ -1,0 +1,48 @@
+type: picture-elements
+image: /local/floorplan/parter.svg
+style: |
+  hui-state-label-element {
+    font-size: 20px;
+    font-size: 2.5vw;
+    color: #333333
+  }
+elements:
+- type: state-label
+  entity: sensor.temp005_parter_biuro_temperature
+  style:
+    top: 71%
+    left: 15%
+- type: state-label
+  entity: sensor.temp005_parter_biuro_humidity
+  style:
+    top: 74%
+    left: 15%
+- type: state-label
+  entity: sensor.temp008_parter_salon_temperature
+  style:
+    top: 12%
+    left: 35%
+- type: state-label
+  entity: sensor.temp008_parter_salon_humidity
+  style:
+    top: 15%
+    left: 35%
+- type: state-label
+  entity: sensor.temp201_ogrod_ganek_temperature
+  style:
+    top: 90%
+    left: 15%
+- type: state-label
+  entity: sensor.temp201_ogrod_ganek_humidity
+  style:
+    top: 93%
+    left: 15%
+- type: state-icon
+  entity: switch.relay001_parter_wejscie_furtka
+  tap_action:
+    action: toggle
+  style:
+    top: 80%
+    left: 35%
+id: system
+title: Parter
