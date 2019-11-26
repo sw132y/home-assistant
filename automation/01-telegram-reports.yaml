@@ -1,0 +1,101 @@
+- alias: 'Display all available options in telegram'
+  hide_entity: true
+  initial_state: 'on'
+  trigger:
+  - platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/o'
+  - platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/options'
+  action:
+    - service: notify.sw132y
+      data_template:
+        message: 'Wybierz opcję'
+        data:
+          inline_keyboard:
+            - "Klimat w domu:/report_temperature, Okna:/report_upstairs_window"
+            - "Brama:/report_gate, Światła:/report_lights, Dzwonek:/report_doorbell"
+
+- alias: 'Temperature and humidity'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_temperature'
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        message_id: 'last'
+        chat_id: '{{ trigger.event.data.user_id }}'
+        message: |
+          Sypialnia {{ states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit }}, {{ states.sensor.temp101_pietro_sypialnia_humidity.state_with_unit }}
+          Salon {{ states.sensor.temp008_parter_salon_temperature.state_with_unit }}, {{ states.sensor.temp008_parter_salon_humidity.state_with_unit }}
+          Biuro {{ states.sensor.temp005_parter_biuro_temperature.state_with_unit }}, {{ states.sensor.temp005_parter_biuro_humidity.state_with_unit }}
+          Ogród {{ states.sensor.temp201_ogrod_ganek_temperature.state_with_unit }}, {{ states.sensor.temp201_ogrod_ganek_humidity.state_with_unit }}
+
+- alias: 'Entry gate state'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_gate'
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        message_id: 'last'
+        chat_id: '{{ trigger.event.data.user_id }}'
+        message: >
+            {% if is_state("binary_sensor.kontr202_ogrod_brama_contact", "off") %}Brama jest zamknięta{% else %}Brama jest otwarta{% endif %} od {{ as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed) | timestamp_custom('%b %-d %-I:%M%p') }} 
+
+- alias: 'Upstairs opened windows'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_upstairs_window'
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        message_id: 'last'
+        chat_id: '{{ trigger.event.data.user_id }}'
+        message: |
+          Sypialnia Pd {{states.binary_sensor.kontr102_pietro_sypialnia_poludnie_contact.state}}
+          Sypialnia Wsch {{states.binary_sensor.kontr101_pietro_sypialnia_wschod_contact.state}}
+          Chillroom {{states.binary_sensor.kontr103_pietro_chillroom_contact.state}}
+          Gościnny {{states.binary_sensor.kontr104_pietro_goscinny_contact.state}}
+          Łazienka {{states.binary_sensor.kontr106_pietro_lazienka_contact.state}}
+          Ignacy {{states.binary_sensor.kontr105_pietro_ignacy_contact.state}}
+
+- alias: 'Doorbell state'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_doorbell'
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        message_id: 'last'
+        chat_id: '{{ trigger.event.data.user_id }}'
+        message: Dzwonek jest {{states.switch.relay005_parter_wejscie_dzwonek.state}}
+
+- alias: 'Lights state'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_lights'
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        message_id: 'last'
+        chat_id: '{{ trigger.event.data.user_id }}'
+        message: Witryna jest {{states.switch.relay006_parter_salon_witryna.state}}

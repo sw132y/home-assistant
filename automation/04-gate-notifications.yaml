@@ -1,0 +1,45 @@
+- alias: Gate is open more then 5 minutes
+  initial_state: 'on'
+  trigger:
+    - platform: time_pattern
+      seconds: "/60"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.kontr202_ogrod_brama_contact
+        state: 'on'
+      - condition: template
+        value_template: '{{as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed) >= 300}}'
+  action:
+  - service: notify.sw132y
+    data:
+      message: 'Brama jest otwarta od {{((as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed)) / 60) | int}}min'
+
+- alias: Gate has been opened
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kontr202_ogrod_brama_contact
+    from: 'off'
+    to: 'on'
+    for:
+      seconds: 10
+  action:
+  - service: notify.sw132y
+    data:
+      message: Brama została otwarta
+
+- alias: Gate has been closed
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kontr202_ogrod_brama_contact
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 10
+  action:
+  - service: notify.sw132y
+    data:
+      message: Brama została zamknięta

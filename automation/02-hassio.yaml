@@ -1,0 +1,44 @@
+- alias: Set theme at startup
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: Dark
+
+- alias: Hassio has been started
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - service: notify.sw132y
+    data:
+      message: Home Assistant on Pi booted
+
+- alias: Create Snapshot
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '02:00:00'
+  condition:  
+    condition: time
+    weekday:
+      - sun
+      - wed
+  action:
+    - service: hassio.snapshot_full
+      data_template:
+        name: Hassio ({{now().strftime('%d.%m.%y')}})
+    - service: notify.sw132y
+      data_template:
+        message: Hassio snapshot {{now().strftime('%d.%m.%y')}} is done.
+
+- alias: Automaticaly push to GIT
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:03:00'
+  action:
+    - service: shell_command.backup
