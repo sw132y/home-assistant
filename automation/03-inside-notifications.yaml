@@ -10,11 +10,30 @@
         below: 20
       - condition: time
         after: '18:00:00'
-        before: '07:00:00'
+        before: '08:00:00'
   action:
   - service: notify.sw132y
     data:
       message: Temperatura w sypialni wynosi {{states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit}}
+
+- alias: 'Notification humidity is below 60%'
+  trigger:
+    - platform: time_pattern
+      minutes: "/30"
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.temp101_pietro_sypialnia_hummidity
+        below: 60
+      - condition: time
+        after: '18:00:00'
+        before: '23:00:00'
+  action:
+  - service: notify.sw132y
+    data:
+      message: Wiglotnośc powietrzna w sypialni wynosi {{states.sensor.temp101_pietro_sypialnia_hummidity.state_with_unit}}
+
 
 - alias: 'Notification window is opened when is cold outside'
   initial_state: 'on'

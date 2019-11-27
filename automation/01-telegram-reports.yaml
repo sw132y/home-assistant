@@ -18,6 +18,7 @@
           inline_keyboard:
             - "Klimat w domu:/report_temperature, Okna:/report_upstairs_window"
             - "Brama:/report_gate, Światła:/report_lights, Dzwonek:/report_doorbell"
+            - "Otwieranie furtki:/open_gateway"
 
 - alias: 'Temperature and humidity'
   initial_state: 'on'
@@ -99,3 +100,14 @@
         message_id: 'last'
         chat_id: '{{ trigger.event.data.user_id }}'
         message: Witryna jest {{states.switch.relay006_parter_salon_witryna.state}}
+
+- alias: 'Open gateway'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/open_gateway'
+  action:
+    - service: switch.toggle
+      entity_id: switch.relay001_parter_wejscie_furtka
