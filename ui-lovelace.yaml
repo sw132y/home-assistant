@@ -2,6 +2,8 @@ title: Dom
 resources:
   - url: /local/floorplan/plugins/card-mod.js
     type: js
+  - url: /community_plugin/button-card/button-card.js
+    type: module
 views:
   - badges:
       - sensor.temp005_parter_biuro_temperature

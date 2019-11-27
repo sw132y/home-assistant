@@ -1,3 +1,65 @@
-entity: light.chillroom_lights
-title: Chillroom
-type: light
+type: horizontal-stack
+title: Piętro
+cards:
+  - type: "custom:button-card"
+    name: Eco
+    state:
+    - operator: template
+      value: >
+        [[[
+          return states['light.chillroom_lights'].attributes
+          && (states['light.chillroom_lights'].attributes.brightness <= 100)
+        ]]]
+      icon: mdi:lightbulb-on
+    - operator: default
+      icon: mdi:lightbulb
+    color: rgb(237, 227, 168)
+    tap_action:
+      action: call-service
+      service: light.turn_on
+      service_data: 
+        entity_id: light.chillroom_lights
+        brightness: 30
+    entity: light.chillroom_lights
+
+  - type: "custom:button-card"
+    name: Dzień
+    state:
+    - operator: template
+      value: >
+        [[[
+          return states['light.chillroom_lights'].attributes
+          && (states['light.chillroom_lights'].attributes.brightness > 30 &&  states['light.chillroom_lights'].attributes.brightness <= 125)
+        ]]]
+      icon: mdi:lightbulb-on
+    - operator: default
+      icon: mdi:lightbulb
+    color: rgb(240, 222, 115)
+    tap_action:
+      action: call-service
+      service: light.turn_on
+      service_data: 
+        entity_id: light.chillroom_lights
+        brightness: 125
+    entity: light.chillroom_lights
+
+  - type: "custom:button-card"
+    name: Max
+    state:
+    - operator: template
+      value: >
+        [[[
+          return states['light.chillroom_lights'].attributes
+          && (states['light.chillroom_lights'].attributes.brightness > 125)
+        ]]]
+      icon: mdi:lightbulb-on
+    - operator: default
+      icon: mdi:lightbulb
+    color: rgb(242, 213, 41)
+    tap_action:
+      action: call-service
+      service: light.turn_on
+      service_data: 
+        entity_id: light.chillroom_lights
+        brightness: 255
+    entity: light.chillroom_lights
