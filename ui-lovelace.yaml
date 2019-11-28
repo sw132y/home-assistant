@@ -5,13 +5,7 @@ resources:
   - url: /community_plugin/button-card/button-card.js
     type: module
 views:
-  - badges:
-      - sensor.temp005_parter_biuro_temperature
-      - sensor.temp008_parter_salon_temperature
-      - sensor.temp101_pietro_sypialnia_temperature
-      - sensor.temp201_ogrod_ganek_temperature
-      - sensor.temp101_pietro_sypialnia_humidity
-      - sensor.temp201_ogrod_ganek_pressure
+  - badges: []
     cards:
       - !include /config/lovelace/views/01-parter-wejscie.yaml
       - !include /config/lovelace/views/02-parter-salon.yaml

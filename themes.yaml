@@ -2,9 +2,9 @@ dark:
   # Background image
   background-image: 'center / cover no-repeat url("/local/night.jpg") fixed'
 
-  switch-checked-color: '#d26d26' # Knob On
+  switch-checked-color: 'rgb(240, 222, 115)' # Knob On
   switch-unchecked-color: '#268bd2' # Knob Off
-  switch-unchecked-button-color: '#268bd2' # Knob Off
+  switch-unchecked-button-color: '#3b4049' # Knob Off
   switch-unchecked-track-color: 'var(--base01)'
   
   # Colors
@@ -12,7 +12,7 @@ dark:
   text-medium-light-color: '#A0A2A8'                                              # Medium-light grey text
   text-medium-color: '#80828A'                                                    # Medium grey text
   text-dark-color: '#6A6B74'                                                      # Dark grey text
-  accent-color: '#008bef'                                                         # Blue
+  accent-color: 'rgb(240, 222, 115)'                                               # Yellow
   accent-medium-color: '#2686c1'                                                  # Decent blue
   background-color: '#3b4049'                                                     # Dark grey background
   background-color-2: '#484E59'                                                   # Light grey background
@@ -51,9 +51,9 @@ dark:
   
   # Switches
   paper-toggle-button-checked-button-color: 'var(--text-medium-light-color)'      # Knob On
-  paper-toggle-button-checked-bar-color: '#009FFF'                                # Background On
-  paper-toggle-button-unchecked-button-color: 'var(--text-medium-light-color)'    # Knob Off
-  paper-toggle-button-unchecked-bar-color: '#767682'                              # Background Off
+  paper-toggle-button-checked-bar-color: 'rgb(240, 222, 115)'                                # Background On
+  paper-toggle-button-unchecked-button-color: '#3b4049'    # Knob Off
+  paper-toggle-button-unchecked-bar-color: '#DADADB'                              # Background Off
   
   # Shadows
   shadow-elevation-2dp_-_box-shadow: 'inset 0px 0px 0px 1px var(--border-color)'

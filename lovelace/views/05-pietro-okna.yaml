@@ -8,4 +8,8 @@ entities:
 show_header_toggle: false
 theme: default
 title: Okna
-type: entities
+type: entity-filter
+show_empty: false
+card: glance
+state_filter:
+  - "on"
