@@ -8,25 +8,11 @@ views:
   - badges: []
     cards:
       - !include /config/lovelace/views/01-parter-wejscie.yaml
+      - !include /config/lovelace/views/07-pietro-ignacy.yaml
       - !include /config/lovelace/views/02-parter-salon.yaml
       - !include /config/lovelace/views/03-pietro-sypialnia.yaml
       - !include /config/lovelace/views/04-pietro-chillroom.yaml
       - !include /config/lovelace/views/05-pietro-okna.yaml
       - !include /config/lovelace/views/06-dom-klimat.yaml
-      - !include /config/lovelace/views/07-ogrod-klimat.yaml
     path: default_view
     title: Home
- 
-  - badges: []
-    panel: true
-    id: system
-    title: Parter
-    cards:
-      - !include /config/lovelace/views/floorplan/parter.yaml
-      
-  - badges: []
-    panel: true
-    id: system
-    title: Piętro
-    cards:
-      - !include /config/lovelace/views/floorplan/pietro.yaml

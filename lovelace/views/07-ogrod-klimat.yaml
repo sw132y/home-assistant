@@ -1,7 +1,0 @@
-entities:
-  - entity: sensor.temp201_ogrod_ganek_temperature
-  - entity: sensor.temp201_ogrod_ganek_humidity
-  - entity: sensor.temp201_ogrod_ganek_pressure
-show_header_toggle: false
-title: Ogród
-type: entities
