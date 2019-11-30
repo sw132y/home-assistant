@@ -1,4 +1,4 @@
-- alias: 'Notification temperature is below 20 celcius'
+- alias: 'Notification sypialnia temperature is below 20 celcius'
   trigger:
     - platform: time_pattern
       minutes: "/30"
@@ -7,7 +7,7 @@
     conditions:
       - condition: numeric_state
         entity_id: sensor.temp101_pietro_sypialnia_temperature
-        below: 20
+        below: 19.5
       - condition: time
         after: '18:00:00'
         before: '08:00:00'

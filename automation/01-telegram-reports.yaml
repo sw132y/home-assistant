@@ -33,10 +33,10 @@
         message_id: 'last'
         chat_id: '{{ trigger.event.data.user_id }}'
         message: |
-          Sypialnia {{ states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit }}, {{ states.sensor.temp101_pietro_sypialnia_humidity.state_with_unit }}
-          Salon {{ states.sensor.temp008_parter_salon_temperature.state_with_unit }}, {{ states.sensor.temp008_parter_salon_humidity.state_with_unit }}
-          Biuro {{ states.sensor.temp005_parter_biuro_temperature.state_with_unit }}, {{ states.sensor.temp005_parter_biuro_humidity.state_with_unit }}
-          Ogród {{ states.sensor.temp201_ogrod_ganek_temperature.state_with_unit }}, {{ states.sensor.temp201_ogrod_ganek_humidity.state_with_unit }}
+          Sypialnia - {{ states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit }} - {{ states.sensor.temp101_pietro_sypialnia_humidity.state_with_unit }}
+          Ignacy - {{ states.sensor.temp106_pietro_ignacy_temperature.state_with_unit }} - {{ states.sensor.temp106_pietro_ignacy_humidity.state_with_unit }}
+          Salon - {{ states.sensor.temp008_parter_salon_temperature.state_with_unit }} - {{ states.sensor.temp008_parter_salon_humidity.state_with_unit }}
+          Biuro - {{ states.sensor.temp005_parter_biuro_temperature.state_with_unit }} - {{ states.sensor.temp005_parter_biuro_humidity.state_with_unit }}
 
 - alias: 'Entry gate state'
   initial_state: 'on'
@@ -99,7 +99,10 @@
       data_template:
         message_id: 'last'
         chat_id: '{{ trigger.event.data.user_id }}'
-        message: Witryna jest {{states.switch.relay006_parter_salon_witryna.state}}
+        message: |
+          Lampy na witrynce są {{states.switch.relay006_parter_salon_witryna.state}}
+          Lampa przy narożniku jest {{states.switch.relay006_parter_salon_witryna.state}}
+
 
 - alias: 'Open gateway'
   initial_state: 'on'

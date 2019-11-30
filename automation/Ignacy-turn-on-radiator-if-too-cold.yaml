@@ -1,0 +1,31 @@
+- alias: 'Turn on radiator if is too cold. Notification if Ignacy room temperature is below 20 celcius, '
+  trigger:
+    - platform: time_pattern
+      minutes: "/2"
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.temp106_pietro_ignacy_temperature
+        below: 20
+      - condition: time
+        after: '18:00:00'
+        before: '08:00:00'
+  action:
+    - service: notify.sw132y
+      data:
+        message: > 
+          Temperatura u Igiego wynosi {{states.sensor.temp106_pietro_ignacy_temperature.state_with_unit}}, a wilgotność powietrza {{states.sensor.temp106_pietro_ignacy_humidity.state_with_unit}}
+    - condition: and
+      conditions:
+        - condition: time
+          after: '22:00:00'
+          before: '05:00:00'
+        - condition: state
+          entity_id: switch.relay102_grzejnik
+          state: 'off'
+        - condition: numeric_state
+          entity_id: sensor.temp106_pietro_ignacy_temperature
+          below: 19.5
+    - service: switch.turn_on
+      entity_id: switch.relay102_grzejnik
