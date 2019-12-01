@@ -55,7 +55,7 @@ cards:
       icon: mdi:lightbulb-on
     - operator: default
       icon: mdi:lightbulb
-    color: rgb(242, 213, 41)
+    color: '#008bef'
     tap_action:
       action: call-service
       service: light.turn_on

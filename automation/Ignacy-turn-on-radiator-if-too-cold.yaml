@@ -1,4 +1,4 @@
-- alias: 'Turn on radiator if is too cold. Notification if Ignacy room temperature is below 20 celcius, '
+- alias: 'Ignacy if is too cold. Turn on radiator and notify if temperature is below 20 celcius'
   trigger:
     - platform: time_pattern
       minutes: "/2"
