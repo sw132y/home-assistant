@@ -13,7 +13,7 @@ cards:
       icon: mdi:lightbulb-on
     - operator: default
       icon: mdi:lightbulb
-    color: rgb(237, 227, 168)
+    color: rgb(61,174,255)
     tap_action:
       action: call-service
       service: light.turn_on
@@ -21,6 +21,10 @@ cards:
         entity_id: light.chillroom_lights
         brightness: 30
     entity: light.chillroom_lights
+    size: 15%
+    styles:
+        card:
+          - height: 80px
 
   - type: "custom:button-card"
     name: Dzień
@@ -34,7 +38,7 @@ cards:
       icon: mdi:lightbulb-on
     - operator: default
       icon: mdi:lightbulb
-    color: rgb(240, 222, 115)
+    color: rgb(0,139,239)
     tap_action:
       action: call-service
       service: light.turn_on
@@ -42,6 +46,10 @@ cards:
         entity_id: light.chillroom_lights
         brightness: 125
     entity: light.chillroom_lights
+    size: 15%
+    styles:
+        card:
+          - height: 80px
 
   - type: "custom:button-card"
     name: Max
@@ -55,7 +63,7 @@ cards:
       icon: mdi:lightbulb-on
     - operator: default
       icon: mdi:lightbulb
-    color: '#008bef'
+    color: rgb(0,95,163)
     tap_action:
       action: call-service
       service: light.turn_on
@@ -63,3 +71,7 @@ cards:
         entity_id: light.chillroom_lights
         brightness: 255
     entity: light.chillroom_lights
+    size: 15%
+    styles:
+        card:
+          - height: 80px
