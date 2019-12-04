@@ -4,6 +4,8 @@ resources:
     type: js
   - url: /community_plugin/button-card/button-card.js
     type: module
+  - url: /community_plugin/spotify-card/spotify-card.js
+    type: module
 views:
   - badges: []
     cards:
@@ -15,5 +17,7 @@ views:
       - !include /config/lovelace/views/04-pietro-chillroom.yaml
       - !include /config/lovelace/views/06-dom-klimat.yaml
       - !include /config/lovelace/views/weather.yaml
+      - type: media-control
+        entity: media_player.salon
     path: default_view
     title: Home
