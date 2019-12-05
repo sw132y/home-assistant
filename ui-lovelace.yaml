@@ -19,5 +19,6 @@ views:
       - !include /config/lovelace/views/weather.yaml
       - type: media-control
         entity: media_player.salon
+    #   - type: 'custom:spotify-card'
     path: default_view
     title: Home
