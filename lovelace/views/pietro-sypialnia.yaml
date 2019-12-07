@@ -1,8 +1,12 @@
-entities:
-  - entity: sensor.temp101_pietro_sypialnia_temperature
-    show_state: true
-    show_name: true
-  - entity: sensor.temp101_pietro_sypialnia_humidity
-    show_state: true
+type: vertical-stack
 title: Sypialnia
-type: glance
+cards:
+  - type: horizontal-stack
+    cards:
+    - type: sensor
+      entity: sensor.temp101_pietro_sypialnia_temperature
+      icon: 
+    - type: sensor
+      entity: sensor.temp101_pietro_sypialnia_humidity
+  - type: light
+    entity: light.light203_pietro_sypialnia

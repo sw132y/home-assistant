@@ -2,7 +2,7 @@ type: horizontal-stack
 title: Piętro
 cards:
   - type: "custom:button-card"
-    name: Eco
+    name: Film
     state:
     - operator: template
       value: >
@@ -27,7 +27,7 @@ cards:
           - height: 80px
 
   - type: "custom:button-card"
-    name: Dzień
+    name: Wieczór
     state:
     - operator: template
       value: >
@@ -52,7 +52,7 @@ cards:
           - height: 80px
 
   - type: "custom:button-card"
-    name: Max
+    name: Turbo
     state:
     - operator: template
       value: >

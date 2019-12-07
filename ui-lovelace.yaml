@@ -13,8 +13,8 @@ views:
       - !include /config/lovelace/views/pietro-okna.yaml
       - !include /config/lovelace/views/pietro-ignacy.yaml
       - !include /config/lovelace/views/parter-salon.yaml
-      - !include /config/lovelace/views/pietro-sypialnia.yaml
       - !include /config/lovelace/views/pietro-chillroom.yaml
+      - !include /config/lovelace/views/pietro-sypialnia.yaml
       - !include /config/lovelace/views/dom-klimat.yaml
       - !include /config/lovelace/views/weather.yaml
     path: default_view
