@@ -1,77 +1,81 @@
-type: horizontal-stack
+type: vertical-stack
 title: Piętro
 cards:
-  - type: "custom:button-card"
-    name: Film
-    state:
-    - operator: template
-      value: >
-        [[[
-          return states['light.chillroom_lights'].attributes
-          && (states['light.chillroom_lights'].attributes.brightness <= 100)
-        ]]]
-      icon: mdi:lightbulb-on
-    - operator: default
-      icon: mdi:lightbulb
-    color: rgb(61,174,255)
-    tap_action:
-      action: call-service
-      service: light.turn_on
-      service_data: 
-        entity_id: light.chillroom_lights
-        brightness: 30
-    entity: light.chillroom_lights
-    size: 15%
-    styles:
-        card:
-          - height: 80px
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        name: Film
+        state:
+        - operator: template
+          value: >
+            [[[
+              return states['light.chillroom_lights'].attributes
+              && (states['light.chillroom_lights'].attributes.brightness <= 100)
+            ]]]
+          icon: mdi:lightbulb-on
+        - operator: default
+          icon: mdi:lightbulb
+        color: rgb(61,174,255)
+        tap_action:
+          action: call-service
+          service: light.turn_on
+          service_data: 
+            entity_id: light.chillroom_lights
+            brightness: 30
+        entity: light.chillroom_lights
+        size: 15%
+        styles:
+            card:
+              - height: 80px
 
-  - type: "custom:button-card"
-    name: Wieczór
-    state:
-    - operator: template
-      value: >
-        [[[
-          return states['light.chillroom_lights'].attributes
-          && (states['light.chillroom_lights'].attributes.brightness > 100 &&  states['light.chillroom_lights'].attributes.brightness <= 200)
-        ]]]
-      icon: mdi:lightbulb-on
-    - operator: default
-      icon: mdi:lightbulb
-    color: rgb(0,139,239)
-    tap_action:
-      action: call-service
-      service: light.turn_on
-      service_data: 
-        entity_id: light.chillroom_lights
-        brightness: 125
-    entity: light.chillroom_lights
-    size: 15%
-    styles:
-        card:
-          - height: 80px
+      - type: "custom:button-card"
+        name: Wieczór
+        state:
+        - operator: template
+          value: >
+            [[[
+              return states['light.chillroom_lights'].attributes
+              && (states['light.chillroom_lights'].attributes.brightness > 100 &&  states['light.chillroom_lights'].attributes.brightness <= 200)
+            ]]]
+          icon: mdi:lightbulb-on
+        - operator: default
+          icon: mdi:lightbulb
+        color: rgb(0,139,239)
+        tap_action:
+          action: call-service
+          service: light.turn_on
+          service_data: 
+            entity_id: light.chillroom_lights
+            brightness: 125
+        entity: light.chillroom_lights
+        size: 15%
+        styles:
+            card:
+              - height: 80px
 
-  - type: "custom:button-card"
-    name: Turbo
-    state:
-    - operator: template
-      value: >
-        [[[
-          return states['light.chillroom_lights'].attributes
-          && (states['light.chillroom_lights'].attributes.brightness > 200)
-        ]]]
-      icon: mdi:lightbulb-on
-    - operator: default
-      icon: mdi:lightbulb
-    color: rgb(0,95,163)
-    tap_action:
-      action: call-service
-      service: light.turn_on
-      service_data: 
-        entity_id: light.chillroom_lights
-        brightness: 255
+      - type: "custom:button-card"
+        name: Turbo
+        state:
+        - operator: template
+          value: >
+            [[[
+              return states['light.chillroom_lights'].attributes
+              && (states['light.chillroom_lights'].attributes.brightness > 200)
+            ]]]
+          icon: mdi:lightbulb-on
+        - operator: default
+          icon: mdi:lightbulb
+        color: rgb(0,95,163)
+        tap_action:
+          action: call-service
+          service: light.turn_on
+          service_data: 
+            entity_id: light.chillroom_lights
+            brightness: 255
+        entity: light.chillroom_lights
+        size: 15%
+        styles:
+            card:
+              - height: 80px
+  - type: light
     entity: light.chillroom_lights
-    size: 15%
-    styles:
-        card:
-          - height: 80px
