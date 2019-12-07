@@ -1,12 +1,5 @@
-
-# Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
-
-# Text to speech
 tts:
   - platform: google_translate
 
@@ -60,31 +53,6 @@ config:
 
 customizer:
   custom_ui: local
-
-vacuum:
-  - platform: mqtt
-    name: "MQTT Vacuum"
-    schema: state
-    supported_features:
-      - start
-      - pause
-      - stop
-      - return_home
-      - battery
-      - status
-      - locate
-      - clean_spot
-      - fan_speed
-      - send_command
-    command_topic: "vacuum/command"
-    state_topic: "vacuum/state"
-    set_fan_speed_topic: "vacuum/set_fan_speed"
-    fan_speed_list:
-      - min
-      - medium
-      - high
-      - max
-    send_command_topic: "vacuum/send_command"
 
 tuya:
   username: !secret tuya_username
