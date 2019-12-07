@@ -14,8 +14,9 @@
   action:
     - service: notify.sw132y
       data:
-        message: > 
+        message: |
           Temperatura u Igiego wynosi {{states.sensor.temp106_pietro_ignacy_temperature.state_with_unit}}, a wilgotność powietrza {{states.sensor.temp106_pietro_ignacy_humidity.state_with_unit}}
+          Grzejnik jest {{states.switch.relay102_grzejnik.state}}
     - condition: and
       conditions:
         - condition: time

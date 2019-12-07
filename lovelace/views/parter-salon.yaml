@@ -16,5 +16,11 @@ entities:
     show_name: true
   - entity: sensor.temp008_parter_salon_temperature
     show_name: true
+  - entity: sensor.relay008_energy_daily_cost
+    name: TV Dzisiaj
+    show_name: true
+  - entity: sensor.relay008_energy_energy_power
+    name: TV Teraz
+    show_name: true
 title: Parter
 type: entities

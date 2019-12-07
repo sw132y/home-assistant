@@ -8,6 +8,10 @@ entities:
     name: Grzejnik
   - entity: sensor.temp106_pietro_ignacy_temperature
   - entity: sensor.temp106_pietro_ignacy_humidity
+  - entity: sensor.relay102_grzejnik_energy_power
+    name: "Teraz"
+  - entity: sensor.relay102_grzejnik_daily_cost
+    name: "Dzisiaj"
 show_header_toggle: false
 title: Ignacy
 type: entities

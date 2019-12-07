@@ -28,7 +28,8 @@ frontend:
 lovelace:
   mode: yaml
 
-binary_sensor: !include binary_sensors.yaml
+binary_sensor: !include customize_binary_sensors.yaml
+sensor: !include customize_sensors.yaml
 
 shell_command:
     backup: sh /config/gitupdate.sh
@@ -53,12 +54,6 @@ config:
 
 customizer:
   custom_ui: local
-
-tuya:
-  username: !secret tuya_username
-  password: !secret tuya_password
-  country_code: 48
-  platform: smart_life
 
 light:
   - platform: group

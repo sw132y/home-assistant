@@ -1,5 +1,0 @@
-# - platform: template
-#   sensors:
-#     fibaro_sensor:
-#       value_template: '{{ states.sensor.fibaro_system_fgms001_motion_sensor_luminance_2.attributes.battery_level }}'
-#       unit_of_measurement: '%'

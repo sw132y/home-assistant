@@ -33,7 +33,7 @@ cards:
       value: >
         [[[
           return states['light.chillroom_lights'].attributes
-          && (states['light.chillroom_lights'].attributes.brightness > 30 &&  states['light.chillroom_lights'].attributes.brightness <= 125)
+          && (states['light.chillroom_lights'].attributes.brightness > 100 &&  states['light.chillroom_lights'].attributes.brightness <= 200)
         ]]]
       icon: mdi:lightbulb-on
     - operator: default
@@ -58,7 +58,7 @@ cards:
       value: >
         [[[
           return states['light.chillroom_lights'].attributes
-          && (states['light.chillroom_lights'].attributes.brightness > 125)
+          && (states['light.chillroom_lights'].attributes.brightness > 200)
         ]]]
       icon: mdi:lightbulb-on
     - operator: default
