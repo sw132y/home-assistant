@@ -20,3 +20,6 @@ switch.relay006_parter_salon_witryna:
 
 switch.relay007_parter_salon_naroznik:
   icon: mdi:lamp
+
+switch.relay008_energy:
+  icon: fas:tv
