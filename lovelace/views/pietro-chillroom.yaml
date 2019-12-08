@@ -21,7 +21,7 @@ cards:
           service: light.turn_on
           service_data: 
             entity_id: light.chillroom_lights
-            brightness: 30
+            brightness: 35
         entity: light.chillroom_lights
         size: 15%
         styles:

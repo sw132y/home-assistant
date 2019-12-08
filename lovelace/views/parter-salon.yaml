@@ -20,6 +20,11 @@ entities:
   - entity: switch.relay008_energy
     name: TV
     show_name: true
+    hold_action:
+      action: toggle
+    tap_action:
+      action: none    
+    show_state: true
   - entity: sensor.relay008_energy_daily_cost
     name: TV Dzisiaj
     show_name: true
