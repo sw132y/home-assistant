@@ -52,20 +52,3 @@
   - service: notify.sw132y
     data:
       message: Okno na piętrze jest otwarte
-
-- alias: Notification radiator has changed state
-  initial_state: 'on'
-  trigger:
-    - platform: state
-      entity_id: switch.relay102_grzejnik
-      from: 'on'
-      to: 'off'
-    - platform: state
-      entity_id: switch.relay102_grzejnik
-      from: 'off'
-      to: 'on'
-  action:
-  - service: notify.sw132y
-    data:
-       message: >
-        {% if is_state("switch.relay102_grzejnik", "off") %}Grzejnik został wyłączony{% else %}Grzejnik został włączony{% endif %} 
