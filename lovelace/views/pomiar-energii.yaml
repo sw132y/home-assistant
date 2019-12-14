@@ -1,0 +1,17 @@
+type: entities
+title: "Lodówka w garażu"
+show_header_toggle: false
+entities:
+  - entity: switch.relay008_energy
+    hold_action:
+      action: none
+    tap_action:
+      action: none 
+    show_toggle: false
+    name: "Stan"
+  - entity: sensor.relay008_energy_energy_power
+    name: "Teraz"
+  - entity: sensor.relay008_energy_energy_today
+    name: "Dzisiaj"
+  - entity: sensor.relay008_energy_daily_cost
+    name: "Dzisiaj"

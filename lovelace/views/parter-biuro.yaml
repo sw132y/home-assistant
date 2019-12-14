@@ -1,11 +1,6 @@
 entities:
   - entity: sensor.temp005_parter_biuro_temperature
   - entity: sensor.temp005_parter_biuro_humidity
-  - type: divider
-  - entity: sensor.relay102_grzejnik_energy_power
-    name: "Komputer teraz"
-  - entity: sensor.relay102_grzejnik_daily_cost
-    name: "Komputer dzisiaj"
 title: Biuro
 type: entities
 show_header_toggle: false

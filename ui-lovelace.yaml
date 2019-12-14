@@ -16,6 +16,7 @@ views:
       - !include /config/lovelace/views/pietro-chillroom.yaml
       - !include /config/lovelace/views/pietro-sypialnia.yaml
       - !include /config/lovelace/views/parter-biuro.yaml
+      - !include /config/lovelace/views/pomiar-energii.yaml
       - !include /config/lovelace/views/weather.yaml
     path: default_view
     title: Home

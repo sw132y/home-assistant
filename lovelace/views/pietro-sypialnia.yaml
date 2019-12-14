@@ -8,5 +8,10 @@ cards:
       icon: 
     - type: sensor
       entity: sensor.temp101_pietro_sypialnia_humidity
-  - type: light
-    entity: light.light203_pietro_sypialnia
+  - type: entity-filter
+    show_empty: false
+    state_filter:
+      - "on"
+    card: light
+    entities: 
+      - entity: light.light203_pietro_sypialnia
