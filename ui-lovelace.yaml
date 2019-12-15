@@ -8,6 +8,8 @@ resources:
     type: module
 views:
   - badges: []
+    path: default_view
+    title: Home
     cards:
       - !include /config/lovelace/views/parter-wejscie.yaml
       - !include /config/lovelace/views/pietro-okna.yaml
@@ -18,5 +20,17 @@ views:
       - !include /config/lovelace/views/parter-biuro.yaml
       - !include /config/lovelace/views/pomiar-energii.yaml
       - !include /config/lovelace/views/weather.yaml
-    path: default_view
-    title: Home
+  - badges: []
+    path: admin
+    title: Admin
+    cards:
+      - type: entities
+        show_header_toggle: false    
+        title: Admin
+        entities:
+          - type: weblink
+            url: http://192.168.1.1
+            name: TP-Link router
+          - type: weblink
+            url: http://192.168.1.104:9541/
+            name: Tasmota admin

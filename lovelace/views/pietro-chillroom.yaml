@@ -77,5 +77,11 @@ cards:
         styles:
             card:
               - height: 80px
-  - type: light
-    entity: light.chillroom_lights
+
+  - card: light
+    type: entity-filter
+    show_empty: false
+    state_filter:
+      - "on"
+    entities:
+    - entity: light.chillroom_lights
