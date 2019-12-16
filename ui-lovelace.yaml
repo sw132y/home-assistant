@@ -21,6 +21,12 @@ views:
       - !include /config/lovelace/views/pomiar-energii.yaml
       - !include /config/lovelace/views/weather.yaml
   - badges: []
+    path: rozrywka
+    title: Rozrywka
+    cards:
+      - type: media-control
+        entity: media_player.chromecast
+  - badges: []
     path: admin
     title: Admin
     cards:
