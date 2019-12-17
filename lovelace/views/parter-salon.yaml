@@ -14,7 +14,14 @@ entities:
       action: none
     name: Narożnik
     show_name: true
+  - entity: switch.relay009_parter_kuchnia_potrojna
+    name: Kuchnia
+    show_name: true
+    tap_action:
+      action: toggle
+    hold_action:
+      action: none
   - entity: sensor.temp008_parter_salon_temperature
     show_name: true
-title: Salon
+title: Parter
 type: entities
