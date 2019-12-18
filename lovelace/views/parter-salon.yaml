@@ -21,6 +21,14 @@ entities:
       action: toggle
     hold_action:
       action: none
+  - entity: switch.relay003_gniazdko
+    name: Choinka
+    show_name: true
+    icon: mdi:pine-tree
+    tap_action:
+      action: toggle
+    hold_action:
+      action: none
   - entity: sensor.temp008_parter_salon_temperature
     show_name: true
 title: Parter
