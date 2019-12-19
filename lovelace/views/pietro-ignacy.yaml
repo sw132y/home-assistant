@@ -1,18 +1,18 @@
 entities:
   - entity: sensor.temp106_pietro_ignacy_temperature
   - entity: sensor.temp106_pietro_ignacy_humidity
-  - type: divider
-  - entity: switch.relay102_grzejnik
-    hold_action:
-      action: toggle
-    tap_action:
-      action: none    
-    show_state: true
-    name: Grzejnik
-  - entity: sensor.relay102_grzejnik_energy_power
-    name: "Grzejnik teraz"
-  - entity: sensor.relay102_grzejnik_daily_cost
-    name: "Grzejnik dzisiaj"
+  # - type: divider
+  # - entity: switch.relay102_grzejnik
+    # hold_action:
+    #   action: toggle
+    # tap_action:
+    #   action: none    
+    # show_state: true
+    # name: Grzejnik
+  # - entity: sensor.relay102_grzejnik_energy_power
+  #   name: "Grzejnik teraz"
+  # - entity: sensor.relay102_grzejnik_daily_cost
+  #   name: "Grzejnik dzisiaj"
 show_header_toggle: false
 title: Ignacy
 type: entities

@@ -15,6 +15,15 @@ entities:
     name: Dzwonek
     show_state: true
     show_name: false
+  - entity: switch.relay002_parter_wejscie_oswietle
+    name: Oświetlenie
+    tap_action:
+        action: toggle
+    hold_action:
+      action: none
+    show_state: true
+    show_name: true
+    icon: mdi:outdoor-lamp
   - entity: binary_sensor.kontr202_ogrod_brama_contact
     tap_action:
       action: none

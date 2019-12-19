@@ -1,6 +1,16 @@
 entities:
   - entity: sensor.temp005_parter_biuro_temperature
   - entity: sensor.temp005_parter_biuro_humidity
+  - type: divider
+  - entity: switch.relay004_gniazdko_komputer
+    name: "Komputer teraz"
+    icon: mdi:desktop-classic
+  - entity: sensor.relay004_gniazdko_komputer_energy_power
+    name: "Moc teraz"
+  - entity: sensor.relay004_gniazdko_komputer_energy_today
+    name: "Zużycie energii dzisiaj"
+  - entity: sensor.relay004_gniazdko_komputer_daily_cost
+    name: "Koszt dzisiaj"
 title: Biuro
 type: entities
 show_header_toggle: false

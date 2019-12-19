@@ -3,11 +3,16 @@
     relay008_energy_daily_cost:
       friendly_name: "Current cost"
       unit_of_measurement: 'zł'
-      value_template: "{{ (states('sensor.relay008_energy_energy_today') | float * 0.55) | round(2) }}"
+      value_template: "{{ (states('sensor.relay008_energy_energy_today') | float * 0.63) | round(2) }}"
       icon_template: mdi:currency-usd
     relay102_grzejnik_daily_cost:
       friendly_name: "Current cost"
       unit_of_measurement: 'zł'
-      value_template: "{{ (states('sensor.relay102_grzejnik_energy_today') | float * 0.55) | round(2) }}"
+      value_template: "{{ (states('sensor.relay102_grzejnik_energy_today') | float * 0.63) | round(2) }}"
+      icon_template: mdi:currency-usd
+    relay004_gniazdko_komputer_daily_cost:
+      friendly_name: "Current cost"
+      unit_of_measurement: 'zł'
+      value_template: "{{ (states('sensor.relay004_gniazdko_komputer_energy_today') | float * 0.63) | round(2) }}"
       icon_template: mdi:currency-usd
       

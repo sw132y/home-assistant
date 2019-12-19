@@ -16,10 +16,10 @@ switch.relay001_parter_wejscie_furtka:
   icon: fas:key
 
 switch.relay006_parter_salon_witryna:
-  icon: fas:lightbulb
+  icon: mdi:lightbulb-on
 
 switch.relay007_parter_salon_naroznik:
-  icon: mdi:lamp
+  icon: mdi:floor-lamp
 
-switch.relay008_energy:
-  icon: fas:tv
+switch.relay009_parter_kuchnia_potrojna:
+  icon: mdi:ceiling-light
