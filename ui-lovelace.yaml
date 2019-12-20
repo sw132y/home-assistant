@@ -30,6 +30,7 @@ views:
     path: admin
     title: Admin
     cards:
+      - !include /config/lovelace/views/sterowanie.yaml
       - type: entities
         show_header_toggle: false    
         title: Admin

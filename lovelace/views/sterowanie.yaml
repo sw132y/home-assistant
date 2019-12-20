@@ -1,0 +1,29 @@
+type: vertical-stack
+title: Parter
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        name: Światełki
+        state:
+        - operator: default
+          icon: mdi:pine-tree
+        tap_action:
+          action: toggle
+        entity: group.lights_parter
+        size: 15%
+        styles:
+            card:
+              - height: 80px
+      - type: "custom:button-card"
+        name: Oświetlenie
+        state:
+        - operator: default
+          icon: mdi:lightbulb
+        tap_action:
+          action: toggle
+        entity: group.lights_parter
+        size: 15%
+        styles:
+            card:
+              - height: 80px

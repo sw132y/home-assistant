@@ -61,10 +61,3 @@ light:
     entities:
       - light.light201_pietro_chillroom
       - light.light202_pietro_chillroom
-  - platform: group
-    name: Parter
-    entities:
-      - switch.relay006_parter_salon_witryna
-      - switch.relay007_parter_salon_naroznik
-      - switch.relay009_parter_kuchnia_potrojna
-      - switch.relay003_gniazdko
