@@ -1,0 +1,16 @@
+- alias: 'Action: Turn off outside lights'
+  trigger:
+    - platform: time
+      at: "01:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.relay002_parter_wejscie_oswietle
+        state: 'on'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.relay002_parter_wejscie_oswietle
+  - service: notify.sw132y
+    data:
+      message: Automatyczne wyłączenie świateł zewnętrznych.

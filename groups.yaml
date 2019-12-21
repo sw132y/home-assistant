@@ -28,3 +28,4 @@ lights_parter:
       - switch.relay007_parter_salon_naroznik
       - switch.relay009_parter_kuchnia_potrojna
       - switch.relay003_gniazdko
+      - switch.relay102_grzejnik

@@ -19,6 +19,7 @@
             - "Klimat w domu:/report_temperature, Okna:/report_upstairs_window"
             - "Brama:/report_gate, Światła:/report_lights, Dzwonek:/report_doorbell"
             - "Otwieranie furtki:/open_gateway"
+            - "Oświetlenie wł:/turn_on_outside_lights, Oświetlenie wył:/turn_off_outside_lights"
 
 - alias: 'Temperature and humidity'
   initial_state: 'on'
@@ -87,7 +88,7 @@
         chat_id: '{{ trigger.event.data.user_id }}'
         message: Dzwonek jest {{states.switch.relay005_parter_wejscie_dzwonek.state}}
 
-- alias: 'Lights state'
+- alias: 'State: Lights state'
   initial_state: 'on'
   trigger:
     platform: event
@@ -104,7 +105,7 @@
           Lampa przy narożniku jest {{states.switch.relay006_parter_salon_witryna.state}}
 
 
-- alias: 'Open gateway'
+- alias: 'Action: open gateway'
   initial_state: 'on'
   trigger:
     platform: event
@@ -112,5 +113,27 @@
     event_data:
       data: '/open_gateway'
   action:
-    - service: switch.toggle
+    - service: switch.turn_on
       entity_id: switch.relay001_parter_wejscie_furtka
+
+- alias: 'Action: turn on outside lights'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/turn_on_outside_lights'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.relay002_parter_wejscie_oswietle
+
+- alias: 'Action: turn off outside lights'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/turn_off_outside_lights'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.relay002_parter_wejscie_oswietle

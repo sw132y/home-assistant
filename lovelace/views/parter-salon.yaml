@@ -35,7 +35,7 @@ entities:
     tap_action:
       action: none    
     show_state: true
-    name: Poroże
+    name: Jeleń
     icon: mdi:donkey
   - entity: sensor.temp008_parter_salon_temperature
     show_name: true

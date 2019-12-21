@@ -4,19 +4,7 @@ cards:
   - type: horizontal-stack
     cards:
       - type: "custom:button-card"
-        name: Światełki
-        state:
-        - operator: default
-          icon: mdi:pine-tree
-        tap_action:
-          action: toggle
-        entity: group.lights_parter
-        size: 15%
-        styles:
-            card:
-              - height: 80px
-      - type: "custom:button-card"
-        name: Oświetlenie
+        name: Parter
         state:
         - operator: default
           icon: mdi:lightbulb
@@ -24,6 +12,21 @@ cards:
           action: toggle
         entity: group.lights_parter
         size: 15%
-        styles:
-            card:
-              - height: 80px
+        aspect_ratio: 1/1
+      - type: "custom:button-card"
+        name: Zewnętrzne
+        state:
+        - operator: default
+          icon: mdi:outdoor-lamp
+        tap_action:
+          action: toggle
+        entity: switch.relay002_parter_wejscie_oswietle
+        size: 15%
+        aspect_ratio: 1/1
+      - type: "custom:button-card"
+        name: Salon
+        tap_action:
+          action: toggle
+        entity: sensor.temp008_parter_salon
+        size: 15%
+        aspect_ratio: 1/1
