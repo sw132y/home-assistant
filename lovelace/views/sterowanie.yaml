@@ -1,7 +1,57 @@
 type: vertical-stack
-title: Parter
 cards:
   - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        name: Furtka
+        state:
+        - operator: default
+          icon: fas:key
+        tap_action:
+          action: toggle
+        hold_action:
+          action: toggle
+        entity: switch.relay001_parter_wejscie_furtka
+        size: 30%
+        aspect_ratio: 1/1
+      
+      - type: "custom:button-card"
+        name: Zewnętrzne
+        state:
+        - operator: default
+          icon: mdi:outdoor-lamp
+        tap_action:
+          action: toggle
+        hold_action:
+          action: toggle
+        entity: switch.relay002_parter_wejscie_oswietle
+        size: 40%
+        aspect_ratio: 1/1
+
+      - type: "custom:button-card"
+        name: Dzwonek
+        tap_action:
+          action: toggle
+        hold_action:
+          action: toggle
+        entity: switch.relay005_parter_wejscie_dzwonek
+        size: 30%
+        aspect_ratio: 1/1
+
+      - type: "custom:button-card"
+        name: Brama
+        state:
+        - operator: default
+          icon: mdi:gate
+        entity: binary_sensor.kontr202_ogrod_brama_contact
+        size: 40%
+        aspect_ratio: 1/1
+
+
+
+
+  - type: horizontal-stack
+    title: Parter
     cards:
       - type: "custom:button-card"
         name: Parter
@@ -10,23 +60,496 @@ cards:
           icon: mdi:lightbulb
         tap_action:
           action: toggle
+        hold_action:
+          action: toggle
         entity: group.lights_parter
         size: 15%
-        aspect_ratio: 1/1
+        layout: icon_label
+        show_label: true
+        show_name: false
+        size: 30%
+        styles:
+          card:
+            #- height: 100px
+          label:
+            #- justify-self: left
+            - padding: -20px 5px
+            #- text-align: start
+        label: >
+          [[[
+            return (states['group.lights_parter'].state === 'on' ? 'Wyłącz' : 'Włącz') + ' wszystkie światła';
+          ]]]
+  
+  
+  - type: horizontal-stack
+    cards:
       - type: "custom:button-card"
-        name: Zewnętrzne
+        name: Witryna
+        aspect_ratio: 1/1
         state:
         - operator: default
-          icon: mdi:outdoor-lamp
+          icon: mdi:lightbulb
+        tap_action:
+          action: toggle 
+        hold_action:
+          action: toggle
+        entity: switch.relay006_parter_salon_witryna
+        size: 40%
+
+      - type: "custom:button-card"
+        name: Narożnik
+        aspect_ratio: 1/1
+        state:
+        - operator: default
+          icon: mdi:floor-lamp
         tap_action:
           action: toggle
-        entity: switch.relay002_parter_wejscie_oswietle
-        size: 15%
-        aspect_ratio: 1/1
+        hold_action:
+          action: toggle
+        entity: switch.relay007_parter_salon_naroznik
+        size: 40%
+
       - type: "custom:button-card"
+        name: Kuchnia
+        aspect_ratio: 1/1
+        state:
+        - operator: default
+          icon: mdi:pot-mix
+        tap_action:
+          action: toggle
+        hold_action:
+          action: toggle
+        entity: switch.relay009_parter_kuchnia_potrojna
+        size: 40%
+
+      - type: "custom:button-card"
+        name: Choinka
+        aspect_ratio: 1/1
+        state:
+        - operator: default
+          icon: mdi:pine-tree
+        tap_action:
+          action: toggle
+        hold_action:
+          action: toggle
+        entity: switch.relay003_gniazdko
+        size: 40%
+
+      - type: "custom:button-card"
+        name: Jeleń
+        aspect_ratio: 1/1
+        state:
+        - operator: default
+          icon: mdi:donkey
+        tap_action:
+          action: toggle
+        hold_action:
+          action: toggle
+        entity: switch.relay102_grzejnik
+        size: 40%
+
+        
+  - type: horizontal-stack
+    title: Klimat
+    cards:
+      - type: custom:button-card
+        entity: 'sensor.temp008_parter_salon'
+        aspect_ratio: 1/1
         name: Salon
         tap_action:
-          action: toggle
-        entity: sensor.temp008_parter_salon
-        size: 15%
+          action: more-info
+        styles:
+          grid:
+            - grid-template-areas: '"i temp" "n n" "temperature temperature" "humidity humidity"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+            - padding-left: 5px
+          name:
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - padding-left: 5px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          icon:
+            - width: 70%
+            - margin-top: -10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            temperature:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            humidity:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+        custom_fields:
+          temp: >
+            [[[
+              return ``
+            ]]]
+          temperature: >
+            [[[
+              return `<ha-icon
+                icon="mdi:thermometer"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp008_parter_salon_temperature'].state}°C</span></span>`
+            ]]]
+          humidity: >
+            [[[
+              return `<ha-icon
+                icon="mdi:water-percent"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp008_parter_salon_humidity'].state}%</span></span>`
+            ]]]
+
+      - type: custom:button-card
+        entity: 'sensor.temp106_pietro_ignacy'
         aspect_ratio: 1/1
+        name: Ignacy
+        tap_action:
+          action: more-info
+        styles:
+          grid:
+            - grid-template-areas: '"i temp" "n n" "temperature temperature" "humidity humidity"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+            - padding-left: 5px
+          name:
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - padding-left: 5px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          icon:
+            - width: 70%
+            - margin-top: -10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            temperature:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            humidity:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+        custom_fields:
+          temp: >
+            [[[
+              return ``
+            ]]]
+          temperature: >
+            [[[
+              return `<ha-icon
+                icon="mdi:thermometer"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp106_pietro_ignacy_temperature'].state}°C</span></span>`
+            ]]]
+          humidity: >
+            [[[
+              return `<ha-icon
+                icon="mdi:water-percent"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp106_pietro_ignacy_humidity'].state}%</span></span>`
+            ]]]
+
+
+
+
+
+      - type: custom:button-card
+        entity: 'sensor.temp005_parter_biuro'
+        aspect_ratio: 1/1
+        name: Biuro
+        state:
+        - operator: default
+          icon: mdi:pot-mix
+        tap_action:
+          action: more-info
+        styles:
+          grid:
+            - grid-template-areas: '"i temp" "n n" "temperature temperature" "humidity humidity"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+            - padding-left: 5px
+          name:
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - padding-left: 5px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          icon:
+            - width: 70%
+            - margin-top: -10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            temperature:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            humidity:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+        custom_fields:
+          temp: >
+            [[[
+              return ``
+            ]]]
+          temperature: >
+            [[[
+              return `<ha-icon
+                icon="mdi:thermometer"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp005_parter_biuro_temperature'].state}°C</span></span>`
+            ]]]
+          humidity: >
+            [[[
+              return `<ha-icon
+                icon="mdi:water-percent"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp005_parter_biuro_humidity'].state}%</span></span>`
+            ]]]
+
+
+      - type: custom:button-card
+        entity: sensor.temp101_pietro_sypialnia
+        aspect_ratio: 1/1
+        name: Sypialnia
+        tap_action:
+          action: more-info
+        styles:
+          grid:
+            - grid-template-areas: '"i temp" "n n" "temperature temperature" "humidity humidity"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+            - padding-left: 5px
+          name:
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - padding-left: 5px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          icon:
+            - width: 70%
+            - margin-top: -10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            temperature:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            humidity:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+        custom_fields:
+          temp: >
+            [[[
+              return ``
+            ]]]
+          temperature: >
+            [[[
+              return `<ha-icon
+                icon="mdi:thermometer"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp101_pietro_sypialnia_temperature'].state}°C</span></span>`
+            ]]]
+          humidity: >
+            [[[
+              return `<ha-icon
+                icon="mdi:water-percent"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp101_pietro_sypialnia_humidity'].state}%</span></span>`
+            ]]]
+
+
+
+  - type: horizontal-stack
+    title: Zużycie prądu
+    cards:
+      - type: custom:button-card
+        entity: switch.relay004_gniazdko_komputer
+        aspect_ratio: 1/1
+        name: Komputer
+        size: 10%
+        state:
+        - operator: default
+          icon: mdi:desktop-classic
+        styles:
+          grid:
+            - grid-template-areas: '"i temp" "n n" "power_now power_now" "power_today power_today" "power_yesterday power_yesterday" "cost_today cost_today"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+            - padding-left: 5px
+          name:
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - padding-left: 5px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          icon:
+            - width: 70%
+            - margin-top: -10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            power_now:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            power_today:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            power_yesterday:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            cost_today:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+        custom_fields:
+          temp: >
+            [[[
+              return ``
+            ]]]
+          power_now: >
+            [[[
+              return `<ha-icon
+                icon="mdi:flash"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">Teraz: ${states['sensor.relay004_gniazdko_komputer_energy_power'].state}W</span></span>`
+            ]]]
+          power_today: >
+            [[[
+              return `<ha-icon
+                icon="mdi:flash"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">Dzisiaj: ${states['sensor.relay004_gniazdko_komputer_energy_today'].state}kWh</span></span>`
+            ]]]
+          power_yesterday: >
+            [[[
+              return `<ha-icon
+                icon="mdi:flash"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">Wczoraj: ${states['sensor.relay004_gniazdko_komputer_energy_yesterday'].state}kWh</span></span>`
+            ]]]
+          cost_today: >
+            [[[
+              return `<ha-icon
+                icon="mdi:currency-usd"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">Dzisiaj: ${states['sensor.relay004_gniazdko_komputer_daily_cost'].state}zł</span></span>`
+            ]]]
+
+
+      - type: custom:button-card
+        entity: switch.relay008_energy
+        aspect_ratio: 1/1
+        name: Lodówka w garażu
+        size: 10%
+        tap_action:
+          none
+        hold_action:
+          none
+        state:
+        - operator: default
+          icon: mdi:fridge
+        styles:
+          grid:
+            - grid-template-areas: '"i temp" "n n" "power_now power_now" "power_today power_today" "power_yesterday power_yesterday" "cost_today cost_today"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+            - padding-left: 5px
+          name:
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - padding-left: 5px
+          img_cell:
+            - justify-content: start
+            - align-items: start
+            - margin: none
+          icon:
+            - width: 70%
+            - margin-top: -10%
+          custom_fields:
+            temp:
+              - align-self: start
+              - justify-self: end
+            power_now:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            power_today:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            power_yesterday:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+            cost_today:
+              - padding-bottom: 2px
+              - align-self: middle
+              - justify-self: start
+        custom_fields:
+          temp: >
+            [[[
+              return ``
+            ]]]
+          power_now: >
+            [[[
+              return `<ha-icon
+                icon="mdi:flash"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">Teraz: ${states['sensor.relay008_energy_energy_power'].state}W</span></span>`
+            ]]]
+          power_today: >
+            [[[
+              return `<ha-icon
+                icon="mdi:flash"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">Dzisiaj: ${states['sensor.relay008_energy_energy_today'].state}kWh</span></span>`
+            ]]]
+          power_yesterday: >
+            [[[
+              return `<ha-icon
+                icon="mdi:flash"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">Wczoraj: ${states['sensor.relay008_energy_energy_yesterday'].state}kWh</span></span>`
+            ]]]
+          cost_today: >
+            [[[
+              return `<ha-icon
+                icon="mdi:currency-usd"
+                style="width: 12px; height: 12px;">
+                </ha-icon><span><span style="color: var(--text-color-sensor);">Dzisiaj: ${states['sensor.relay008_energy_daily_cost'].state}zł</span></span>`
+            ]]]

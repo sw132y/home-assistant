@@ -61,8 +61,10 @@
       entity_id: switch.relay002_parter_wejscie_oswietle
     - platform: state
       entity_id: switch.relay005_parter_wejscie_dzwonek
+    - platform: state
+      entity_id: switch.relay001_parter_wejscie_furtka
   action:
     service: notify.sw132y
     data_template:
       message: >
-        {{trigger.to_state.attributes.friendly_name}} jest {% if is_state("trigger.to_state.state", "off") %}xxx.{% else %}yyy.{% endif %}
+        {{trigger.to_state.attributes.friendly_name}} jest teraz {{trigger.to_state.state}}
