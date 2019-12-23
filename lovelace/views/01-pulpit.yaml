@@ -4,7 +4,7 @@ cards:
     title: Wejście
     cards:
       - !include /config/lovelace/views/buttons/wejscie-furtka.yaml
-      - !include /config/lovelace/views/buttons/wejscie-oswietlenie-zewnetrzne.yaml
+      - !include /config/lovelace/views/buttons/wejscie-swiatlo-zewnetrzne.yaml
       - !include /config/lovelace/views/buttons/wejscie-dzwonek.yaml
       - !include /config/lovelace/views/buttons/wejscie-brama.yaml
 

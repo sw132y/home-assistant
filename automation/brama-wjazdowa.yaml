@@ -1,33 +1,17 @@
-- alias: 'Action: Turn on door bell'
+- alias: 'Notification: Gate is open more then 5 minutes'
+  initial_state: 'on'
   trigger:
-    - platform: time
-      at: "09:00:00"
+    - platform: time_pattern
+      seconds: "/60"
   condition:
     condition: and
     conditions:
       - condition: state
-        entity_id: switch.relay005_parter_wejscie_dzwonek
-        state: 'off'
-  action:
-  - service: switch.turn_on
-    entity_id: switch.relay005_parter_wejscie_dzwonek
-  - service: notify.sw132y
-    data:
-      message: Automatyczne włączenie dzwonka.
-
-- alias: 'Action: Turn off door bell'
-  trigger:
-    - platform: time
-      at: "19:00:00"
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: switch.relay005_parter_wejscie_dzwonek
+        entity_id: binary_sensor.kontr202_ogrod_brama_contact
         state: 'on'
+      - condition: template
+        value_template: '{{as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed) >= 300}}'
   action:
-  - service: switch.turn_off
-    entity_id: switch.relay005_parter_wejscie_dzwonek
   - service: notify.sw132y
     data:
-      message: Automatyczne wyłączenie dzwonka.
+      message: 'Brama jest otwarta od {{((as_timestamp(now()) - as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed)) / 60) | int}}min'

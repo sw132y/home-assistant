@@ -1,7 +1,7 @@
 - alias: 'Action: Turn off outdoor lights'
   trigger:
     - platform: time
-      at: "01:00:00"
+      at: "23:30:00"
   condition:
     condition: and
     conditions:
