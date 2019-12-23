@@ -1,0 +1,7 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    title: Zużycie prądu
+    cards:
+      - !include /config/lovelace/views/buttons/pomiar-energii-komputer.yaml
+      - !include /config/lovelace/views/buttons/pomiar-energii-lodowka-garaz.yaml

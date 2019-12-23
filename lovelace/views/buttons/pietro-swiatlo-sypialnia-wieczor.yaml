@@ -1,0 +1,24 @@
+type: "custom:button-card"
+name: Wieczór
+state:
+- operator: template
+  value: >
+    [[[
+      return states['light.light203_pietro_sypialnia'].attributes
+      && (states['light.light203_pietro_sypialnia'].attributes.brightness <  200)
+    ]]]
+  icon: mdi:lightbulb-on
+- operator: default
+  icon: mdi:lightbulb
+color: rgb(0,139,239)
+tap_action:
+  action: call-service
+  service: light.turn_on
+  service_data: 
+    entity_id: light.light203_pietro_sypialnia
+    brightness: 105
+entity: light.light203_pietro_sypialnia
+size: 15%
+styles:
+    card:
+      - height: 80px

@@ -1,0 +1,80 @@
+type: custom:button-card
+entity: switch.relay004_gniazdko_komputer
+aspect_ratio: 1/1
+name: Komputer
+size: 10%
+state:
+- operator: default
+  icon: mdi:desktop-classic
+styles:
+  grid:
+    - grid-template-areas: '"i state" "n n" "power_now power_now" "power_today power_today" "power_yesterday power_yesterday" "cost_today cost_today"'
+    - grid-template-columns: 1fr 1fr
+    - grid-template-rows: 1fr min-content min-content min-content min-content
+    - padding-left: 5px
+  name:
+    - align-self: middle
+    - justify-self: start
+    - padding-bottom: 4px
+    - padding-left: 5px
+  img_cell:
+    - justify-content: start
+    - align-items: start
+    - margin: none
+  icon:
+    - width: 50%
+    - margin-top: -10%
+  custom_fields:
+    state:
+      - align-self: start
+      - justify-self: end
+      - padding-right: 10px
+    power_now:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+    power_today:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+    power_yesterday:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+    cost_today:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+custom_fields:
+  state: >
+    [[[
+      return `<span style="color: var(--text-color-sensor);">${states['switch.relay004_gniazdko_komputer'].state}</span>`
+    ]]]
+  power_now: >
+    [[[
+      return `<ha-icon
+        icon="mdi:flash"
+        style="width: 12px; height: 12px;">
+        </ha-icon><span><span style="color: var(--text-color-sensor);">Teraz: ${states['sensor.relay004_gniazdko_komputer_energy_power'].state}W</span></span>`
+    ]]]
+  power_today: >
+    [[[
+      return `<ha-icon
+        icon="mdi:flash"
+        style="width: 12px; height: 12px;">
+        </ha-icon><span><span style="color: var(--text-color-sensor);">Dzisiaj: ${states['sensor.relay004_gniazdko_komputer_energy_today'].state}kWh</span></span>`
+    ]]]
+  power_yesterday: >
+    [[[
+      return `<ha-icon
+        icon="mdi:flash"
+        style="width: 12px; height: 12px;">
+        </ha-icon><span><span style="color: var(--text-color-sensor);">Wczoraj: ${states['sensor.relay004_gniazdko_komputer_energy_yesterday'].state}kWh</span></span>`
+    ]]]
+  cost_today: >
+    [[[
+      return `<ha-icon
+        icon="mdi:currency-usd"
+        style="width: 12px; height: 12px;">
+        </ha-icon><span><span style="color: var(--text-color-sensor);">Dzisiaj: ${states['sensor.relay004_gniazdko_komputer_daily_cost'].state}zł</span></span>`
+    ]]]

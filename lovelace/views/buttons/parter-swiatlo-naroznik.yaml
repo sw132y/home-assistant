@@ -1,0 +1,12 @@
+type: "custom:button-card"
+name: Narożnik
+aspect_ratio: 1/1
+state:
+- operator: default
+  icon: mdi:floor-lamp
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay007_parter_salon_naroznik
+size: 40%

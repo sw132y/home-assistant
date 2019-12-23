@@ -1,4 +1,4 @@
-- alias: 'Display all available options in telegram'
+- alias: 'Menu: Display all available options in telegram'
   hide_entity: true
   initial_state: 'on'
   trigger:
@@ -19,9 +19,10 @@
             - "Klimat w domu:/report_temperature, Okna:/report_upstairs_window"
             - "Brama:/report_gate, Światła:/report_lights, Dzwonek:/report_doorbell"
             - "Otwieranie furtki:/open_gateway"
-            - "Oświetlenie wł:/turn_on_outside_lights, Oświetlenie wył:/turn_off_outside_lights"
+            - "Zew. ośw. wł:/turn_on_outside_lights, Zew. ośw. wył:/turn_off_outside_lights"
+            - "Parter ośw. wł:/turn_on_parter_lights, Parter ośw. wył:/turn_off_parter_lights"
 
-- alias: 'Temperature and humidity'
+- alias: 'Report: Temperature and humidity'
   initial_state: 'on'
   trigger:
     platform: event
@@ -39,7 +40,7 @@
           Salon - {{ states.sensor.temp008_parter_salon_temperature.state_with_unit }} - {{ states.sensor.temp008_parter_salon_humidity.state_with_unit }}
           Biuro - {{ states.sensor.temp005_parter_biuro_temperature.state_with_unit }} - {{ states.sensor.temp005_parter_biuro_humidity.state_with_unit }}
 
-- alias: 'Entry gate state'
+- alias: 'Report: Entry gate state'
   initial_state: 'on'
   trigger:
     platform: event
@@ -54,7 +55,7 @@
         message: >
             {% if is_state("binary_sensor.kontr202_ogrod_brama_contact", "off") %}Brama jest zamknięta{% else %}Brama jest otwarta{% endif %} od {{ as_timestamp(states.binary_sensor.kontr202_ogrod_brama_contact.last_changed) | timestamp_custom('%b %-d %-I:%M%p') }} 
 
-- alias: 'Upstairs opened windows'
+- alias: 'Report: Upstairs opened windows'
   initial_state: 'on'
   trigger:
     platform: event
@@ -74,7 +75,7 @@
           Łazienka {{states.binary_sensor.kontr106_pietro_lazienka_contact.state}}
           Ignacy {{states.binary_sensor.kontr105_pietro_ignacy_contact.state}}
 
-- alias: 'Doorbell state'
+- alias: 'Report: Door bell state'
   initial_state: 'on'
   trigger:
     platform: event
@@ -88,7 +89,7 @@
         chat_id: '{{ trigger.event.data.user_id }}'
         message: Dzwonek jest {{states.switch.relay005_parter_wejscie_dzwonek.state}}
 
-- alias: 'State: Lights state'
+- alias: 'Report: Lights state'
   initial_state: 'on'
   trigger:
     platform: event
@@ -101,9 +102,12 @@
         message_id: 'last'
         chat_id: '{{ trigger.event.data.user_id }}'
         message: |
-          Lampy na witrynce są {{states.switch.relay006_parter_salon_witryna.state}}
-          Lampa przy narożniku jest {{states.switch.relay006_parter_salon_witryna.state}}
-
+          Witryna: {{states.switch.relay006_parter_salon_witryna.state}}
+          Narożnik {{states.switch.relay007_parter_salon_naroznik.state}}
+          Kuchnia: {{states.switch.relay009_parter_kuchnia_potrojna.state}}
+          Choinka: {{states.switch.relay003_gniazdko.state}}
+          Jeleń: {{states.switch.relay102_grzejnik.state}}
+          Zewnętrzne: {{states.switch.relay002_parter_wejscie_oswietle.state}}
 
 - alias: 'Action: open gateway'
   initial_state: 'on'
@@ -137,3 +141,25 @@
   action:
     - service: switch.turn_off
       entity_id: switch.relay002_parter_wejscie_oswietle
+
+- alias: 'Action: turn on parter lights'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/turn_on_parter_lights'
+  action:
+    - service: switch.turn_on
+      entity_id: group.lights_parter
+
+- alias: 'Action: turn off parter lights'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/turn_off_parter_lights'
+  action:
+    - service: switch.turn_off
+      entity_id: group.lights_parter

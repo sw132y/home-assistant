@@ -7,30 +7,26 @@ resources:
   - url: /community_plugin/spotify-card/spotify-card.js
     type: module
 views:
-  # - badges: []
-  #   path: default_view
-  #   title: Home
-  #   cards:
-  #     - !include /config/lovelace/views/parter-wejscie.yaml
-  #     - !include /config/lovelace/views/parter-salon.yaml
-  #     - !include /config/lovelace/views/pietro-ignacy.yaml
-  #     - !include /config/lovelace/views/pietro-okna.yaml
-  #     - !include /config/lovelace/views/pietro-chillroom.yaml
-  #     - !include /config/lovelace/views/pietro-sypialnia.yaml
-  #     - !include /config/lovelace/views/parter-biuro.yaml
-  #     - !include /config/lovelace/views/pomiar-energii.yaml
-  #     - !include /config/lovelace/views/weather.yaml
-  # - badges: []
-  #   path: rozrywka
-  #   title: Rozrywka
-  #   cards:
-  #     - type: media-control
-  #       entity: media_player.chromecast
   - badges: []
     path: default_view
-    title: Nowy
+    title: Pulpit
     cards:
-      - !include /config/lovelace/views/sterowanie.yaml
+      - !include /config/lovelace/views/01-pulpit.yaml
+  - badges: []
+    path: pietro
+    title: Piętro
+    cards:
+      - !include /config/lovelace/views/02-pietro.yaml
+  - badges: []
+    path: pomiar_energii
+    title: Pomiar energii
+    cards:
+      - !include /config/lovelace/views/03-pomiar-energii.yaml
+  - badges: []
+    path: rozrywka
+    title: Rozrywka
+    cards:
+      - !include /config/lovelace/views/04-rozrywka.yaml
       # - type: entities
       #   show_header_toggle: false    
       #   title: Admin

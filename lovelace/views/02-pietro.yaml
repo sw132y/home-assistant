@@ -1,0 +1,21 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    title: Chilroom
+    cards:
+      - !include /config/lovelace/views/buttons/pietro-swiatlo-chillroom-film.yaml
+      - !include /config/lovelace/views/buttons/pietro-swiatlo-chillroom-wieczor.yaml
+      - !include /config/lovelace/views/buttons/pietro-swiatlo-chillroom-turbo.yaml
+  
+  - type: light
+    entity: light.chillroom_lights
+
+  - type: horizontal-stack
+    title: Sypialnia
+    cards:
+      - !include /config/lovelace/views/buttons/pietro-swiatlo-sypialnia-wieczor.yaml
+      - !include /config/lovelace/views/buttons/pietro-swiatlo-sypialnia-turbo.yaml
+  
+  - type: light
+    entity: light.light203_pietro_sypialnia
+      

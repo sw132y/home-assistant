@@ -1,0 +1,12 @@
+type: "custom:button-card"
+name: Zewnętrzne
+state:
+- operator: default
+  icon: mdi:outdoor-lamp
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay002_parter_wejscie_oswietle
+size: 40%
+aspect_ratio: 1/1

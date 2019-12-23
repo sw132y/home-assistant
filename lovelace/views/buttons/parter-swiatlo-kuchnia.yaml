@@ -1,0 +1,12 @@
+type: "custom:button-card"
+name: Kuchnia
+aspect_ratio: 1/1
+state:
+- operator: default
+  icon: mdi:pot-mix
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay009_parter_kuchnia_potrojna
+size: 40%

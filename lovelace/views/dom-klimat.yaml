@@ -1,9 +1,0 @@
-entities:
-  - entity: sensor.temp008_parter_salon_temperature
-  - entity: sensor.temp008_parter_salon_humidity
-  - type: divider
-  - entity: sensor.temp101_pietro_sypialnia_temperature
-  - entity: sensor.temp101_pietro_sypialnia_humidity
-show_header_toggle: false
-title: Klimat
-type: entities

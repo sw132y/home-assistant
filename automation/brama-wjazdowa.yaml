@@ -1,0 +1,33 @@
+- alias: 'Action: Turn on door bell'
+  trigger:
+    - platform: time
+      at: "09:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.relay005_parter_wejscie_dzwonek
+        state: 'off'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.relay005_parter_wejscie_dzwonek
+  - service: notify.sw132y
+    data:
+      message: Automatyczne włączenie dzwonka.
+
+- alias: 'Action: Turn off door bell'
+  trigger:
+    - platform: time
+      at: "19:00:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.relay005_parter_wejscie_dzwonek
+        state: 'on'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.relay005_parter_wejscie_dzwonek
+  - service: notify.sw132y
+    data:
+      message: Automatyczne wyłączenie dzwonka.

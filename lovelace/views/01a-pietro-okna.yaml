@@ -1,3 +1,4 @@
+type: entity-filter
 entities:
   - entity: binary_sensor.kontr102_pietro_sypialnia_poludnie_contact
   - entity: binary_sensor.kontr101_pietro_sypialnia_wschod_contact
@@ -5,11 +6,10 @@ entities:
   - entity: binary_sensor.kontr103_pietro_chillroom_contact
   - entity: binary_sensor.kontr106_pietro_lazienka_contact
   - entity: binary_sensor.kontr105_pietro_ignacy_contact
-show_header_toggle: false
-theme: default
-title: Okna
-card: glance
-type: entity-filter
 show_empty: false
 state_filter:
   - "on"
+card:
+  type: entities
+  title: Otwarte okna
+  show_header_toggle: false

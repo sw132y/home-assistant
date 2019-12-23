@@ -1,0 +1,9 @@
+type: "custom:button-card"
+name: Dzwonek
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay005_parter_wejscie_dzwonek
+size: 30%
+aspect_ratio: 1/1

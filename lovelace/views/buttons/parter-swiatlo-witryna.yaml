@@ -1,0 +1,12 @@
+type: "custom:button-card"
+name: Witryna
+aspect_ratio: 1/1
+state:
+- operator: default
+  icon: mdi:lightbulb
+tap_action:
+  action: toggle 
+hold_action:
+  action: toggle
+entity: switch.relay006_parter_salon_witryna
+size: 40%

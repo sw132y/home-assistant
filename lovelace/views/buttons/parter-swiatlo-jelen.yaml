@@ -1,0 +1,12 @@
+type: "custom:button-card"
+name: Jeleń
+aspect_ratio: 1/1
+state:
+- operator: default
+  icon: mdi:donkey
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay102_grzejnik
+size: 40%

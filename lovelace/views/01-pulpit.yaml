@@ -1,0 +1,37 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    title: Wejście
+    cards:
+      - !include /config/lovelace/views/buttons/wejscie-furtka.yaml
+      - !include /config/lovelace/views/buttons/wejscie-oswietlenie-zewnetrzne.yaml
+      - !include /config/lovelace/views/buttons/wejscie-dzwonek.yaml
+      - !include /config/lovelace/views/buttons/wejscie-brama.yaml
+
+  - type: horizontal-stack
+    title: Parter
+    cards:
+      - !include /config/lovelace/views/buttons/parter-wszystkie-swiatla.yaml
+  
+  - type: horizontal-stack
+    cards:
+      - !include /config/lovelace/views/buttons/parter-swiatlo-witryna.yaml
+      - !include /config/lovelace/views/buttons/parter-swiatlo-naroznik.yaml
+      - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
+      - !include /config/lovelace/views/buttons/parter-swiatlo-choinka.yaml
+      - !include /config/lovelace/views/buttons/parter-swiatlo-jelen.yaml
+  
+  - type: conditional
+    conditions:
+      - entity: group.upstairs_windows
+        state: "on"
+    card:
+        !include /config/lovelace/views/01a-pietro-okna.yaml
+
+  - type: horizontal-stack
+    title: Klimat
+    cards:
+      - !include /config/lovelace/views/buttons/klimat-salon.yaml
+      - !include /config/lovelace/views/buttons/klimat-ignacy.yaml
+      - !include /config/lovelace/views/buttons/klimat-biuro.yaml
+      - !include /config/lovelace/views/buttons/klimat-sypialnia.yaml

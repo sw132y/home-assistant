@@ -1,0 +1,21 @@
+type: "custom:button-card"
+name: Film
+state:
+- operator: template
+  value: >
+    [[[
+      return states['light.chillroom_lights'].attributes
+      && (states['light.chillroom_lights'].attributes.brightness < 100)
+    ]]]
+  icon: mdi:lightbulb-on
+- operator: default
+  icon: mdi:lightbulb
+color: rgb(61,174,255)
+tap_action:
+  action: call-service
+  service: light.turn_on
+  service_data: 
+    entity_id: light.chillroom_lights
+    brightness: 35
+entity: light.chillroom_lights
+size: 25%

@@ -1,0 +1,8 @@
+type: "custom:button-card"
+name: Brama
+state:
+- operator: default
+  icon: mdi:gate
+entity: binary_sensor.kontr202_ogrod_brama_contact
+size: 40%
+aspect_ratio: 1/1

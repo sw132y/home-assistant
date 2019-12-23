@@ -1,0 +1,51 @@
+type: custom:button-card
+entity: 'sensor.temp005_parter_biuro'
+aspect_ratio: 1/1
+name: Biuro
+state:
+- operator: default
+  icon: mdi:pot-mix
+tap_action:
+  action: more-info
+styles:
+  grid:
+    - grid-template-areas: '"n n" "temperature temperature" "humidity humidity"'
+    - grid-template-columns: 1fr 1fr
+    - grid-template-rows: 1fr min-content min-content min-content min-content
+    - padding-left: 5px
+  name:
+    - align-self: middle
+    - justify-self: start
+    - padding-bottom: 4px
+    - padding-left: 5px
+  img_cell:
+    - justify-content: start
+    - align-items: start
+    - margin: none
+  icon:
+    - width: 70%
+    - margin-top: -10%
+  custom_fields:
+    temperature:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+    humidity:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+custom_fields:
+  temperature: >
+    [[[
+      return `<ha-icon
+        icon="mdi:thermometer"
+        style="width: 12px; height: 12px;">
+        </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp005_parter_biuro_temperature'].state}°C</span></span>`
+    ]]]
+  humidity: >
+    [[[
+      return `<ha-icon
+        icon="mdi:water-percent"
+        style="width: 12px; height: 12px;">
+        </ha-icon><span><span style="color: var(--text-color-sensor);">${states['sensor.temp005_parter_biuro_humidity'].state}%</span></span>`
+    ]]]
