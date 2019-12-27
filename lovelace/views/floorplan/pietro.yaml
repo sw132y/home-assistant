@@ -1,4 +1,5 @@
 type: picture-elements
+title: Piętro
 image: /local/floorplan/pietro.svg
 style: |
   hui-state-label-element {

@@ -25,6 +25,7 @@ lovelace:
 
 binary_sensor: !include customize_binary_sensors.yaml
 sensor: !include customize_sensors.yaml
+switch: !include customize_switches.yaml
 
 shell_command:
     backup: sh /config/gitupdate.sh

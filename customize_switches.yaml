@@ -1,0 +1,67 @@
+- platform: mqtt
+  state_topic: "tele/rf001_parter_kuchnia_bridge/STATE"
+  command_topic: "tele/rf001_parter_kuchnia_bridge/RESULT"
+  name: 'Gniazdko RF #1'
+  value_template: >-
+    {% if value_json.RfReceived.Data == '832C0F' %}
+      {{'ON'}}
+    {% elif value_json.RfReceived.Data == '832C07' %}
+      {{'OFF'}}
+    {% else %}
+      {{states('switch.gniazdko_rf_1') | upper}}
+    {% endif %}
+  payload_on: '832C0F'
+  payload_off: '832C07'
+  retain: true
+  optimistic: false
+
+- platform: mqtt
+  state_topic: "rf001_parter_kuchnia_bridge/tele/STATE"
+  command_topic: "rf001_parter_kuchnia_bridge/tele/STATE"
+  name: 'Gniazdko RF #2'
+  value_template: >-
+    {% if value_json.RfReceived.Data == '832C0B' %}
+      {{'ON'}}
+    {% elif value_json.RfReceived.Data == '832C03' %}
+      {{'OFF'}}
+    {% else %}
+      {{states('switch.gniazdko_rf_2') | upper}}
+    {% endif %}
+  payload_on: '832C0B'
+  payload_off: '832C03'
+  retain: true
+  optimistic: false
+
+- platform: mqtt
+  state_topic: "rf001_parter_kuchnia_bridge/tele/STATE"
+  command_topic: "rf001_parter_kuchnia_bridge/tele/STATE"
+  name: 'Gniazdko RF #3'
+  value_template: >-
+    {% if value_json.RfReceived.Data == '832C0D' %}
+      {{'ON'}}
+    {% elif value_json.RfReceived.Data == '419602' %}
+      {{'OFF'}}
+    {% else %}
+      {{states('switch.gniazdko_rf_3') | upper}}
+    {% endif %}
+  payload_on: '832C0D'
+  payload_off: '419602'
+  retain: true
+  optimistic: false
+
+- platform: mqtt
+  state_topic: "rf001_parter_kuchnia_bridge/tele/STATE"
+  command_topic: "rf001_parter_kuchnia_bridge/tele/STATE"
+  name: 'Gniazdko RF #4'
+  value_template: >-
+    {% if value_json.RfReceived.Data == '832C0E' %}
+      {{'ON'}}
+    {% elif value_json.RfReceived.Data == '832C06' %}
+      {{'OFF'}}
+    {% else %}
+      {{states('switch.gniazdko_rf_4') | upper}}
+    {% endif %}
+  payload_on: '832C0E'
+  payload_off: '832C06'
+  retain: true
+  optimistic: false
