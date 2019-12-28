@@ -1,9 +1,9 @@
 type: "custom:button-card"
-name: RF 1
-aspect_ratio: 1/1
+name: Kryształ
+# aspect_ratio: 1/1
 state:
 - operator: default
-  icon: mdi:flash
+  icon: mdi:bitbucket
 tap_action:
   action: toggle
 hold_action:

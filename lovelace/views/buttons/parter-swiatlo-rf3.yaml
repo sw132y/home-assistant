@@ -1,9 +1,9 @@
 type: "custom:button-card"
-name: RF 3
+name: Jeleń
 aspect_ratio: 1/1
 state:
 - operator: default
-  icon: mdi:flash
+  icon: mdi:donkey
 tap_action:
   action: toggle
 hold_action:

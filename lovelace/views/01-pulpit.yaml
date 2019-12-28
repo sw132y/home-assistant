@@ -12,20 +12,17 @@ cards:
     title: Parter
     cards:
       - !include /config/lovelace/views/buttons/parter-wszystkie-swiatla.yaml
-  
   - type: horizontal-stack
     cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-witryna.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-naroznik.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
-      - !include /config/lovelace/views/buttons/parter-swiatlo-choinka.yaml
-      - !include /config/lovelace/views/buttons/parter-swiatlo-jelen.yaml
+      - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
   - type: horizontal-stack
+    title: Święta
     cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf1.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf2.yaml
-      - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
-      - !include /config/lovelace/views/buttons/parter-swiatlo-rf4.yaml
   
   - type: conditional
     conditions:
