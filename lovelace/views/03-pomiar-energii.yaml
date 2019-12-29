@@ -8,4 +8,4 @@ cards:
   - type: horizontal-stack
     cards:
       - !include /config/lovelace/views/buttons/pomiar-energii-ekspres-do-kawy.yaml
-      #- !include /config/lovelace/views/buttons/pomiar-energii-lodowka-garaz.yaml
+      - !include /config/lovelace/views/buttons/pomiar-energii-pralka.yaml
