@@ -24,3 +24,22 @@ AA B0 29 03 08 0302 00DC 1F54 01101010101001011010011001011010101010101001011010
 Sending MQTT payload to the Bridge
 Topic: `rf001_parter_kuchnia_bridge/cmnd/`
 Payload: converted payload
+
+**Sonoff Devices OTA with Tasmota**
+1. Use latest release https://github.com/itead/Sonoff_Devices_DIY_Tools
+2. Run hotspot: sonoffDiy / 20170618sn
+3. Connect device to the power with OTA mode (for Sonoff Mini there is the OTA jumper)
+4. Run Sonoff Devices DIY Tools ./tool/tool_01DIY85(3.3.0).exe
+5. Download tasmota \*.bin file on disk
+6. Follow instruction https://github.com/arendst/Tasmota/wiki/Sonoff-DIY
+
+Tested well with: Sonoff Mini
+
+**NodeMCU flashing with Tasmota**
+1. Use latest release https://github.com/tasmota/tasmota-pyflasher
+2. Connect device via USB
+3. Download tasmota \*.bin on disk
+4. Select port and image
+5. Click flash
+
+Tested well with: Wemos D1 Mini
