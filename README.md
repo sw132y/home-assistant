@@ -1,15 +1,14 @@
-Sonoff OTA
-https://github.com/arendst/Tasmota/wiki/Sonoff-DIY
-
+# Manage new devices for Home Assistant
 **RF Sonoff Bridge**
+
 Add new device to RF Sonoff Bridge
-1. Login to Tasmota WebUI of the Bridge
+1. Login to Tasmota WebUI of the Sonoff Bridge
 2. Open Console
 3. Run command RfRaw 177
 4. Send command from device remote control 
-5. Copy object with RfRaw data to clipboard
+5. Copy object with RfRaw data to clipboard (see example below)
 6. Open http://bbconv.hrbl.pl/
-7. Convert payload
+7. Convert copied payload
 
 *Example:*
 raw data
@@ -25,6 +24,7 @@ Sending MQTT payload to the Bridge
 Topic: `rf001_parter_kuchnia_bridge/cmnd/`
 Payload: converted payload
 
+# Flashing devices with Tasmota
 **Sonoff Devices OTA with Tasmota**
 1. Use latest release https://github.com/itead/Sonoff_Devices_DIY_Tools
 2. Run hotspot: sonoffDiy / 20170618sn
