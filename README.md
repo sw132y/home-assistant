@@ -35,6 +35,10 @@ Payload: converted payload
 
 Tested well with: Sonoff Mini
 
+**Sonoff Devices via GPIO**
+1. Use latest release https://github.com/letscontrolit/ESPEasy/releases
+2. Prepare hardware and flashing - follow instruction on https://github.com/arendst/Tasmota/wiki/Prerequisites
+
 **NodeMCU flashing with Tasmota**
 1. Use latest release https://github.com/tasmota/tasmota-pyflasher
 2. Connect device via USB
