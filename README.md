@@ -47,3 +47,10 @@ Tested well with: Sonoff Mini
 5. Click flash
 
 Tested well with: Wemos D1 Mini
+
+**Tuya devices flashing with Tasmota OTA**
+1. Follow https://github.com/arendst/Tasmota/wiki/Tuya-OTA ==> https://github.com/ct-Open-Source/tuya-convert
+
+Note: For me works only with Raspberry PI 3 (built in WiFi adapter). Make sure all prerequisets are installed correctly without errors. Important step is to connect smartphone to the hotspot.
+
+Tested well with: HYKKER 7W White Warm Wifi Bulb, HYKKER Socket 16A, WI-FI DGM PP-W162
