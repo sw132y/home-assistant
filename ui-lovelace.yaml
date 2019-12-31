@@ -23,28 +23,18 @@ views:
     cards:
       - !include /config/lovelace/views/03-pomiar-energii.yaml
   - badges: []
+    path: ogrzewanie
+    title: Ogrzewanie
+    cards:
+      - !include /config/lovelace/views/05-ogrzewanie.yaml
+  - badges: []
     path: rozrywka
     title: Rozrywka
     cards:
       - !include /config/lovelace/views/04-rozrywka.yaml
-#   - badges: []
-    # path: floorplan_parter
-    # title: Parter
-    # cards:
-    #   - !include /config/lovelace/views/floorplan/parter.yaml
   - badges: []
     path: floorplan
     title: Floorplan
     cards:
       - !include /config/lovelace/views/floorplan/parter.yaml
       - !include /config/lovelace/views/floorplan/pietro.yaml
-      # - type: entities
-      #   show_header_toggle: false    
-      #   title: Admin
-      #   entities:
-      #     - type: weblink
-      #       url: http://192.168.1.1
-      #       name: TP-Link router
-      #     - type: weblink
-      #       url: http://192.168.1.104:9541/
-      #       name: Tasmota admin
