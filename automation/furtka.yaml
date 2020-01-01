@@ -1,0 +1,17 @@
+- alias: 'Action: Open gateway with NFC'
+  trigger:
+    platform: mqtt
+    topic: nfc201_ogrod_furtka/tele/SENSOR
+  action:
+    - service: notify.sw132y
+      data_template:
+        message: Rozpoznano NFC {{trigger.payload_json.PN532.UID}}
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: '{{ trigger.payload_json.PN532.UID == "B9D02FA3" }}'
+    - service: notify.sw132y
+      data_template:
+        message: Otwieram furtkę
+    - service: switch.turn_on
+      entity_id: switch.relay001_parter_wejscie_furtka

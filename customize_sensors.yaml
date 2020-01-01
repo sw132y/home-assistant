@@ -23,7 +23,7 @@
    
 - platform: mqtt
   state_topic: "nfc201_ogrod_furtka/tele/SENSOR"
-  #value_template: "{{ value_json.PN532.UID }}"
+  value_template: "{{ value_json.PN532.UID.value }}"
   name: "NFC"
 
 

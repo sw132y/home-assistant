@@ -1,7 +1,8 @@
 type: vertical-stack
+title: Ogrzewanie
 cards:
   - type: horizontal-stack
-    title: Ogrzewanie
+    title: Parter
     cards:
       - type: thermostat
         entity: climate.therm001_parter_salon_climate
@@ -11,9 +12,10 @@ cards:
     cards:
       - type: thermostat
         entity: climate.therm003_parter_biuro_climate
-      - type: thermostat
-        entity: climate.therm101_pietro_ignacy_climate
   - type: horizontal-stack
+    title: Piętro
     cards:
       - type: thermostat
         entity: climate.therm102_pietro_chillroom_climate
+      - type: thermostat
+        entity: climate.therm101_pietro_ignacy_climate
