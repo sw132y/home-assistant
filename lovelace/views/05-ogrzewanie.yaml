@@ -19,3 +19,4 @@ cards:
         entity: climate.therm102_pietro_chillroom_climate
       - type: thermostat
         entity: climate.therm101_pietro_ignacy_climate
+

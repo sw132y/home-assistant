@@ -1,0 +1,23 @@
+type: "custom:button-card"
+name: Parter
+state:
+- operator: default
+  icon: mdi:lightbulb-group-outline
+tap_action:
+  action: call-service
+  service: automation.trigger
+  service_data:
+    entity_id: automation.action_turn_off_all_lights_on_parter
+hold_action:
+  action: call-service
+  service: automation.trigger
+  service_data:
+    entity_id: automation.action_turn_off_all_lights_on_parter
+entity: group.lights_parter
+layout: icon_label
+show_label: true
+show_name: false
+label: >
+  [[[
+    return 'Zgaś';
+  ]]]

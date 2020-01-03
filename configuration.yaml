@@ -1,6 +1,10 @@
 group: !include groups.yaml
+
 automation: !include_dir_merge_list /config/automation/
+
 script: !include scripts.yaml
+
+scene: !include_dir_merge_list /config/scenes/
 
 homeassistant:
   customize: !include customize.yaml
@@ -9,8 +13,29 @@ homeassistant:
       custom_ui_state_card: state-card-custom-ui
   
 recorder:
-  db_url: !secret mariadb_url
-  purge_keep_days: 5
+  #db_url: !secret mariadb_url
+  purge_keep_days: 2
+  purge_interval: 1
+  #include:
+  #  entities:
+  #    - sensor.temp005_parter_biuro
+  #    - sensor.temp008_parter_salon
+  
+history:
+#   include:
+    # entities:
+    #   - sensor.temp005_parter_biuro
+    #   - sensor.temp008_parter_salon
+
+logbook:
+
+history_graph:
+  gr1:
+    name: Temperature
+    entities:
+      - sensor.temp005_parter_biuro
+      - sensor.temp008_parter_salon
+    hours_to_show: 24
 
 frontend:
   themes: !include themes.yaml

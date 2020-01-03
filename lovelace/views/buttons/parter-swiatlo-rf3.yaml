@@ -1,6 +1,6 @@
 type: "custom:button-card"
 name: Jeleń
-aspect_ratio: 1/1
+#aspect_ratio: 1/1
 state:
 - operator: default
   icon: mdi:donkey

@@ -1,6 +1,6 @@
 type: "custom:button-card"
 name: Witryna
-aspect_ratio: 1/1
+#aspect_ratio: 1/1
 state:
 - operator: default
   icon: mdi:lightbulb

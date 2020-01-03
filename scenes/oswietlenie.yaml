@@ -1,0 +1,17 @@
+- name: Poranne oświetlenie przed wyjsciem do pracy
+  entities:
+    switch.relay002_parter_wejscie_oswietle: on
+    switch.relay006_parter_salon_witryna: on
+    switch.relay009_parter_kuchnia_potrojna: on
+
+- name: Zgaś oświetlenie po wyjsciu do pracy
+  entities:
+    switch.relay002_parter_wejscie_oswietle: off
+    switch.relay006_parter_salon_witryna: off
+    switch.relay009_parter_kuchnia_potrojna: off
+
+- name: Zapal wszystkie światła w salonie
+  entities:
+    switch.relay006_parter_salon_witryna: on
+    switch.relay007_parter_salon_naroznik: on
+    switch.relay009_parter_kuchnia_potrojna: on

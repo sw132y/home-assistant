@@ -11,16 +11,16 @@ cards:
   - type: horizontal-stack
     title: Parter
     cards:
-      - !include /config/lovelace/views/buttons/parter-wszystkie-swiatla.yaml
+      - !include /config/lovelace/views/buttons/parter-wszystkie-swiatla-on.yaml
+      - !include /config/lovelace/views/buttons/parter-wszystkie-swiatla-off.yaml
   - type: horizontal-stack
     cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-witryna.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-naroznik.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
-      - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
   - type: horizontal-stack
-    title: Święta
     cards:
+      - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf1.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf2.yaml
   
@@ -30,6 +30,14 @@ cards:
         state: "on"
     card:
         !include /config/lovelace/views/01a-pietro-okna.yaml
+
+  - type: history-graph
+    name: Temperature
+    entities:
+      - entity: sensor.temp005_parter_biuro
+        name: Biuro
+      - entity: sensor.temp008_parter_salon
+        name: Salon
 
   - type: horizontal-stack
     title: Klimat

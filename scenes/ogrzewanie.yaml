@@ -1,0 +1,89 @@
+- name: Ogrzewanie poranek
+  entities:
+    climate.therm001_parter_salon_climate:
+      state: on
+      temperature: 20.5
+    climate.therm002_parter_kuchnia_climate:
+      state: on
+      temperature: 20.5
+    climate.therm003_parter_biuro_climate:
+      state: on
+      temperature: 20.5
+    climate.therm101_pietro_ignacy_climate:
+      state: on
+      temperature: 21
+    climate.therm102_pietro_chillroom_climate:
+      state: on
+      temperature: 20.5
+
+- name: Ogrzewanie dzień
+  entities:
+    climate.therm001_parter_salon_climate:
+      state: on
+      temperature: 20.5
+    climate.therm002_parter_kuchnia_climate:
+      state: on    
+      temperature: 20.5
+    climate.therm003_parter_biuro_climate:
+      state: on    
+      temperature: 20.5
+    climate.therm101_pietro_ignacy_climate:
+      state: on    
+      temperature: 20
+    climate.therm102_pietro_chillroom_climate:
+      state: on    
+      temperature: 20   
+
+- name: Ogrzewanie wieczór
+  entities:
+    climate.therm001_parter_salon_climate:
+      state: on    
+      temperature: 20.5
+    climate.therm002_parter_kuchnia_climate:
+      state: on    
+      temperature: 20.5
+    climate.therm003_parter_biuro_climate:
+      state: on    
+      temperature: 20
+    climate.therm101_pietro_ignacy_climate:
+      state: on    
+      temperature: 21
+    climate.therm102_pietro_chillroom_climate:
+      state: on    
+      temperature: 20
+    
+- name: Ogrzewanie noc
+  entities:
+    climate.therm001_parter_salon_climate:
+      state: on    
+      temperature: 19
+    climate.therm002_parter_kuchnia_climate:
+      state: on    
+      temperature: 19
+    climate.therm003_parter_biuro_climate:
+      state: on    
+      temperature: 19
+    climate.therm101_pietro_ignacy_climate:
+      state: on    
+      temperature: 20
+    climate.therm102_pietro_chillroom_climate:
+      state: on    
+      temperature: 20
+
+- name: Ogrzewanie wakacje
+  entities:
+    climate.therm001_parter_salon_climate:
+      state: on    
+      temperature: 18.5
+    climate.therm002_parter_kuchnia_climate:
+      state: on    
+      temperature: 18.5
+    climate.therm003_parter_biuro_climate:
+      state: on    
+      temperature: 18.5
+    climate.therm101_pietro_ignacy_climate:
+      state: on    
+      temperature: 18.5
+    climate.therm102_pietro_chillroom_climate:
+      state: on    
+      temperature: 18.5

@@ -1,0 +1,44 @@
+- alias: 'Action: Change heating mode to "Poranek"'
+  trigger:
+    - platform: time
+      at: "05:00:00"
+  action:
+  - service: scene.turn_on
+    entity_id: scene.ogrzewanie_poranek
+  - service: notify.sw132y
+    data:
+      message: Tryb grzania "poranek".
+
+- alias: 'Action: Change heating mode to "Dzień"'
+  trigger:
+    - platform: time
+      at: "09:00:00"
+  action:
+  - service: scene.turn_on
+    entity_id: scene.ogrzewanie_dzien
+  - service: notify.sw132y
+    data:
+      message: Tryb grzania "dzień".
+
+- alias: 'Action: Change heating mode to "Wieczór"'
+  trigger:
+    - platform: time
+      at: "17:00:00"
+  action:
+  - service: scene.turn_on
+    entity_id: scene.ogrzewanie_wieczor
+  - service: notify.sw132y
+    data:
+      message: Tryb grzania "wieczór".
+
+
+- alias: 'Action: Change heating mode to "Noc"'
+  trigger:
+    - platform: time
+      at: "22:00:00"
+  action:
+  - service: scene.turn_on
+    entity_id: scene.ogrzewanie_noc
+  - service: notify.sw132y
+    data:
+      message: Tryb grzania "noc".
