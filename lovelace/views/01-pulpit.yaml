@@ -32,12 +32,11 @@ cards:
         !include /config/lovelace/views/01a-pietro-okna.yaml
 
   - type: history-graph
-    name: Temperature
     entities:
-      - entity: sensor.temp005_parter_biuro
-        name: Biuro
-      - entity: sensor.temp008_parter_salon
-        name: Salon
+      - sensor.temp005_parter_biuro_temperature
+      - sensor.temp008_parter_salon_temperature
+      - sensor.temp106_pietro_ignacy_temperature
+      - sensor.temp101_pietro_sypialnia_temperature
 
   - type: horizontal-stack
     title: Klimat

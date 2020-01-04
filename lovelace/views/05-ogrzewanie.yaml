@@ -20,3 +20,22 @@ cards:
       - type: thermostat
         entity: climate.therm101_pietro_ignacy_climate
 
+  - type: history-graph
+    entities:
+      - climate.therm101_pietro_ignacy_climate
+
+  - type: history-graph
+    entities:
+      - climate.therm102_pietro_chillroom_climate
+
+  - type: history-graph
+    entities:
+      - climate.therm003_parter_biuro_climate
+
+  - type: history-graph
+    entities:
+      - climate.therm001_parter_salon_climate
+
+  - type: history-graph
+    entities:
+      - climate.therm002_parter_kuchnia_climate
