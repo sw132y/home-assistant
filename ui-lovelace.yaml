@@ -1,4 +1,3 @@
-title: Dom
 resources:
   - url: /local/floorplan/plugins/card-mod.js
     type: js

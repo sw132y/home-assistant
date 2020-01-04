@@ -9,3 +9,20 @@ cards:
     cards:
       - !include /config/lovelace/views/buttons/pomiar-energii-ekspres-do-kawy.yaml
       - !include /config/lovelace/views/buttons/pomiar-energii-pralka.yaml
+  
+  - type: vertical-stack
+    title: Podsumowanie
+    cards:
+      - type: history-graph
+        title: Lodówka w garażu
+        hours_to_show: 48
+        entities:
+          - sensor.relay008_energy_energy_today
+          - sensor.relay008_energy_energy_power
+
+      - type: history-graph
+        title: Komputer
+        hours_to_show: 48
+        entities:
+          - sensor.relay004_gniazdko_komputer_energy_today
+          - sensor.relay004_gniazdko_komputer_energy_power

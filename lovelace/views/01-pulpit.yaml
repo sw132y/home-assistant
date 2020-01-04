@@ -32,6 +32,7 @@ cards:
         !include /config/lovelace/views/01a-pietro-okna.yaml
 
   - type: history-graph
+    hours_to_show: 48
     entities:
       - sensor.temp005_parter_biuro_temperature
       - sensor.temp008_parter_salon_temperature

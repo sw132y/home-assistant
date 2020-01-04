@@ -13,7 +13,7 @@ homeassistant:
       custom_ui_state_card: state-card-custom-ui
   
 recorder:
-  #db_url: !secret mariadb_url
+  db_url: !secret mariadb_url
   purge_keep_days: 2
   purge_interval: 1
  

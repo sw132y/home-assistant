@@ -1,5 +1,4 @@
 type: vertical-stack
-title: Ogrzewanie
 cards:
   - type: horizontal-stack
     title: Parter
@@ -19,23 +18,31 @@ cards:
         entity: climate.therm102_pietro_chillroom_climate
       - type: thermostat
         entity: climate.therm101_pietro_ignacy_climate
+  
+  - type: vertical-stack
+    title: Podsumowanie
+    cards:
+      - type: history-graph
+        title: Ignacy
+        entities:
+          - climate.therm101_pietro_ignacy_climate
 
-  - type: history-graph
-    entities:
-      - climate.therm101_pietro_ignacy_climate
+      - type: history-graph
+        title: Chillroom
+        entities:
+          - climate.therm102_pietro_chillroom_climate
 
-  - type: history-graph
-    entities:
-      - climate.therm102_pietro_chillroom_climate
+      - type: history-graph
+        title: Biuro
+        entities:
+          - climate.therm003_parter_biuro_climate
 
-  - type: history-graph
-    entities:
-      - climate.therm003_parter_biuro_climate
+      - type: history-graph
+        title: Salon
+        entities:
+          - climate.therm001_parter_salon_climate
 
-  - type: history-graph
-    entities:
-      - climate.therm001_parter_salon_climate
-
-  - type: history-graph
-    entities:
-      - climate.therm002_parter_kuchnia_climate
+      - type: history-graph
+        title: Kuchnia
+        entities:
+          - climate.therm002_parter_kuchnia_climate
