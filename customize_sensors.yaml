@@ -20,18 +20,3 @@
       unit_of_measurement: 'zł'
       value_template: "{{ (states('sensor.relay004_gniazdko_komputer_energy_today') | float * 0.63) | round(2) }}"
       icon_template: mdi:currency-usd
-   
-- platform: mqtt
-  state_topic: "nfc201_ogrod_furtka/tele/SENSOR"
-  value_template: "{{ value_json.PN532.UID.value }}"
-  name: "NFC"
-
-
-# Biała karta NFC
-# 14:42:49 MQT: tele/nfc201_ogrod_furtka/SENSOR = {"Time":"2019-12-30T14:42:49","PN532":{"UID":"DBE0111C"}}
-
-# Brelok
-# 14:43:47 MQT: tele/nfc201_ogrod_furtka/SENSOR = {"Time":"2019-12-30T14:43:47","PN532":{"UID":"BA5BCB16"}}
-# 15:32:58 MQT: nfc201_ogrod_furtka/tele/SENSOR = {"Time":"2019-12-30T15:32:58","PN532":{"UID":"F9DC2FA3"}}
-# 15:34:18 MQT: nfc201_ogrod_furtka/tele/SENSOR = {"Time":"2019-12-30T15:34:18","PN532":{"UID":"096223A3"}}
-# 15:35:08 MQT: nfc201_ogrod_furtka/tele/SENSOR = {"Time":"2019-12-30T15:35:08","PN532":{"UID":"B9D02FA3"}}

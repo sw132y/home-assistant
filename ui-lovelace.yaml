@@ -1,9 +1,9 @@
 resources:
-  - url: /local/floorplan/plugins/card-mod.js
+  - url: /local/floorplan/plugins/card-mod.js?v=1
     type: js
-  - url: /community_plugin/button-card/button-card.js
+  - url: /community_plugin/button-card/button-card.js?v=1
     type: module
-  - url: /community_plugin/spotify-card/spotify-card.js
+  - url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js?v=1
     type: module
 views:
   - badges: []

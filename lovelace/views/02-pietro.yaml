@@ -7,7 +7,8 @@ cards:
       - !include /config/lovelace/views/buttons/pietro-swiatlo-chillroom-wieczor.yaml
       - !include /config/lovelace/views/buttons/pietro-swiatlo-chillroom-turbo.yaml
   
-  - type: light
+  - type: custom:slider-entity-row
+    name: Chillroom
     entity: light.chillroom_lights
 
   - type: horizontal-stack
@@ -16,6 +17,7 @@ cards:
       - !include /config/lovelace/views/buttons/pietro-swiatlo-sypialnia-wieczor.yaml
       - !include /config/lovelace/views/buttons/pietro-swiatlo-sypialnia-turbo.yaml
   
-  - type: light
+  - type: custom:slider-entity-row
+    name: Sypialnia
     entity: light.light203_pietro_sypialnia
       
