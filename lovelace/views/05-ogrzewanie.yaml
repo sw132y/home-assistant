@@ -1,23 +1,18 @@
 type: vertical-stack
 cards:
-  - type: horizontal-stack
+  - type: entities
     title: Parter
-    cards:
-      - type: thermostat
-        entity: climate.therm001_parter_salon_climate
-      - type: thermostat
-        entity: climate.therm002_parter_kuchnia_climate
-  - type: horizontal-stack
-    cards:
-      - type: thermostat
-        entity: climate.therm003_parter_biuro_climate
-  - type: horizontal-stack
+    show_header_toggle: false
+    entities:
+      - climate.therm001_parter_salon_climate
+      - climate.therm002_parter_kuchnia_climate
+      - climate.therm003_parter_biuro_climate
+  - type: entities
     title: Piętro
-    cards:
-      - type: thermostat
-        entity: climate.therm102_pietro_chillroom_climate
-      - type: thermostat
-        entity: climate.therm101_pietro_ignacy_climate
+    show_header_toggle: false
+    entities:
+      - climate.therm101_pietro_ignacy_climate
+      - climate.therm102_pietro_chillroom_climate
   
   - type: vertical-stack
     title: Podsumowanie

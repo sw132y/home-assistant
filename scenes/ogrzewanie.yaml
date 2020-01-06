@@ -47,7 +47,7 @@
       temperature: 20
     climate.therm101_pietro_ignacy_climate:
       state: on    
-      temperature: 21
+      temperature: 20.5
     climate.therm102_pietro_chillroom_climate:
       state: on    
       temperature: 20

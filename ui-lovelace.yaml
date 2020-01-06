@@ -11,21 +11,21 @@ views:
     title: Pulpit
     cards:
       - !include /config/lovelace/views/01-pulpit.yaml
-  - badges: []
-    path: pietro
-    title: Piętro
-    cards:
-      - !include /config/lovelace/views/02-pietro.yaml
-  - badges: []
-    path: pomiar_energii
-    title: Pomiar energii
-    cards:
-      - !include /config/lovelace/views/03-pomiar-energii.yaml
+  # - badges: []
+  #   path: pietro
+  #   title: Piętro
+  #   cards:
+  #     - !include /config/lovelace/views/02-pietro.yaml
   - badges: []
     path: ogrzewanie
     title: Ogrzewanie
     cards:
       - !include /config/lovelace/views/05-ogrzewanie.yaml
+  - badges: []
+    path: pomiar_energii
+    title: Pomiar energii
+    cards:
+      - !include /config/lovelace/views/03-pomiar-energii.yaml
   - badges: []
     path: rozrywka
     title: Rozrywka
