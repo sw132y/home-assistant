@@ -14,22 +14,15 @@ cards:
     title: Podsumowanie
     cards:
       - type: history-graph
-        title: Lodówka w garażu
         hours_to_show: 48
         entities:
-          - sensor.relay008_energy_energy_today
-          - sensor.relay008_energy_energy_power
-
-      - type: history-graph
-        title: Komputer
-        hours_to_show: 48
-        entities:
-          - sensor.relay004_gniazdko_komputer_energy_today
-          - sensor.relay004_gniazdko_komputer_energy_power
-
-      - type: history-graph
-        title: TV
-        hours_to_show: 48
-        entities:
+          #- sensor.relay003_gniazdko_energy_today
           - sensor.relay003_gniazdko_energy_today
-          - sensor.relay003_gniazdko_energy_power
+          #- sensor.relay004_gniazdko_komputer_energy_today
+          - sensor.relay004_gniazdko_komputer_energy_today
+          #- entity: sensor.relay008_energy_energy_today
+          #  name: Lodówka w garażu
+          - entity: sensor.relay008_energy_energy_today
+            name: Lodówka w garażu
+          - entity: sensor.relay102_grzejnik_energy_today
+            name: Pralka

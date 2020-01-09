@@ -27,9 +27,9 @@
     climate.therm103_pietro_goscinny_climate:
       state: on
       temperature: 19
-    #climate.therm004_parter_wejscie_climate:
-    #  state: on
-    #  temperature: 20
+    climate.therm004_parter_wejscie_climate:
+     state: on
+     temperature: 20
 
 
 - name: Ogrzewanie dzień

@@ -68,20 +68,34 @@ cards:
       - type: history-graph
         hours_to_show: 48
         entities:
-          - sensor.temp001_parter_wejscie_humidity
-          - sensor.temp002_parter_goscinny_humidity
-          - sensor.temp003_parter_garaz_humidity
-          - sensor.temp004_parter_kotlownia_humidity
-          - sensor.temp005_parter_biuro_humidity
-          - sensor.temp006_parter_kuchnia_humidity
-          - sensor.temp007_parter_wc_humidity
-          - sensor.temp008_parter_salon_humidity
-          - sensor.temp009_parter_schody_humidity
-          - sensor.temp101_pietro_sypialnia_humidity
-          - sensor.temp102_pietro_lazienka_humidity
-          - sensor.temp104_pietro_chillroom_humidity
-          - sensor.temp105_pietro_goscinny_humidity
-          - sensor.temp106_pietro_ignacy_humidity
+          - entity: sensor.temp001_parter_wejscie_humidity
+            name: Wejście
+          - entity: sensor.temp002_parter_goscinny_humidity
+            name: Gościnny (Parter)
+          - entity: sensor.temp003_parter_garaz_humidity
+            name: Garaż
+          - entity: sensor.temp004_parter_kotlownia_humidity
+            name: Kotłownia
+          - entity: sensor.temp005_parter_biuro_humidity
+            name: Biuro
+          - entity: sensor.temp006_parter_kuchnia_humidity
+            name: Kuchnia
+          - entity: sensor.temp008_parter_salon_humidity
+            name: Salon
+          - entity: sensor.temp007_parter_wc_humidity
+            name: WC
+          - entity: sensor.temp009_parter_schody_humidity
+            name: Schody
+          - entity: sensor.temp106_pietro_ignacy_humidity
+            name: Ignacy
+          - entity: sensor.temp101_pietro_sypialnia_humidity 
+            name: Sypialnia
+          - entity: sensor.temp102_pietro_lazienka_humidity
+            name: Łazienka
+          - entity: sensor.temp104_pietro_chillroom_humidity
+            name: Chillroom
+          - entity: sensor.temp105_pietro_goscinny_humidity
+            name: Gościnny (Piętro)
 
   - type: vertical-stack
     title: Podsumowanie
