@@ -11,11 +11,6 @@ views:
     title: Pulpit
     cards:
       - !include /config/lovelace/views/01-pulpit.yaml
-  # - badges: []
-  #   path: pietro
-  #   title: Piętro
-  #   cards:
-  #     - !include /config/lovelace/views/02-pietro.yaml
   - badges: []
     path: ogrzewanie
     title: Ogrzewanie

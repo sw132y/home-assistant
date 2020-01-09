@@ -15,6 +15,22 @@
     climate.therm102_pietro_chillroom_climate:
       state: on
       temperature: 20.5
+    climate.therm005_parter_schody_climate:
+      state: on
+      temperature: 19
+    climate.therm006_parter_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm104_pietro_sypialnia_climate:
+      state: on
+      temperature: 21
+    climate.therm103_pietro_goscinny_climate:
+      state: on
+      temperature: 19
+    #climate.therm004_parter_wejscie_climate:
+    #  state: on
+    #  temperature: 20
+
 
 - name: Ogrzewanie dzień
   entities:
@@ -32,7 +48,22 @@
       temperature: 20
     climate.therm102_pietro_chillroom_climate:
       state: on    
-      temperature: 20   
+      temperature: 20
+    climate.therm005_parter_schody_climate:
+      state: on
+      temperature: 19.5
+    climate.therm006_parter_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm104_pietro_sypialnia_climate:
+      state: on
+      temperature: 19
+    climate.therm103_pietro_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm004_parter_wejscie_climate:
+     state: on
+     temperature: 20.0
 
 - name: Ogrzewanie wieczór
   entities:
@@ -51,6 +82,21 @@
     climate.therm102_pietro_chillroom_climate:
       state: on    
       temperature: 20
+    climate.therm005_parter_schody_climate:
+      state: on
+      temperature: 19
+    climate.therm006_parter_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm104_pietro_sypialnia_climate:
+      state: on
+      temperature: 20
+    climate.therm103_pietro_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm004_parter_wejscie_climate:
+     state: on
+     temperature: 20.0
     
 - name: Ogrzewanie noc
   entities:
@@ -69,6 +115,21 @@
     climate.therm102_pietro_chillroom_climate:
       state: on    
       temperature: 20
+    climate.therm005_parter_schody_climate:
+      state: on
+      temperature: 19
+    climate.therm006_parter_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm104_pietro_sypialnia_climate:
+      state: on
+      temperature: 19
+    climate.therm103_pietro_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm004_parter_wejscie_climate:
+     state: on
+     temperature: 20.0
 
 - name: Ogrzewanie wakacje
   entities:
@@ -87,3 +148,18 @@
     climate.therm102_pietro_chillroom_climate:
       state: on    
       temperature: 19
+    climate.therm005_parter_schody_climate:
+      state: on
+      temperature: 19
+    climate.therm006_parter_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm104_pietro_sypialnia_climate:
+      state: on
+      temperature: 19
+    climate.therm103_pietro_goscinny_climate:
+      state: on
+      temperature: 19
+    climate.therm004_parter_wejscie_climate:
+     state: on
+     temperature: 19

@@ -7,7 +7,7 @@ cards:
       - !include /config/lovelace/views/buttons/pomiar-energii-lodowka-garaz.yaml
   - type: horizontal-stack
     cards:
-      - !include /config/lovelace/views/buttons/pomiar-energii-ekspres-do-kawy.yaml
+      - !include /config/lovelace/views/buttons/pomiar-energii-tv.yaml
       - !include /config/lovelace/views/buttons/pomiar-energii-pralka.yaml
   
   - type: vertical-stack
@@ -26,3 +26,10 @@ cards:
         entities:
           - sensor.relay004_gniazdko_komputer_energy_today
           - sensor.relay004_gniazdko_komputer_energy_power
+
+      - type: history-graph
+        title: TV
+        hours_to_show: 48
+        entities:
+          - sensor.relay003_gniazdko_energy_today
+          - sensor.relay003_gniazdko_energy_power

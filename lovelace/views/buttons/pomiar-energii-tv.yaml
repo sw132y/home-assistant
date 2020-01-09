@@ -1,15 +1,11 @@
 type: custom:button-card
 entity: switch.relay003_gniazdko
 aspect_ratio: 1/1
-name: Ekspres do kawy
+name: Telewizor
 size: 10%
-tap_action:
-  none
-hold_action:
-  none
 state:
 - operator: default
-  icon: mdi:coffee-maker
+  icon: mdi:television-classic
 styles:
   grid:
     - grid-template-areas: '"i state" "n n" "power_now power_now" "power_today power_today" "power_yesterday power_yesterday" "cost_today cost_today"'

@@ -63,21 +63,3 @@ cards:
         state: "on"
     card:
         !include /config/lovelace/views/01a-pietro-okna.yaml
-
-  - type: vertical-stack
-    title: Klimat w domu
-    cards:
-      - type: history-graph
-        hours_to_show: 48
-        entities:
-          - sensor.temp005_parter_biuro_temperature
-          - sensor.temp008_parter_salon_temperature
-          - sensor.temp106_pietro_ignacy_temperature
-          - sensor.temp101_pietro_sypialnia_temperature
-
-      - type: horizontal-stack
-        cards:
-          - !include /config/lovelace/views/buttons/klimat-salon.yaml
-          - !include /config/lovelace/views/buttons/klimat-ignacy.yaml
-          - !include /config/lovelace/views/buttons/klimat-biuro.yaml
-          - !include /config/lovelace/views/buttons/klimat-sypialnia.yaml

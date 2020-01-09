@@ -7,13 +7,82 @@ cards:
       - climate.therm001_parter_salon_climate
       - climate.therm002_parter_kuchnia_climate
       - climate.therm003_parter_biuro_climate
+      - climate.therm004_parter_wejscie_climate
+      - climate.therm005_parter_schody_climate
+      - climate.therm006_parter_goscinny_climate
   - type: entities
     title: Piętro
     show_header_toggle: false
     entities:
       - climate.therm101_pietro_ignacy_climate
+      - climate.therm104_pietro_sypialnia_climate
       - climate.therm102_pietro_chillroom_climate
+      - climate.therm103_pietro_goscinny_climate
   
+  - type: vertical-stack
+    title: Temperatura (Parter)
+    cards:
+      - type: history-graph
+        hours_to_show: 48
+        entities:
+          - entity: sensor.temp001_parter_wejscie_temperature
+            name: Wejście
+          - entity: sensor.temp002_parter_goscinny_temperature
+            name: Gościnny
+          - entity: sensor.temp003_parter_garaz_temperature
+            name: Garaż
+          - entity: sensor.temp004_parter_kotlownia_temperature
+            name: Kotłownia
+          - entity: sensor.temp005_parter_biuro_temperature
+            name: Biuro
+          - entity: sensor.temp006_parter_kuchnia_temperature
+            name: Kuchnia
+          - entity: sensor.temp008_parter_salon_temperature
+            name: Salon
+          - entity: sensor.temp007_parter_wc_temperature
+            name: WC
+          - entity: sensor.temp009_parter_schody_temperature
+            name: Schody
+  
+  - type: vertical-stack
+    title: Temperatura (Piętro)
+    cards:
+      - type: history-graph
+        hours_to_show: 48
+        entities:
+          - entity: sensor.temp106_pietro_ignacy_temperature
+            name: Ignacy
+          - entity: sensor.temp101_pietro_sypialnia_temperature 
+            name: Sypialnia
+          - entity: sensor.temp102_pietro_lazienka_temperature
+            name: Łazienka
+          - entity: sensor.temp104_pietro_chillroom_temperature
+            name: Chillroom
+          - entity: sensor.temp105_pietro_goscinny_temperature
+            name: Gościnny
+          
+
+  - type: vertical-stack
+    title: Wilgotność powietrza
+    cards:
+      - type: history-graph
+        hours_to_show: 48
+        entities:
+          - sensor.temp001_parter_wejscie_humidity
+          - sensor.temp002_parter_goscinny_humidity
+          - sensor.temp003_parter_garaz_humidity
+          - sensor.temp004_parter_kotlownia_humidity
+          - sensor.temp005_parter_biuro_humidity
+          - sensor.temp006_parter_kuchnia_humidity
+          - sensor.temp007_parter_wc_humidity
+          - sensor.temp008_parter_salon_humidity
+          - sensor.temp009_parter_schody_humidity
+          - sensor.temp101_pietro_sypialnia_humidity
+          - sensor.temp102_pietro_lazienka_humidity
+          - sensor.temp104_pietro_chillroom_humidity
+          - sensor.temp105_pietro_goscinny_humidity
+          - sensor.temp106_pietro_ignacy_humidity
+
   - type: vertical-stack
     title: Podsumowanie
     cards:
@@ -21,23 +90,48 @@ cards:
         title: Ignacy
         entities:
           - climate.therm101_pietro_ignacy_climate
-
+      - type: history-graph
+        title: Sypialnia
+        entities:
+          - climate.therm104_pietro_sypialnia_climate
       - type: history-graph
         title: Chillroom
         entities:
           - climate.therm102_pietro_chillroom_climate
-
       - type: history-graph
         title: Biuro
         entities:
           - climate.therm003_parter_biuro_climate
-
       - type: history-graph
         title: Salon
         entities:
           - climate.therm001_parter_salon_climate
-
       - type: history-graph
         title: Kuchnia
         entities:
           - climate.therm002_parter_kuchnia_climate
+      - type: history-graph
+        title: Gościnny (Parter)
+        entities:
+          - climate.therm006_parter_goscinny_climate
+      - type: history-graph
+        title: Gościnny (Piętro)
+        entities:
+          - climate.therm103_pietro_goscinny_climate
+      - type: history-graph
+        title: Schody
+        entities:
+          - climate.therm005_parter_schody_climate
+      - type: history-graph
+        title: Wejście
+        entities:
+          - climate.therm004_parter_wejscie_climate
+
+  - type: entities
+    title: Tryby grzania
+    show_header_toggle: false
+    entities:
+      - scene.ogrzewanie_poranek
+      - scene.ogrzewanie_dzien
+      - scene.ogrzewanie_wieczor
+      - scene.ogrzewanie_noc
