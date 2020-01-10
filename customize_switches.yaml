@@ -2,14 +2,6 @@
   state_topic: "rf001_parter_kuchnia_bridge/cmnd/RfRaw"
   command_topic: "rf001_parter_kuchnia_bridge/cmnd/RfRaw"
   name: 'Gniazdko RF #1'
-  # value_template: >-
-  #   {% if value_json.RfRaw.Data == 'AA B0 29 03 08 02F8 00E6 1F5E 011010101010010110100110010110101010101001010101100110010110101012 55' %}
-  #     {{'ON'}}
-  #   {% elif value_json.RfRaw.Data == 'AA B0 29 03 08 0302 00DC 1F54 011010101010010110100110010110101010101010010101100110011001101012 55' %}
-  #     {{'OFF'}}
-  #   {% else %}
-  #     {{states('switch.gniazdko_rf_1') | upper}}
-  #   {% endif %}
   payload_on: 'AA B0 29 03 08 02F8 00E6 1F5E 011010101010010110100110010110101010101001010101100110010110101012 55'
   payload_off: 'AA B0 29 03 08 0302 00DC 1F54 011010101010010110100110010110101010101010010101100110011001101012 55'
   retain: true
@@ -19,14 +11,6 @@
   state_topic: "rf001_parter_kuchnia_bridge/cmnd/RfRaw"
   command_topic: "rf001_parter_kuchnia_bridge/cmnd/RfRaw"
   name: 'Gniazdko RF #2'
-  # value_template: >-
-  #   {% if value_json.RfRaw.Data == 'AA B0 29 03 08 02F8 00E6 1F5E 011010101010010110100110010110101010101001100101100110010101101012 55' %}
-  #     {{'ON'}}
-  #   {% elif value_json.RfRaw.Data == 'AA B0 29 03 08 02F8 00DC 1F54 011010101010010110100110010110101010101010100101100110011010011012 55' %}
-  #     {{'OFF'}}
-  #   {% else %}
-  #     {{states('switch.gniazdko_rf_2') | upper}}
-  #   {% endif %}
   payload_on: 'AA B0 29 03 08 02F8 00E6 1F5E 011010101010010110100110010110101010101001100101100110010101101012 55'
   payload_off: 'AA B0 29 03 08 02F8 00DC 1F54 011010101010010110100110010110101010101010100101100110011010011012 55'
   retain: true
@@ -36,14 +20,6 @@
   state_topic: "rf001_parter_kuchnia_bridge/cmnd/RfRaw"
   command_topic: "rf001_parter_kuchnia_bridge/cmnd/RfRaw"
   name: 'Gniazdko RF #3'
-    # value_template: >-
-    # {% if value_json.RfRaw.Data == 'AA B0 29 03 08 02F8 00E6 1F5E 011010101010010110100110010110101010101001011001100110010110011012 55' %}
-    #   {{'ON'}}
-    # {% elif value_json.RfRaw.Data == 'AA B0 29 03 08 02F8 00E6 1F5E 011010101010010110100110010110101010101010011001100110011001011012 55' %}
-    #   {{'OFF'}}
-    # {% else %}
-    #   {{states('switch.gniazdko_rf_3') | upper}}
-    # {% endif %}
   payload_on: 'AA B0 29 03 08 02F8 00E6 1F5E 011010101010010110100110010110101010101001011001100110010110011012 55'
   payload_off: 'AA B0 29 03 08 02F8 00E6 1F5E 011010101010010110100110010110101010101010011001100110011001011012 55'
   retain: true
@@ -53,14 +29,6 @@
   state_topic: "rf001_parter_kuchnia_bridge/cmnd/RfRaw"
   command_topic: "rf001_parter_kuchnia_bridge/cmnd/RfRaw"
   name: 'Gniazdko RF #4'
-  # value_template: >-
-  #   {% if value_json.RfRaw.Data == 'AA B0 29 03 08 0316 00C8 1F2C 011010101010010110100110010110101010101001010110100110010110100112 55' %}
-  #     {{'ON'}}
-  #   {% elif value_json.RfRaw.Data == 'AA B0 29 03 08 0302 00DC 1F54 011010101010010110100110010110101010101010010110100110011001100112 55' %}
-  #     {{'OFF'}}
-  #   {% else %}
-  #     {{states('switch.gniazdko_rf_4') | upper}}
-  #   {% endif %}
   payload_on: 'AA B0 29 03 08 0316 00C8 1F2C 011010101010010110100110010110101010101001010110100110010110100112 55'
   payload_off: 'AA B0 29 03 08 0302 00DC 1F54 011010101010010110100110010110101010101010010110100110011001100112 55'
   retain: true

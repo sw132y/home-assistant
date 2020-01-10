@@ -1,6 +1,7 @@
 type: vertical-stack
 cards:
   - !include /config/lovelace/views/buttons/dobranoc.yaml
+
   - type: horizontal-stack
     cards:
       - !include /config/lovelace/views/buttons/wejscie-furtka.yaml
@@ -22,6 +23,14 @@ cards:
       #- !include /config/lovelace/views/buttons/parter-swiatlo-rf1.yaml
       #- !include /config/lovelace/views/buttons/parter-swiatlo-rf2.yaml
   
+  - type: entities
+    entities:
+      - sensor.meteo_pm2_5
+      - sensor.meteo_pm10
+      - sensor.meteo_temperature
+      - sensor.meteo_humidity
+      - sensor.meteo_pressure
+
   - type: vertical-stack
     cards:
       - type: conditional

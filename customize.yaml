@@ -23,3 +23,23 @@ switch.relay007_parter_salon_naroznik:
 
 switch.relay009_parter_kuchnia_potrojna:
   icon: mdi:ceiling-light
+
+sensor.meteo_pm2_5:
+  icon: mdi:jquery
+  unit_of_measurement: "μg/m3"
+
+sensor.meteo_pm10:
+  icon: mdi:jquery
+  unit_of_measurement: "μg/m3"
+
+sensor.meteo_temperature:
+  icon: mdi:thermometer
+  unit_of_measurement: "°C"
+
+sensor.meteo_humidity:
+  icon: mdi:water-percent
+  unit_of_measurement: "%"
+
+sensor.meteo_pressure:
+  icon: mdi:gauge
+  unit_of_measurement: "hPA"

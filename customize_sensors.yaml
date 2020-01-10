@@ -21,4 +21,35 @@
       value_template: "{{ (states('sensor.relay004_gniazdko_komputer_energy_today') | float * 0.63) | round(2) }}"
       icon_template: mdi:currency-usd
 - platform: mqtt
-  state_topic: weather/particulatematter
+  name: Particulate Matter Sensor
+  state_topic: weather/meteopi
+- platform: mqtt
+  name: "Meteo PM2.5"
+  state_topic: "weather/meteopi"
+  value_template: "{{ value_json.pm25 }}"
+  json_attributes_topic: "weather/meteopi"
+  json_attributes_template: "{{ value_json.pm25 | tojson }}"
+- platform: mqtt
+  name: "Meteo PM10"
+  state_topic: "weather/meteopi"
+  value_template: "{{ value_json.pm10 }}"
+  json_attributes_topic: "weather/meteopi"
+  json_attributes_template: "{{ value_json.pm10 | tojson }}"
+- platform: mqtt
+  name: "Meteo Temperature"
+  state_topic: "weather/meteopi"
+  value_template: "{{ value_json.temperature | float | round(1) }}"
+  json_attributes_topic: "weather/meteopi"
+  json_attributes_template: "{{ value_json.temperature | tojson }}"
+- platform: mqtt
+  name: "Meteo Pressure"
+  state_topic: "weather/meteopi"
+  value_template: "{{ value_json.pressure | float | round(1) }}"
+  json_attributes_topic: "weather/meteopi"
+  json_attributes_template: "{{ value_json.pressure | tojson }}"
+- platform: mqtt
+  name: "Meteo Humidity"
+  state_topic: "weather/meteopi"
+  value_template: "{{ value_json.humidity | float | round(0) }}"
+  json_attributes_topic: "weather/meteopi"
+  json_attributes_template: "{{ value_json.humidity | tojson }}"
