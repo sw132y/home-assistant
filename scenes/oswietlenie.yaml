@@ -15,3 +15,13 @@
     switch.relay006_parter_salon_witryna: on
     switch.relay007_parter_salon_naroznik: on
     switch.relay009_parter_kuchnia_potrojna: on
+
+- name: Dzień dobry
+  entities:
+    switch.relay003_gniazdko: on
+
+- name: Dobranoc
+  entities:
+    group.lights_parter: off
+    switch.relay003_gniazdko: off
+    switch.relay002_parter_wejscie_oswietle: off
