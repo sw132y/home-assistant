@@ -10,6 +10,8 @@ tap_action:
 layout: icon_label
 show_label: true
 show_name: false
+confirmation:
+  text: '[[[ return `Na pewno?` ]]]'
 label: >
   [[[
     return 'Dobranoc';

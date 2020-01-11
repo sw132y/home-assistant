@@ -1,6 +1,9 @@
 type: vertical-stack
 cards:
-  - !include /config/lovelace/views/buttons/dobranoc.yaml
+  - type: horizontal-stack
+    cards:
+      - !include /config/lovelace/views/buttons/dzien-dobry.yaml
+      - !include /config/lovelace/views/buttons/dobranoc.yaml
 
   - type: horizontal-stack
     cards:
@@ -20,8 +23,6 @@ cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-naroznik.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
-      #- !include /config/lovelace/views/buttons/parter-swiatlo-rf1.yaml
-      #- !include /config/lovelace/views/buttons/parter-swiatlo-rf2.yaml
   
   - type: entities
     entities:

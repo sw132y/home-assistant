@@ -1,16 +1,12 @@
 type: "custom:button-card"
-name: Parter
-icon: mdi:lightbulb-group-outline
+name: Dzeń dobry
+icon: mdi:weather-sunny
+entity: scene.dzien_dobry
 tap_action:
   action: call-service
-  service: automation.trigger
+  service: scene.turn_on
   service_data:
-    entity_id: automation.action_turn_off_all_lights_on_parter
-hold_action:
-  action: call-service
-  service: automation.trigger
-  service_data:
-    entity_id: automation.action_turn_off_all_lights_on_parter
+    entity_id: scene.dzien_dobry
 layout: icon_label
 show_label: true
 show_name: false
@@ -18,9 +14,11 @@ confirmation:
   text: '[[[ return `Na pewno?` ]]]'
 label: >
   [[[
-    return 'Zgaś';
+    return 'Dzień dobry';
   ]]]
 styles:
+    card:
+      - height: 75px
     img_cell:
       - justify-content: center
       - align-items: center
