@@ -18,6 +18,7 @@ cards:
       - climate.therm104_pietro_sypialnia_climate
       - climate.therm102_pietro_chillroom_climate
       - climate.therm103_pietro_goscinny_climate
+    #   - climate therm105_pietro_lazienka_climate
   
   - type: vertical-stack
     title: Temperatura (Parter)
