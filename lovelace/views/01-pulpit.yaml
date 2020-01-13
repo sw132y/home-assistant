@@ -24,12 +24,12 @@ cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
   
-#   - type: entities
-    # entities:
-    #   - sensor.meteo_pm2_5
-    #   - sensor.meteo_pm10
-    #   - sensor.meteo_temperature
-    #   - sensor.meteo_humidity
+  - type: entities
+    entities:
+      - sensor.meteo_pm2_5
+      - sensor.meteo_pm10
+      - sensor.meteo_temperature
+      - sensor.meteo_humidity
     #   - sensor.meteo_pressure
 
   - type: vertical-stack
