@@ -66,3 +66,17 @@ light:
     entities:
       - light.light201_pietro_chillroom
       - light.light202_pietro_chillroom
+
+input_boolean:
+  wakacje:
+    name: Set vacations mode (impact for heating, lights, automation)
+    initial: off
+    icon: mdi:palm-tree
+  gosc_parter:
+    name: Set heating for guest room
+    initial: off
+    icon: mdi:hotel
+  gosc_pietro:
+    name: Set heating for guest room
+    initial: off
+    icon: mdi:hotel

@@ -24,7 +24,9 @@ cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
   
-  - type: entities
+  - type: history-graph
+    title: Smog
+    hours_to_show: 48
     entities:
       - sensor.meteo_pm2_5
       - sensor.meteo_pm10

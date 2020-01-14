@@ -43,7 +43,7 @@
   json_attributes_template: "{{ value_json.DHT11['Temperature'] | tojson }}"
 - platform: mqtt
   name: "Meteo Humidity"
-  state_topic: "meteo/pm/tele/SENSORr"
+  state_topic: "meteo/pm/tele/SENSOR"
   value_template: "{{ value_json.DHT11['Humidity'] | float | round(0) }}"
   json_attributes_topic: "meteo/pm/tele/SENSOR"
   json_attributes_template: "{{ value_json.DHT11['Humidity'] | tojson }}"

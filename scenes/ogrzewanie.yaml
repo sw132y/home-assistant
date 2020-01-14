@@ -11,7 +11,7 @@
       temperature: 20.5
     climate.therm101_pietro_ignacy_climate:
       state: on
-      temperature: 21
+      temperature: 20.5
     climate.therm102_pietro_chillroom_climate:
       state: on
       temperature: 20.5
@@ -23,7 +23,7 @@
       temperature: 19
     climate.therm104_pietro_sypialnia_climate:
       state: on
-      temperature: 21
+      temperature: 18
     climate.therm103_pietro_goscinny_climate:
       state: on
       temperature: 19
@@ -42,16 +42,16 @@
       temperature: 20.5
     climate.therm003_parter_biuro_climate:
       state: on    
-      temperature: 20.5
+      temperature: 20
     climate.therm101_pietro_ignacy_climate:
       state: on    
       temperature: 20
     climate.therm102_pietro_chillroom_climate:
       state: on    
-      temperature: 20
+      temperature: 19
     climate.therm005_parter_schody_climate:
       state: on
-      temperature: 19.5
+      temperature: 19
     climate.therm006_parter_goscinny_climate:
       state: on
       temperature: 19
@@ -60,10 +60,10 @@
       temperature: 19
     climate.therm103_pietro_goscinny_climate:
       state: on
-      temperature: 19
+      temperature: 18
     climate.therm004_parter_wejscie_climate:
      state: on
-     temperature: 20.0
+     temperature: 20
 
 - name: Ogrzewanie wieczór
   entities:
@@ -90,13 +90,13 @@
       temperature: 19
     climate.therm104_pietro_sypialnia_climate:
       state: on
-      temperature: 20
+      temperature: 18
     climate.therm103_pietro_goscinny_climate:
       state: on
-      temperature: 19
+      temperature: 18
     climate.therm004_parter_wejscie_climate:
      state: on
-     temperature: 20.0
+     temperature: 19
     
 - name: Ogrzewanie noc
   entities:
@@ -126,10 +126,10 @@
       temperature: 19
     climate.therm103_pietro_goscinny_climate:
       state: on
-      temperature: 19
+      temperature: 18
     climate.therm004_parter_wejscie_climate:
      state: on
-     temperature: 20.0
+     temperature: 19
 
 - name: Ogrzewanie wakacje
   entities:
@@ -159,7 +159,7 @@
       temperature: 19
     climate.therm103_pietro_goscinny_climate:
       state: on
-      temperature: 19
+      temperature: 18
     climate.therm004_parter_wejscie_climate:
      state: on
      temperature: 19
