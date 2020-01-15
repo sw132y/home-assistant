@@ -80,3 +80,13 @@ input_boolean:
     name: Set heating for guest room
     initial: off
     icon: mdi:hotel
+
+luftdaten:
+  sensor_id: 38797
+  show_on_map: true
+  sensors:
+    monitored_conditions:
+      - P1
+      - P2
+      #- temperature
+      #- humidity

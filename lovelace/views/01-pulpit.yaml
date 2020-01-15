@@ -28,10 +28,10 @@ cards:
     title: Smog
     hours_to_show: 48
     entities:
-      - sensor.meteo_pm2_5
-      - sensor.meteo_pm10
-      - sensor.meteo_temperature
-      - sensor.meteo_humidity
+      - sensor.luftdaten_38797_p1
+      - sensor.luftdaten_38797_p2
+      # - sensor.meteo_temperature
+      # - sensor.meteo_humidity
     #   - sensor.meteo_pressure
 
   - type: vertical-stack
