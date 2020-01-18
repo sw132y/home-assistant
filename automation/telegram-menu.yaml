@@ -16,13 +16,14 @@
         message: 'Wybierz opcję'
         data:
           inline_keyboard:
-            - "Klimat w domu:/report_temperature, Okna:/report_upstairs_window"
+            - "Temperatura:/report_temperature, Wilgotność:/report_humidity, Grzejniki:/report_radiators"
+            - "Okna:/report_upstairs_window"
             - "Brama:/report_gate, Światła:/report_lights, Dzwonek:/report_doorbell"
             - "Otwieranie furtki:/open_gateway"
             - "Zew. ośw. wł:/turn_on_outside_lights, Zew. ośw. wył:/turn_off_outside_lights"
             - "Parter ośw. wł:/turn_on_parter_lights, Parter ośw. wył:/turn_off_parter_lights"
 
-- alias: 'Report: Temperature and humidity'
+- alias: 'Report: Temperature (sensors)'
   initial_state: 'on'
   trigger:
     platform: event
@@ -35,10 +36,49 @@
         message_id: 'last'
         chat_id: '{{ trigger.event.data.user_id }}'
         message: |
-          Sypialnia - {{ states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit }} - {{ states.sensor.temp101_pietro_sypialnia_humidity.state_with_unit }}
-          Ignacy - {{ states.sensor.temp106_pietro_ignacy_temperature.state_with_unit }} - {{ states.sensor.temp106_pietro_ignacy_humidity.state_with_unit }}
-          Salon - {{ states.sensor.temp008_parter_salon_temperature.state_with_unit }} - {{ states.sensor.temp008_parter_salon_humidity.state_with_unit }}
-          Biuro - {{ states.sensor.temp005_parter_biuro_temperature.state_with_unit }} - {{ states.sensor.temp005_parter_biuro_humidity.state_with_unit }}
+          {% for state in states.sensor -%}
+          {% if state.entity_id.startswith('sensor.temp') and state.entity_id.endswith('_temperature') %}
+          {{ state.name | replace("Klimat ", "") }} {{ state.state_with_unit }}
+          {%- endif %}
+          {%- endfor %}
+
+- alias: 'Report: Humidity (sensors)'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_humidity'
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        message_id: 'last'
+        chat_id: '{{ trigger.event.data.user_id }}'
+        message: |
+          {% for state in states.sensor -%}
+          {% if state.entity_id.startswith('sensor.temp') and state.entity_id.endswith('_humidity') %}
+          {{ state.name | replace("Klimat ", "") }} {{ state.state_with_unit }}
+          {%- endif %}
+          {%- endfor %}
+
+- alias: 'Report: Radiators'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: '/report_radiators'
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        message_id: 'last'
+        chat_id: '{{ trigger.event.data.user_id }}'
+        message: |
+          {% for state in states.climate -%}
+          {% if state.entity_id.startswith('climate.therm') %}
+          {{ state.name | replace("Grzejnik ", "") }} {{ state.attributes.current_temperature }}°C ({{state.attributes.current_heating_setpoint}}°C)
+          {%- endif %}
+          {%- endfor %}
 
 - alias: 'Report: Entry gate state'
   initial_state: 'on'
@@ -68,12 +108,11 @@
         message_id: 'last'
         chat_id: '{{ trigger.event.data.user_id }}'
         message: |
-          Sypialnia Pd {{states.binary_sensor.kontr102_pietro_sypialnia_poludnie_contact.state}}
-          Sypialnia Wsch {{states.binary_sensor.kontr101_pietro_sypialnia_wschod_contact.state}}
-          Chillroom {{states.binary_sensor.kontr103_pietro_chillroom_contact.state}}
-          Gościnny {{states.binary_sensor.kontr104_pietro_goscinny_contact.state}}
-          Łazienka {{states.binary_sensor.kontr106_pietro_lazienka_contact.state}}
-          Ignacy {{states.binary_sensor.kontr105_pietro_ignacy_contact.state}}
+          {% for state in states.binary_sensor -%}
+          {% if state.entity_id.startswith('binary_sensor.kontr') and state.entity_id.endswith('_contact') and state.name.startswith('Okno') %}
+          {{state.name | replace("Okno ", "")}} jest {% if is_state(state.entity_id, 'off') %}zamknięte{% else %}otwarte{% endif %}
+          {%- endif %}
+          {%- endfor %}
 
 - alias: 'Report: Door bell state'
   initial_state: 'on'
@@ -87,7 +126,7 @@
       data_template:
         message_id: 'last'
         chat_id: '{{ trigger.event.data.user_id }}'
-        message: Dzwonek jest {{states.switch.relay005_parter_wejscie_dzwonek.state}}
+        message: Dzwonek jest {% if is_state('switch.relay005_parter_wejscie_dzwonek', 'off') %}wyłączony{% else %}włączony{% endif %}
 
 - alias: 'Report: Lights state'
   initial_state: 'on'
@@ -105,7 +144,6 @@
           Witryna: {{states.switch.relay006_parter_salon_witryna.state}}
           Narożnik {{states.switch.relay007_parter_salon_naroznik.state}}
           Kuchnia: {{states.switch.relay009_parter_kuchnia_potrojna.state}}
-          Choinka: {{states.switch.relay003_gniazdko.state}}
           Jeleń: {{states.switch.relay102_grzejnik.state}}
           Zewnętrzne: {{states.switch.relay002_parter_wejscie_oswietle.state}}
 
