@@ -1,0 +1,83 @@
+type: custom:button-card
+aspect_ratio: 1/1
+name: Jakość powietrza
+state:
+# - operator: default
+#   icon: mdi:cloud
+tap_action:
+  action: more-info
+styles:
+  grid:
+    - grid-template-areas: '"n n" "pm10" "pm2"'
+    - grid-template-columns: 1fr 1fr
+    - grid-template-rows: 1fr min-content min-content min-content min-content
+    - padding-left: 5px
+  name:
+    - align-self: middle
+    - justify-self: start
+    - padding-bottom: 4px
+    - padding-left: 5px
+  img_cell:
+    - justify-content: start
+    - align-items: start
+    - margin: none
+  icon:
+    - width: 70%
+    - margin-top: -10%
+  custom_fields:
+    pm10:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+    pm2:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+custom_fields:
+  pm10: >
+    [[[
+      var quality = 0
+
+      if (states['sensor.luftdaten_38797_p1'].state <= 20){
+        quality = 0
+      } else if(states['sensor.luftdaten_38797_p1'].state <= 60){
+        quality = 1
+      } else if(states['sensor.luftdaten_38797_p1'].state <= 100){
+        quality = 2
+      } else if(states['sensor.luftdaten_38797_p1'].state <= 140){
+        quality = 3
+      } else if(states['sensor.luftdaten_38797_p1'].state <= 200){
+        quality = 4
+      } else{
+        quality = 5
+      }
+      
+      return `<ha-icon
+        icon="mdi:cloud"
+        style="width: 12px; height: 12px;">
+        </ha-icon><span><span style="color: var(--text-color-sensor);">${quality}</span></span>`
+    ]]]
+  pm2: >
+    [[[
+      var quality = 0
+
+      if (states['sensor.luftdaten_38797_p2'] <= 12){
+        quality = 0
+      } else if(states['sensor.luftdaten_38797_p2'] <= 36){
+        quality = 1
+      } else if(states['sensor.luftdaten_38797_p2'] <= 60){
+        quality = 2
+      } else if(states['sensor.luftdaten_38797_p2'] <= 84){
+        quality = 3
+      } else if(states['sensor.luftdaten_38797_p2'] <= 120){ 
+        quality = 4
+      } else {
+        quality = 5
+      }
+
+      return `<ha-icon
+        icon="mdi:cloud"
+        style="width: 12px; height: 12px;">
+        </ha-icon><span><span style="color: var(--text-color-sensor);">${quality}</span></span>`
+    ]]]
+    

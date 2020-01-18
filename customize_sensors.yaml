@@ -20,30 +20,3 @@
       unit_of_measurement: 'zł'
       value_template: "{{ (states('sensor.relay004_gniazdko_komputer_energy_today') | float * 0.63) | round(2) }}"
       icon_template: mdi:currency-usd
-- platform: mqtt
-  name: Particulate Matter Sensor
-  state_topic: meteo/pm
-- platform: mqtt
-  name: "Meteo PM2.5"
-  state_topic: "meteo/pm/tele/SENSOR"
-  value_template: "{{ value_json.SDS0X1['PM2.5'] }}"
-  json_attributes_topic: "meteo/pm/tele/SENSOR"
-  json_attributes_template: "{{ value_json.SDS0X1['PM2.5'] | tojson }}"
-- platform: mqtt
-  name: "Meteo PM10"
-  state_topic: "meteo/pm/tele/SENSOR"
-  value_template: "{{ value_json.SDS0X1['PM10'] }}"
-  json_attributes_topic: "meteo/pm/tele/SENSOR"
-  json_attributes_template: "{{ value_json.SDS0X1['PM10'] | tojson }}"
-- platform: mqtt
-  name: "Meteo Temperature"
-  state_topic: "meteo/pm/tele/SENSOR"
-  value_template: "{{ value_json.DHT11['Temperature'] | float | round(1) }}"
-  json_attributes_topic: "meteo/pm/tele/SENSOR"
-  json_attributes_template: "{{ value_json.DHT11['Temperature'] | tojson }}"
-- platform: mqtt
-  name: "Meteo Humidity"
-  state_topic: "meteo/pm/tele/SENSOR"
-  value_template: "{{ value_json.DHT11['Humidity'] | float | round(0) }}"
-  json_attributes_topic: "meteo/pm/tele/SENSOR"
-  json_attributes_template: "{{ value_json.DHT11['Humidity'] | tojson }}"

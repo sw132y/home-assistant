@@ -24,15 +24,14 @@ cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
   
-  - type: history-graph
-    title: Smog
-    hours_to_show: 48
-    entities:
-      - sensor.luftdaten_38797_p1
-      - sensor.luftdaten_38797_p2
-      # - sensor.meteo_temperature
-      # - sensor.meteo_humidity
-    #   - sensor.meteo_pressure
+  # - type: history-graph
+  #   title: Smog
+  #   hours_to_show: 48
+  #   entities:
+  #     - sensor.luftdaten_38797_p1
+  #     - sensor.luftdaten_38797_p2
+
+  - !include /config/lovelace/views/buttons/powietrze.yaml
 
   - type: vertical-stack
     cards:
