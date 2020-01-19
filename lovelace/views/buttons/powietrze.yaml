@@ -61,15 +61,15 @@ custom_fields:
     [[[
       var quality = 0
 
-      if (states['sensor.luftdaten_38797_p2'] <= 12){
+      if (states['sensor.luftdaten_38797_p2'].state <= 12){
         quality = 0
-      } else if(states['sensor.luftdaten_38797_p2'] <= 36){
+      } else if(states['sensor.luftdaten_38797_p2'].state <= 36){
         quality = 1
-      } else if(states['sensor.luftdaten_38797_p2'] <= 60){
+      } else if(states['sensor.luftdaten_38797_p2'].state <= 60){
         quality = 2
-      } else if(states['sensor.luftdaten_38797_p2'] <= 84){
+      } else if(states['sensor.luftdaten_38797_p2'].state <= 84){
         quality = 3
-      } else if(states['sensor.luftdaten_38797_p2'] <= 120){ 
+      } else if(states['sensor.luftdaten_38797_p2'].state <= 120){ 
         quality = 4
       } else {
         quality = 5

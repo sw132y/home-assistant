@@ -153,7 +153,7 @@
       temperature: 19
     climate.therm006_parter_goscinny_climate:
       state: on
-      temperature: 19
+      temperature: 18
     climate.therm104_pietro_sypialnia_climate:
       state: on
       temperature: 19

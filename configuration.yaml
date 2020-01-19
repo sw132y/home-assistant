@@ -69,15 +69,15 @@ light:
 
 input_boolean:
   wakacje:
-    name: Set vacations mode (impact for heating, lights, automation)
+    name: Tryb wakacyjny
     initial: off
     icon: mdi:palm-tree
   gosc_parter:
-    name: Set heating for guest room
+    name: Gość śpi na parterze
     initial: off
     icon: mdi:hotel
   gosc_pietro:
-    name: Set heating for guest room
+    name: Gość śpi na piętrze
     initial: off
     icon: mdi:hotel
 

@@ -43,3 +43,25 @@ sensor.meteo_humidity:
 sensor.meteo_pressure:
   icon: mdi:gauge
   unit_of_measurement: "hPA"
+
+sensor.luftdaten_38797_p1:
+  friendly_name: "PM 10µg"
+  templates:
+    icon_color: >
+      if (state <= 21) return 'rgb(98,177,0)';
+      if (state <= 61) return 'rgb(179,221,0)';
+      if (state <= 101) return 'rgb(251,216,0)';
+      if (state <= 141) return 'rgb(222,128,0)';
+      if (state <= 201) return 'rgb(219,0,0)';
+      return 'rgb(146,0,0)'
+
+sensor.luftdaten_38797_p2:
+  friendly_name: "PM 2.5µg"
+  templates:
+    icon_color: >
+      if (state <= 13) return 'rgb(98,177,0)';
+      if (state <= 37) return 'rgb(179,221,0)';
+      if (state <= 61) return 'rgb(251,216,0)';
+      if (state <= 85) return 'rgb(222,128,0)';
+      if (state <= 121) return 'rgb(219,0,0)';
+      return 'rgb(146,0,0)'

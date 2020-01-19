@@ -2,6 +2,10 @@
   trigger:
     - platform: time
       at: "05:00:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.wakacje
+    state: 'off'
   action:
   - service: scene.turn_on
     entity_id: scene.ogrzewanie_poranek
@@ -13,6 +17,10 @@
   trigger:
     - platform: time
       at: "09:00:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.wakacje
+    state: 'off'
   action:
   - service: scene.turn_on
     entity_id: scene.ogrzewanie_dzien
@@ -24,6 +32,10 @@
   trigger:
     - platform: time
       at: "17:00:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.wakacje
+    state: 'off'
   action:
   - service: scene.turn_on
     entity_id: scene.ogrzewanie_wieczor
@@ -36,9 +48,39 @@
   trigger:
     - platform: time
       at: "22:30:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.wakacje
+    state: 'off'
   action:
   - service: scene.turn_on
     entity_id: scene.ogrzewanie_noc
   - service: notify.sw132y
     data:
       message: Tryb grzania "noc".
+
+- alias: 'Action: Change heating mode to "Wakacje"'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.wakacje
+      from: 'off'
+      to: 'on'
+  action:
+  - service: scene.turn_on
+    entity_id: scene.ogrzewanie_wakacje
+  - service: notify.sw132y
+    data:
+      message: Tryb grzania "wakacje".
+
+- alias: 'Action: Turn off "Wakacje" mode'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.wakacje
+      from: 'on'
+      to: 'off'
+  action:
+  - service: scene.turn_on
+    entity_id: scene.ogrzewanie_dzien
+  - service: notify.sw132y
+    data:
+      message: Wyłączenie trybu grzania "wakacje".

@@ -5,5 +5,5 @@ tap_action:
 hold_action:
   action: toggle
 entity: switch.relay005_parter_wejscie_dzwonek
-size: 30%
-aspect_ratio: 1/1
+size: 35%
+#aspect_ratio: 1/1

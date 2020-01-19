@@ -16,7 +16,7 @@
     data:
       message: Temperatura w sypialni wynosi {{states.sensor.temp101_pietro_sypialnia_temperature.state_with_unit}}
 
-- alias: 'Notification: Window is open when is cold outside'
+- alias: 'Notification: Window is open'
   initial_state: 'on'
   trigger:
     - platform: time_pattern
@@ -24,16 +24,20 @@
   condition:
     condition: and
     conditions:
-        # - condition: template
-        #   value_template: "{{ ( states.sensor.temp201_ogrod_ganek_temperature.state  ) < ( states.sensor.temp005_parter_biuro_temperature.state ) }}"
         - condition: state
           entity_id: group.upstairs_windows
           state: 'on'
   action:
   - service: notify.sw132y
-    data:
-      message: Okno na piętrze jest otwarte
-
+    data_template:
+      message: |
+        {% for state in states.binary_sensor -%}
+        {% if state.entity_id.startswith('binary_sensor.kontr') and state.entity_id.endswith('_contact') and state.name.startswith('Okno') %}
+        {% if is_state(state.entity_id, 'on') %}
+        {{state.name | replace("Okno ", "")}} jest otwarte.
+        {%- endif %}
+        {%- endif %}
+        {%- endfor %}
 
 - alias: 'Notification: Entity has changed state to "on"'
   initial_state: 'on'
@@ -48,6 +52,10 @@
       to: 'on'
     - platform: state
       entity_id: switch.relay001_parter_wejscie_furtka
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.kontr203_ogrod_szopka_contact
       from: 'off'
       to: 'on'
     - platform: state
@@ -86,4 +94,23 @@
       message: >
         {{trigger.to_state.attributes.friendly_name}} jest teraz {{trigger.to_state.state}}
 
-  
+- alias: 'Notification: Remind to close if is state is still "on"'
+  initial_state: 'on'
+  trigger:
+    - platform: time
+      at: "21:00:00"
+  condition:
+    condition: or
+    conditions:
+        - condition: state
+          entity_id: binary_sensor.kontr202_ogrod_brama_contact
+          state: 'on'
+        - condition: state
+          entity_id: binary_sensor.kontr203_ogrod_szopka_contact
+          state: 'on'
+  action:
+    service: notify.sw132y
+    data_template:
+      message: |
+        {% if is_state('binary_sensor.kontr202_ogrod_brama_contact', 'on') %}Brama nadal jest otwarta. {%- endif %}
+        {% if is_state('binary_sensor.kontr203_ogrod_szopka_contact', 'on') %}Szopka nadal jest otwarta. {%- endif %}

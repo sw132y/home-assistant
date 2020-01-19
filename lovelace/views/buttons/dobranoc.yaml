@@ -1,6 +1,6 @@
 type: "custom:button-card"
 name: Dobranoc
-icon: mdi:power-sleep
+icon: mdi:sleep
 entity: scene.dobranoc
 tap_action:
   action: call-service

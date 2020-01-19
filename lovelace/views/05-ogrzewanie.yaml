@@ -18,7 +18,6 @@ cards:
       - climate.therm104_pietro_sypialnia_climate
       - climate.therm102_pietro_chillroom_climate
       - climate.therm103_pietro_goscinny_climate
-    #   - climate therm105_pietro_lazienka_climate
   
   - type: vertical-stack
     title: Temperatura (Parter)
@@ -32,8 +31,6 @@ cards:
             name: Gościnny
           - entity: sensor.temp003_parter_garaz_temperature
             name: Garaż
-          - entity: sensor.temp004_parter_kotlownia_temperature
-            name: Kotłownia
           - entity: sensor.temp005_parter_biuro_temperature
             name: Biuro
           - entity: sensor.temp006_parter_kuchnia_temperature
@@ -150,3 +147,11 @@ cards:
       - scene.ogrzewanie_dzien
       - scene.ogrzewanie_wieczor
       - scene.ogrzewanie_noc
+
+  - type: entities
+    title: Tryb
+    show_header_toggle: false
+    entities:
+      - input_boolean.wakacje
+      - input_boolean.gosc_parter
+      - input_boolean.gosc_pietro

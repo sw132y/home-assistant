@@ -2,11 +2,11 @@ type: "custom:button-card"
 name: Furtka
 state:
 - operator: default
-  icon: fas:key
+  icon: mdi:key
 tap_action:
   action: toggle
 hold_action:
   action: toggle
 entity: switch.relay001_parter_wejscie_furtka
-size: 30%
-aspect_ratio: 1/1
+size: 35%
+#aspect_ratio: 1/1

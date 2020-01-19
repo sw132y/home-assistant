@@ -9,7 +9,7 @@
     - condition: or
       conditions:
         - condition: template
-          value_template: '{{ trigger.payload_json.PN532.UID == "B9D02FA3" }}'
+          value_template: '{{ trigger.payload_json.PN532.UID == "C93830A3" }}'
     - service: notify.sw132y
       data_template:
         message: Otwieram furtkę

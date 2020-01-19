@@ -10,7 +10,18 @@ cards:
       - !include /config/lovelace/views/buttons/wejscie-furtka.yaml
       - !include /config/lovelace/views/buttons/wejscie-swiatlo-zewnetrzne.yaml
       - !include /config/lovelace/views/buttons/wejscie-dzwonek.yaml
-      - !include /config/lovelace/views/buttons/wejscie-brama.yaml
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.kontr202_ogrod_brama_contact
+            state: "on"
+        card:
+            !include /config/lovelace/views/buttons/wejscie-brama.yaml
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.kontr203_ogrod_szopka_contact
+            state: "on"
+        card:
+            !include /config/lovelace/views/buttons/ogrod-szopka.yaml
 
   - type: horizontal-stack
     title: Światła na parterze
@@ -24,14 +35,16 @@ cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
   
-  # - type: history-graph
-  #   title: Smog
-  #   hours_to_show: 48
-  #   entities:
-  #     - sensor.luftdaten_38797_p1
-  #     - sensor.luftdaten_38797_p2
+  - type: glance
+    title: Pogoda
+    show_header_toggle: false
+    entities:
+      - entity: sensor.temp202_ogrod_szopka_temperature
+      - entity: sensor.temp202_ogrod_szopka_humidity
+      - entity: sensor.luftdaten_38797_p1
+      - entity: sensor.luftdaten_38797_p2
 
-  - !include /config/lovelace/views/buttons/powietrze.yaml
+  #- !include /config/lovelace/views/buttons/powietrze.yaml
 
   - type: vertical-stack
     cards:

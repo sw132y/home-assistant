@@ -1,0 +1,46 @@
+- alias: 'Action: Automatic turn on lights when "Wakacje" mode is on'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: time_pattern
+      minutes: '/15'
+  condition:
+    - condition: state
+      entity_id: input_boolean.wakacje
+      state: 'on'
+    - condition: sun
+      after: sunset
+      after_offset: '-00:30:00'
+    - condition: time
+      before: '22:00:00'
+  action:
+    - delay: "00:{{ '{:02}'.format(range(0,30) | random | int) }}:00"    
+    - service: switch.turn_on
+      entity_id: switch.relay002_parter_wejscie_oswietle
+    - delay: "00:{{ '{:02}'.format(range(0,30) | random | int) }}:00"
+    - service: switch.turn_on
+      entity_id: light.lights_parter
+    - service: notify.sw132y
+      data:
+        message: Światła zostały włączone w trybie wakacyjnym.
+
+- alias: 'Action: Automatic turn off lights when "Wakacje" mode is on'
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: time
+      at: '23:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.wakacje
+      state: 'on'
+  action:
+    - delay: "00:{{ '{:02}'.format(range(0,30) | random | int) }}:00"    
+    - service: switch.turn_off
+      entity_id: switch.relay002_parter_wejscie_oswietle
+    - delay: "00:{{ '{:02}'.format(range(0,15) | random | int) }}:00"
+    - service: switch.turn_off
+      entity_id: light.lights_parter
+    - service: notify.sw132y
+      data:
+        message: Światła zostały wyłączone w trybie wakacyjnym.

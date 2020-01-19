@@ -1,8 +1,8 @@
 type: "custom:button-card"
-name: Brama
+name: Szopka
 state:
 - operator: default
-  icon: mdi:gate
-entity: binary_sensor.kontr202_ogrod_brama_contact
+  icon: mdi:home
+entity: binary_sensor.kontr203_ogrod_szopka_contact
 size: 35%
 #aspect_ratio: 1/1
