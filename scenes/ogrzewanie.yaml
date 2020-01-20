@@ -17,7 +17,7 @@
       temperature: 20.5
     climate.therm005_parter_schody_climate:
       state: on
-      temperature: 19
+      temperature: 19.5
     climate.therm006_parter_goscinny_climate:
       state: on
       temperature: 18
@@ -29,7 +29,7 @@
       temperature: 18
     climate.therm004_parter_wejscie_climate:
      state: on
-     temperature: 19
+     temperature: 19.5
 
 
 - name: Ogrzewanie dzień
@@ -51,7 +51,7 @@
       temperature: 19
     climate.therm005_parter_schody_climate:
       state: on
-      temperature: 19
+      temperature: 19.5
     climate.therm006_parter_goscinny_climate:
       state: on
       temperature: 18
@@ -63,7 +63,7 @@
       temperature: 18
     climate.therm004_parter_wejscie_climate:
      state: on
-     temperature: 19
+     temperature: 19.5
 
 - name: Ogrzewanie wieczór
   entities:
@@ -123,7 +123,7 @@
       temperature: 18
     climate.therm104_pietro_sypialnia_climate:
       state: on
-      temperature: 18.5
+      temperature: 19
     climate.therm103_pietro_goscinny_climate:
       state: on
       temperature: 18
