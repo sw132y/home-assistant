@@ -66,7 +66,7 @@ cards:
               entity: light.chillroom_lights
       - type: conditional
         conditions:
-          - entity: light.light203_pietro_sypialnia
+          - entity: light.chillroom_lights
             state: "on"
         card:
           type: vertical-stack

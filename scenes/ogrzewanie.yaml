@@ -2,10 +2,10 @@
   entities:
     climate.therm001_parter_salon_climate:
       state: on
-      temperature: 20.5
+      temperature: 21
     climate.therm002_parter_kuchnia_climate:
       state: on
-      temperature: 20.5
+      temperature: 21
     climate.therm003_parter_biuro_climate:
       state: on
       temperature: 20.5
@@ -36,19 +36,19 @@
   entities:
     climate.therm001_parter_salon_climate:
       state: on
-      temperature: 20.5
+      temperature: 21
     climate.therm002_parter_kuchnia_climate:
       state: on    
-      temperature: 20.5
+      temperature: 21
     climate.therm003_parter_biuro_climate:
       state: on    
-      temperature: 20
+      temperature: 20.5
     climate.therm101_pietro_ignacy_climate:
       state: on    
       temperature: 20
     climate.therm102_pietro_chillroom_climate:
       state: on    
-      temperature: 19
+      temperature: 20
     climate.therm005_parter_schody_climate:
       state: on
       temperature: 19.5
