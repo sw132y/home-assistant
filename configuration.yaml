@@ -80,6 +80,10 @@ input_boolean:
     name: Gość śpi na piętrze
     initial: off
     icon: mdi:hotel
+  zigbee_permit_join:
+    name: Allow devices to join
+    initial: off
+    icon: mdi:cellphone-wireless
 
 luftdaten:
   sensor_id: 38797
@@ -88,5 +92,8 @@ luftdaten:
     monitored_conditions:
       - P1
       - P2
-      #- temperature
-      #- humidity
+
+timer:
+  zigbee_permit_join:
+    name: Time remaining
+    duration: 1200

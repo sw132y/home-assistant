@@ -20,3 +20,8 @@
       unit_of_measurement: 'zł'
       value_template: "{{ (states('sensor.relay004_gniazdko_komputer_energy_today') | float * 0.63) | round(2) }}"
       icon_template: mdi:currency-usd
+
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
