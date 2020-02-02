@@ -21,11 +21,11 @@ views:
     title: Pomiar energii
     cards:
       - !include /config/lovelace/views/03-pomiar-energii.yaml
-  # - badges: []
-  #   path: rozrywka
-  #   title: Rozrywka
-  #   cards:
-  #     - !include /config/lovelace/views/04-rozrywka.yaml
+  - badges: []
+    path: rozrywka
+    title: Rozrywka
+    cards:
+      - !include /config/lovelace/views/04-rozrywka.yaml
   - badges: []
     path: floorplan
     title: Floorplan

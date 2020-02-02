@@ -46,3 +46,6 @@
   - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.zigbee_permit_join
+  - service: notify.sw132y
+    data:
+      message: Atomatyczne wyłączenie możliwości wykrywania nowych urządzeń via Zigbee
