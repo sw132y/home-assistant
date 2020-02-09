@@ -8,7 +8,7 @@
       temperature: 21
     climate.therm003_parter_biuro_climate:
       state: on
-      temperature: 20.5
+      temperature: 21
     climate.therm101_pietro_ignacy_climate:
       state: on
       temperature: 20.5
@@ -42,7 +42,7 @@
       temperature: 21
     climate.therm003_parter_biuro_climate:
       state: on    
-      temperature: 20.5
+      temperature: 19.5
     climate.therm101_pietro_ignacy_climate:
       state: on    
       temperature: 20
@@ -78,7 +78,7 @@
       temperature: 20.5
     climate.therm101_pietro_ignacy_climate:
       state: on    
-      temperature: 20
+      temperature: 20.5
     climate.therm102_pietro_chillroom_climate:
       state: on    
       temperature: 20
@@ -111,7 +111,7 @@
       temperature: 19
     climate.therm101_pietro_ignacy_climate:
       state: on    
-      temperature: 19
+      temperature: 20.5
     climate.therm102_pietro_chillroom_climate:
       state: on    
       temperature: 20
