@@ -17,7 +17,7 @@ cards:
       - climate.therm101_pietro_ignacy_climate
       - climate.therm104_pietro_sypialnia_climate
       - climate.therm102_pietro_chillroom_climate
-      #- climate.therm103_pietro_goscinny_climate
+      - climate.therm103_pietro_goscinny_climate
   
   - type: vertical-stack
     title: Temperatura (Parter)
