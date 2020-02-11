@@ -20,13 +20,13 @@
       temperature: 19.5
     climate.therm006_parter_goscinny_climate:
       state: on
-      temperature: 18
+      temperature: 19
     climate.therm104_pietro_sypialnia_climate:
       state: on
       temperature: 20
     climate.therm103_pietro_goscinny_climate:
       state: on
-      temperature: 18
+      temperature: 19
     climate.therm004_parter_wejscie_climate:
      state: on
      temperature: 19.5
@@ -54,7 +54,7 @@
       temperature: 19.5
     climate.therm006_parter_goscinny_climate:
       state: on
-      temperature: 18
+      temperature: 19
     climate.therm104_pietro_sypialnia_climate:
       state: on
       temperature: 19
@@ -87,7 +87,7 @@
       temperature: 19
     climate.therm006_parter_goscinny_climate:
       state: on
-      temperature: 20
+      temperature: 19
     climate.therm104_pietro_sypialnia_climate:
       state: on
       temperature: 19.5
@@ -111,7 +111,7 @@
       temperature: 19
     climate.therm101_pietro_ignacy_climate:
       state: on    
-      temperature: 20.5
+      temperature: 20
     climate.therm102_pietro_chillroom_climate:
       state: on    
       temperature: 20
@@ -120,7 +120,7 @@
       temperature: 19
     climate.therm006_parter_goscinny_climate:
       state: on
-      temperature: 20
+      temperature: 19
     climate.therm104_pietro_sypialnia_climate:
       state: on
       temperature: 19
