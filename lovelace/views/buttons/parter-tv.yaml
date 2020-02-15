@@ -1,0 +1,11 @@
+type: "custom:button-card"
+name: TV
+state:
+- operator: default
+  icon: mdi:television-classic
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay003_gniazdko
+size: 40%

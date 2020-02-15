@@ -18,7 +18,7 @@ confirmation:
   text: '[[[ return `Na pewno?` ]]]'
 label: >
   [[[
-    return 'Zgaś';
+    return 'Zgaś światła';
   ]]]
 styles:
     img_cell:

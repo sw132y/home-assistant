@@ -1,28 +1,16 @@
 type: "custom:button-card"
 name: Dobranoc
-icon: mdi:sleep
+state:
+- operator: default
+  icon: mdi:sleep
 entity: scene.dobranoc
 tap_action:
   action: call-service
   service: scene.turn_on
   service_data:
     entity_id: scene.dobranoc
-layout: icon_label
-show_label: true
-show_name: false
 confirmation:
   text: '[[[ return `Na pewno?` ]]]'
-label: >
-  [[[
-    return 'Dobranoc';
-  ]]]
-styles:
-    card:
-      - height: 75px
-    img_cell:
-      - justify-content: center
-      - align-items: center
-      - margin: none
-    icon:
-      - width: 70%
-      - color: 'rgb(106,107,116)'
+entity: switch.relay001_parter_wejscie_furtka
+size: 35%
+#aspect_ratio: 1/1

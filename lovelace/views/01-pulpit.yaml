@@ -2,11 +2,6 @@ type: vertical-stack
 cards:
   - type: horizontal-stack
     cards:
-      - !include /config/lovelace/views/buttons/dzien-dobry.yaml
-      - !include /config/lovelace/views/buttons/dobranoc.yaml
-
-  - type: horizontal-stack
-    cards:
       - !include /config/lovelace/views/buttons/wejscie-furtka.yaml
       - !include /config/lovelace/views/buttons/wejscie-swiatlo-zewnetrzne.yaml
       - !include /config/lovelace/views/buttons/wejscie-dzwonek.yaml
@@ -22,9 +17,9 @@ cards:
             state: "on"
         card:
             !include /config/lovelace/views/buttons/ogrod-szopka.yaml
+      - !include /config/lovelace/views/buttons/dobranoc.yaml
 
   - type: horizontal-stack
-    title: Światła na parterze
     cards:
       - !include /config/lovelace/views/buttons/parter-wszystkie-swiatla-on.yaml
       - !include /config/lovelace/views/buttons/parter-wszystkie-swiatla-off.yaml
@@ -34,17 +29,17 @@ cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-naroznik.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
+      - !include /config/lovelace/views/buttons/parter-tv.yaml
   
   - type: glance
-    title: Pogoda
     show_header_toggle: false
     entities:
       - entity: sensor.temp202_ogrod_szopka_temperature
+        name: Ogród
       - entity: sensor.temp202_ogrod_szopka_humidity
+        name: Ogród
       - entity: sensor.luftdaten_38797_p1
       - entity: sensor.luftdaten_38797_p2
-
-  #- !include /config/lovelace/views/buttons/powietrze.yaml
 
   - type: vertical-stack
     cards:

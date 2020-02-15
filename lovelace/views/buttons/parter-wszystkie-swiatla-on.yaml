@@ -16,7 +16,7 @@ show_label: true
 show_name: false
 label: >
   [[[
-    return 'Zapal';
+    return 'Zapal światła';
   ]]]
 styles:
     img_cell:
