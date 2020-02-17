@@ -35,7 +35,9 @@ cards:
     show_header_toggle: false
     entities:
       - entity: sensor.temp202_ogrod_szopka_temperature
-        name: Ogród
+        name: Szopka
+      - entity: sensor.luftdaten_38798_temperature
+        name: Studzienka
       - entity: sensor.temp202_ogrod_szopka_humidity
         name: Ogród
       - entity: sensor.luftdaten_38797_p1
