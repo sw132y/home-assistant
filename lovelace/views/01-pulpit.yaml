@@ -33,6 +33,7 @@ cards:
   
   - type: glance
     show_header_toggle: false
+    title: Pogoda
     entities:
       - entity: sensor.temp202_ogrod_szopka_temperature
         name: Szopka
