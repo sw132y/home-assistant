@@ -1,0 +1,12 @@
+type: "custom:button-card"
+name: Nad TV
+#aspect_ratio: 1/1
+state:
+- operator: default
+  icon: mdi:lightbulb-group
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay010_parter_salon_nadtv
+size: 40%

@@ -29,7 +29,15 @@ cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-naroznik.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-kuchnia.yaml
       - !include /config/lovelace/views/buttons/parter-swiatlo-rf3.yaml
+      - !include /config/lovelace/views/buttons/parter-swiatlo-nadtv.yaml
+  - type: horizontal-stack
+    cards:
       - !include /config/lovelace/views/buttons/parter-tv.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
+    #   - !include /config/lovelace/views/buttons/empty.yaml
   
   - type: glance
     show_header_toggle: false
@@ -59,9 +67,9 @@ cards:
                 - !include /config/lovelace/views/buttons/pietro-swiatlo-chillroom-film.yaml
                 - !include /config/lovelace/views/buttons/pietro-swiatlo-chillroom-wieczor.yaml
                 - !include /config/lovelace/views/buttons/pietro-swiatlo-chillroom-turbo.yaml
-            - type: custom:slider-entity-row
-              name: Chillroom
-              entity: light.chillroom_lights
+            # - type: custom:slider-entity-row
+            #   name: Chillroom
+            #   entity: light.chillroom_lights
       - type: conditional
         conditions:
           - entity: light.chillroom_lights
@@ -74,9 +82,9 @@ cards:
               cards:
                 - !include /config/lovelace/views/buttons/pietro-swiatlo-sypialnia-wieczor.yaml
                 - !include /config/lovelace/views/buttons/pietro-swiatlo-sypialnia-turbo.yaml
-            - type: custom:slider-entity-row
-              name: Sypialnia
-              entity: light.light203_pietro_sypialnia
+            # - type: custom:slider-entity-row
+            #   name: Sypialnia
+            #   entity: light.light203_pietro_sypialnia
       
   - type: conditional
     conditions:

@@ -1,0 +1,5 @@
+type: "custom:button-card"
+styles:
+    card:
+      - display: none
+size: 40%
