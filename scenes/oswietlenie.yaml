@@ -26,3 +26,4 @@
     group.lights_parter: off
     switch.relay003_gniazdko: off
     switch.relay002_parter_wejscie_oswietle: off
+    switch.gniazdko_rf_3: off

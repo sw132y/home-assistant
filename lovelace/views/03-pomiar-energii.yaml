@@ -8,7 +8,6 @@ cards:
   - type: horizontal-stack
     cards:
       - !include /config/lovelace/views/buttons/pomiar-energii-tv.yaml
-      - !include /config/lovelace/views/buttons/pomiar-energii-pralka.yaml
   
   - type: vertical-stack
     title: Podsumowanie
@@ -20,5 +19,3 @@ cards:
           - sensor.relay004_gniazdko_komputer_energy_today
           - entity: sensor.relay008_energy_energy_today
             name: Lodówka w garażu
-          - entity: sensor.relay102_grzejnik_energy_today
-            name: Pralka

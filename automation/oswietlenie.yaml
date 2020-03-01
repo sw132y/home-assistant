@@ -65,14 +65,14 @@
     entity_id: switch.relay007_parter_salon_naroznik
   - service: switch.turn_on
     entity_id: switch.relay009_parter_kuchnia_potrojna
-  - service: switch.turn_on
-    entity_id: switch.gniazdko_rf_3
-  - delay: '00:00:02'
-  - service: switch.turn_on
-    entity_id: switch.gniazdko_rf_2
-  - delay: '00:00:02'
-  - service: switch.turn_on
-    entity_id: switch.gniazdko_rf_1
+#   - service: switch.turn_on
+    # entity_id: switch.gniazdko_rf_3
+#   - delay: '00:00:02'
+#   - service: switch.turn_on
+    # entity_id: switch.gniazdko_rf_2
+#   - delay: '00:00:02'
+#   - service: switch.turn_on
+    # entity_id: switch.gniazdko_rf_1
 
 - alias: 'Action: Turn off all lights on "Parter"'
   id: turn_off_all_lights_on_parter

@@ -1,0 +1,11 @@
+type: "custom:button-card"
+name: Radio
+state:
+- operator: default
+  icon: mdi:radio
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay102_grzejnik
+size: 40%
