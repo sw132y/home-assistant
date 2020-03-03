@@ -18,7 +18,7 @@
 - alias: 'Action: Turn on lights before work'
   trigger:
     - platform: time
-      at: "05:00:00"
+      at: "05:10:00"
   condition:
     condition: time
     weekday:
@@ -37,7 +37,7 @@
 - alias: 'Action: Turn off lights before work'
   trigger:
     - platform: time
-      at: "06:15:00"
+      at: "06:00:00"
   condition:
     condition: time
     weekday:
