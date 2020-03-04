@@ -3,12 +3,14 @@
     switch.relay002_parter_wejscie_oswietle: on
     switch.relay006_parter_salon_witryna: on
     switch.relay009_parter_kuchnia_potrojna: on
+    switch.relay011_parter_korytarz: on
 
 - name: Zgaś oświetlenie po wyjsciu do pracy
   entities:
     switch.relay002_parter_wejscie_oswietle: off
     switch.relay006_parter_salon_witryna: off
     switch.relay009_parter_kuchnia_potrojna: off
+    switch.relay011_parter_korytarz: off
 
 - name: Zapal wszystkie światła w salonie
   entities:
@@ -27,3 +29,4 @@
     switch.relay003_gniazdko: off
     switch.relay002_parter_wejscie_oswietle: off
     switch.gniazdko_rf_3: off
+    switch.relay011_parter_korytarz: off

@@ -34,7 +34,7 @@ cards:
     cards:
       - !include /config/lovelace/views/buttons/parter-tv.yaml
       - !include /config/lovelace/views/buttons/parter-radio.yaml
-      - !include /config/lovelace/views/buttons/empty.yaml
+      - !include /config/lovelace/views/buttons/parter-swiatlo-korytarz.yaml
       - !include /config/lovelace/views/buttons/empty.yaml
       - !include /config/lovelace/views/buttons/empty.yaml
     #   - !include /config/lovelace/views/buttons/empty.yaml

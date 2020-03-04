@@ -1,0 +1,12 @@
+type: "custom:button-card"
+name: Korytarz
+#aspect_ratio: 1/1
+state:
+- operator: default
+  icon: mdi:ceiling-light
+tap_action:
+  action: toggle
+hold_action:
+  action: toggle
+entity: switch.relay011_parter_korytarz
+size: 40%
