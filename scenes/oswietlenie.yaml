@@ -21,7 +21,6 @@
 - name: Dzień dobry
   entities:
     switch.relay003_gniazdko: on
-    # switch.gniazdko_rf_3: on
 
 - name: Dobranoc
   entities:

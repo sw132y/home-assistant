@@ -30,14 +30,11 @@
   action:
   - service: scene.turn_on
     entity_id: scene.poranne_oswietlenie_przed_wyjsciem_do_pracy
-  - service: notify.sw132y
-    data:
-      message: Zapalam światła przed wyjściem do pracy
 
 - alias: 'Action: Turn off lights before work'
   trigger:
     - platform: time
-      at: "06:00:00"
+      at: "05:55:00"
   condition:
     condition: time
     weekday:
@@ -49,9 +46,6 @@
   action:
   - service: scene.turn_on
     entity_id: scene.zgas_oswietlenie_po_wyjsciu_do_pracy
-  - service: notify.sw132y
-    data:
-      message: Gaszę światła
 
 - alias: 'Action: Turn on all lights in salon'
   id: turn_on_all_lights_in_salon
@@ -65,14 +59,6 @@
     entity_id: switch.relay007_parter_salon_naroznik
   - service: switch.turn_on
     entity_id: switch.relay009_parter_kuchnia_potrojna
-#   - service: switch.turn_on
-    # entity_id: switch.gniazdko_rf_3
-#   - delay: '00:00:02'
-#   - service: switch.turn_on
-    # entity_id: switch.gniazdko_rf_2
-#   - delay: '00:00:02'
-#   - service: switch.turn_on
-    # entity_id: switch.gniazdko_rf_1
 
 - alias: 'Action: Turn off all lights on "Parter"'
   id: turn_off_all_lights_on_parter
@@ -88,10 +74,6 @@
     entity_id: switch.relay009_parter_kuchnia_potrojna
   - service: switch.turn_off
     entity_id: switch.gniazdko_rf_3
-  - delay: '00:00:02'
   - service: switch.turn_off
-    entity_id: switch.gniazdko_rf_2
-  - delay: '00:00:02'
-  - service: switch.turn_off
-    entity_id: switch.gniazdko_rf_1
+    entity_id: switch.relay011_parter_korytarz
 

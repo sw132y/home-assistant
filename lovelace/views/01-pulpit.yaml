@@ -32,9 +32,16 @@ cards:
       - !include /config/lovelace/views/buttons/parter-swiatlo-nadtv.yaml
   - type: horizontal-stack
     cards:
+      - !include /config/lovelace/views/buttons/parter-swiatlo-korytarz.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
+  - type: horizontal-stack
+    cards:
       - !include /config/lovelace/views/buttons/parter-tv.yaml
       - !include /config/lovelace/views/buttons/parter-radio.yaml
-      - !include /config/lovelace/views/buttons/parter-swiatlo-korytarz.yaml
+      - !include /config/lovelace/views/buttons/empty.yaml
       - !include /config/lovelace/views/buttons/empty.yaml
       - !include /config/lovelace/views/buttons/empty.yaml
     #   - !include /config/lovelace/views/buttons/empty.yaml
@@ -72,7 +79,7 @@ cards:
             #   entity: light.chillroom_lights
       - type: conditional
         conditions:
-          - entity: light.chillroom_lights
+          - entity: light.light203_pietro_sypialnia
             state: "on"
         card:
           type: vertical-stack
