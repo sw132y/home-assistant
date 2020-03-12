@@ -29,3 +29,5 @@
     switch.relay002_parter_wejscie_oswietle: off
     switch.gniazdko_rf_3: off
     switch.relay011_parter_korytarz: off
+    switch.relay010_parter_salon_nadtv: off
+    
